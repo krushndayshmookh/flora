@@ -13,3 +13,13 @@ Develop a system or solution to provide a customized and precise land parcel spe
 ### Estimation of crop yield using modern ICT tools which is quick and reliable for making a realistic plan for procurement and to compensate farmers for yield loss if any. - PK409
 
 Current methods for estimating crop yield take months in crop cutting experiments and farmers have to wait for months to get compensated in case of loss etc. Solution for estimating crop yield using modern ICT technologies needs to be developed, which will make realistic plan for procurement. This would also help in compensate farmers in case of yield loss. The solution needs to be quick and reliable.
+
+## research
+
+[AgriMaps](https://play.google.com/store/apps/details?id=dcit.uwi.agrimaps&hl=en)
+
+[AgriPrice](https://play.google.com/store/apps/details?id=com.agrinett.marketwatcher)
+
+[AgriExpense](https://play.google.com/store/apps/details?id=uwi.dcit.AgriExpenseTT)
+
+[Agro Apps on Goggle Play](https://play.google.com/store/search?q=agro&c=apps)
