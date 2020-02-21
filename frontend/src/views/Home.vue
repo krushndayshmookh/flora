@@ -1,18 +1,31 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+<template lang="pug">
+  .home
+    section.section
+      .container
+        .row
+          .col.s12
+            h3 Dashboard
+
+        .row
+          .col.s12
+            .btn Add field
+
+        .row
+          .col.s12
+            FieldOverview(field="1")
+          .col.s12
+            FieldOverview(field="2")
+
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import FieldOverview from '@/components/FieldOverview.vue'
 
 export default {
-  name: "Home",
-  components: {
-    HelloWorld
-  }
-};
+	name: 'Home',
+	components: {
+		FieldOverview
+	}
+}
 </script>
