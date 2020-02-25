@@ -10,7 +10,7 @@
           li
             router-link(to="/market") Market
           li
-            router-link(to="/profile") Profile
+            router-link(to="/profile/0") Profile
           
           li
             a.dropdown-trigger(href="#!" data-target="dropdown1") Pages

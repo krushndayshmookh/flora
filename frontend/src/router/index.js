@@ -30,12 +30,12 @@ const routes = [
 		component: () => import('../views/Register.vue')
 	},
 	{
-		path: '/profile',
+		path: '/profile/:user_id',
 		name: 'Profile',
 		component: () => import('../views/Profile.vue')
 	},
 	{
-		path: '/field/:id',
+		path: '/field/:field_id',
 		name: 'Field',
 		component: () => import('../views/FarmerField.vue')
 	},
