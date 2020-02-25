@@ -5,6 +5,10 @@
         ul.right.hide-on-med-and-down
           li
             router-link(to="/dashboard") Dashboard
+          li
+            router-link(to="/market") Market
+          li
+            router-link(to="/field/0") Field
 </template>
 
 <script>
