@@ -9,6 +9,8 @@
             router-link(to="/fields") Fields
           li
             router-link(to="/market") Market
+          li
+            router-link(to="/profile") Profile
           
           li
             a.dropdown-trigger(href="#!" data-target="dropdown1") Pages

@@ -21,18 +21,23 @@ const routes = [
 	},
 	{
 		path: '/fields',
-		name: 'fields',
-		component: () => import('../views/Fields.vue')
+		name: 'Fields',
+		component: () => import('../views/FarmerFields.vue')
 	},
 	{
 		path: '/register',
-		name: 'register',
+		name: 'Register',
 		component: () => import('../views/Register.vue')
+	},
+	{
+		path: '/profile',
+		name: 'Profile',
+		component: () => import('../views/Profile.vue')
 	},
 	{
 		path: '/field/:id',
 		name: 'Field',
-		component: () => import('../views/Field.vue')
+		component: () => import('../views/FarmerField.vue')
 	},
 	{
 		path: '/market',
