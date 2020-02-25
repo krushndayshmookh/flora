@@ -16,6 +16,16 @@ Current methods for estimating crop yield take months in crop cutting experiment
 
 ## research
 
+### Estimation of crop yield
+
+http://agriculture.vic.gov.au/agriculture/grains-and-other-crops/crop-production/estimating-crop-yields-a-brief-guide
+
+http://agriculture.vic.gov.au/agriculture/grains-and-other-crops/crop-production/estimating-crop-yields-and-crop-losses
+
+https://samples.ccafs.cgiar.org/measurement-methods/chapter-8-yield-estimation-of-food-and-non-food-crops-in-smallholder-production-systems/
+
+### Apps 
+
 [AgriMaps](https://play.google.com/store/apps/details?id=dcit.uwi.agrimaps&hl=en)
 
 [AgriPrice](https://play.google.com/store/apps/details?id=com.agrinett.marketwatcher)
