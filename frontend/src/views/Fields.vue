@@ -1,10 +1,10 @@
 <template lang="pug">
-  .dashboard
+  .fields
     section.section
       .container
         .row
           .col.s12
-            h3 Dashboard
+            h3 Fields
 
         .row
           .col.s12
@@ -23,7 +23,7 @@
 import FieldOverview from '@/components/FieldOverview.vue'
 
 export default {
-	name: 'Dashboard',
+	name: 'Fields',
 	components: {
 		FieldOverview
 	}
