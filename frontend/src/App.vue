@@ -13,7 +13,7 @@
 </style>
 
 <script>
-// import M from 'materialize-css'
+import M from 'materialize-css'
 import Navbar from '@/components/Navbar.vue'
 import Sidenav from '@/components/Sidenav.vue'
 
@@ -29,8 +29,7 @@ export default {
 		}
 	},
 	mounted() {
-		// M.AutoInit()
-		// M.Sidenav.init(document.querySelector('.sidenav'), {})
+		M.AutoInit()
 	},
 	methods: {
 		toggleSidenav() {

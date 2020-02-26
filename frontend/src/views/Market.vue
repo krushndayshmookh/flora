@@ -77,6 +77,7 @@ export default {
 	},
 	methods: {
 		onTabChange(tab) {
+			// TODO
 			console.log(tab)
 		}
 	}

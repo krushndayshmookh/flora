@@ -74,9 +74,8 @@ export default {
 	},
 	methods: {
 		fetchUser() {
-			// get from DB
+			// TODO: get from DB
 			let currentUser = this.$route.params.user_id
-			console.log(currentUser)
 			this.roles = currentUser.roles || 'consumer'
 		}
 	},

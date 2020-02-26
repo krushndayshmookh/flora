@@ -52,7 +52,6 @@ export default {
 	props: ['trigger'],
 	watch: {
 		trigger(val) {
-			console.log(this.instance)
 			if (val) {
 				this.instance.open()
 			} else {
