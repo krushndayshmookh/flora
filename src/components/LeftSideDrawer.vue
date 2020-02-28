@@ -10,7 +10,7 @@
 
     q-scroll-area(style="height: calc(100% - 150px); margin-top: 150px")
       q-list(padding)
-        q-item(clickable to="/" v-ripple)
+        q-item(clickable to="/home" v-ripple)
           q-item-section(avatar)
             q-icon(name="dashboard")
           q-item-section Dashboard
@@ -22,7 +22,7 @@
           q-item-section(avatar)
             q-icon(name="account_circle")
           q-item-section Profile
-        q-item(clickable v-ripple)
+        q-item(clickable to="/about" v-ripple)
           q-item-section(avatar)
             q-icon(name="info")
           q-item-section About
