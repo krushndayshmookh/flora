@@ -1,6 +1,6 @@
 <template lang="pug">
   q-card
-    q-img(:src="field.image" style="height: 150;")
+    q-img(:src="field.image" style="height: 150px;")
     q-card-section(horizontal)
       q-card-section
         .text-h6 {{ field.title }}
