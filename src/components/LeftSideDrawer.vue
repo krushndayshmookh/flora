@@ -1,5 +1,5 @@
 <template lang="pug">
-  q-drawer(v-model="drawerOpen" show-if-above)
+  q-drawer(v-model="drawerOpen" show-if-above elevated)
 
     q-img.absolute-top(src="https://cdn.quasar.dev/img/material.png" style="height: 150px")
       .absolute-bottom.bg-transparent
@@ -8,7 +8,7 @@
         .text-weight-bold Krushn Dayshmookh
         div @kdayshmookh
 
-    q-scroll-area(style="height: calc(100% - 150px); margin-top: 150px; border-right: 1px solid #ddd")
+    q-scroll-area(style="height: calc(100% - 150px); margin-top: 150px")
       q-list(padding)
         q-item(clickable to="/" v-ripple)
           q-item-section(avatar)
