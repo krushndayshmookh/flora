@@ -1,12 +1,12 @@
 <template lang="pug">
-  q-layout(view="lHh Lpr lFf")
+  q-layout(view="hHh Lpr lff")
     q-header(elevated)
       q-toolbar
         q-btn(flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer")
         q-toolbar-title Flora
         div Quasar v{{ $q.version }}
 
-    LeftSideDrawer(v-model="leftDrawerOpen" )
+    LeftSideDrawer(v-model="leftDrawerOpen" @change="toggleLeftDrawer")
     q-page-container
       router-view
 
