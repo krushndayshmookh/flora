@@ -1,13 +1,17 @@
 <template lang="pug">
-  q-card.my-card(clickable v-ripple)
-    q-parallax(src="https://cdn.quasar.dev/img/parallax1.jpg" :height="150")
-    q-card-section
-      .text-h6 Our Changing Planet
-      .text-subtitle2 by John Doe
+  q-card
+    q-img(:src="field.image" style="height: 150;")
+    q-card-section(horizontal)
+      q-card-section
+        .text-h6 {{ field.title }}
+        .text-subtitle2 {{ field.crop }}
+      q-card-section.absolute-right
+        q-btn(v-ripple outline  :to="'/farmer/field/' + field.id") View
 </template>
 
 <script>
 export default {
-  name: 'FieldCard'
+  name: 'FieldCard',
+  props: ['field']
 }
 </script>
