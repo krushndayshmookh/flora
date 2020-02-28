@@ -1,6 +1,6 @@
 <template lang="pug">
-  q-page.flex.flex-center
-    img(alt="Quasar logo" src="~assets/quasar-logo-full.svg")
+  q-page.q-pa-md
+    q-btn(to="/farmer" color="white" text-color="black" label="Farmer")
 
 </template>
 
