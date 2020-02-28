@@ -1,5 +1,5 @@
 <template lang="pug">
-  q-layout(view="hHh Lpr lff")
+  q-layout(view="lHh Lpr lff")
     q-header(elevated)
       q-toolbar
         q-btn(flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer")
