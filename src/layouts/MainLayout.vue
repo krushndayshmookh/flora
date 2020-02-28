@@ -2,11 +2,11 @@
   q-layout(view="lHh Lpr lFf")
     q-header(elevated)
       q-toolbar
-        q-btn(flat dense round icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen")
+        q-btn(flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer")
         q-toolbar-title Flora
         div Quasar v{{ $q.version }}
 
-    LeftSideDrawer(:open="leftDrawerOpen")
+    LeftSideDrawer(v-model="leftDrawerOpen" )
     q-page-container
       router-view
 
@@ -22,9 +22,14 @@ export default {
     LeftSideDrawer
   },
 
-  data () {
+  data() {
     return {
-      leftDrawerOpen: false,
+      leftDrawerOpen: false
+    }
+  },
+  methods: {
+    toggleLeftDrawer() {
+      this.leftDrawerOpen = !this.leftDrawerOpen
     }
   }
 }

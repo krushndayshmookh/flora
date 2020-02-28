@@ -1,5 +1,5 @@
 <template lang="pug">
-  q-drawer(v-model="open" show-if-above)
+  q-drawer(v-model="drawerOpen" show-if-above)
 
     q-img.absolute-top(src="https://cdn.quasar.dev/img/material.png" style="height: 150px")
       .absolute-bottom.bg-transparent
@@ -26,12 +26,47 @@
           q-item-section(avatar)
             q-icon(name="info")
           q-item-section About
+        q-item(clickable v-ripple @click="darkMode = !darkMode")
+          q-item-section(avatar)
+            q-icon(name="inbox")
+          q-item-section Dark Mode
+          q-item-section.absolute-right
+            q-toggle(color="green" v-model="darkMode")
 
 </template>
 
 <script>
 export default {
-  name: "LeftSideDrawer",
-  props: ["open"]
-};
+  name: 'LeftSideDrawer',
+  props: ['value'],
+  data() {
+    return {}
+  },
+  created() {
+    this.$q.dark.set(this.darkMode)
+  },
+  computed: {
+    drawerOpen: {
+      get() {
+        return this.value
+      },
+      set(opened) {
+        this.$emit('change', opened)
+      }
+    },
+    darkMode: {
+      get() {
+        return this.$store.state.settings.darkMode
+      },
+      set(enabled) {
+        this.$store.dispatch('settings/setDarkMode', enabled)
+      }
+    }
+  },
+  watch: {
+    darkMode(enabled) {
+      this.$q.dark.set(enabled)
+    }
+  }
+}
 </script>
