@@ -59,6 +59,7 @@ export default {
     onReset() {
       this.field.field = null
       this.field.area = null
+      this.show = false
     }
   }
 }
