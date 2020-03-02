@@ -1,21 +1,30 @@
 <template lang="pug">
   q-page.q-pa-md
-    .row
-      h4.text-weight-light.q-px-md.q-my-sm Fields
+
+    h4.text-weight-light.q-px-md.q-my-sm Fields
+
+    .q-px-md.q-my-md
+      q-btn(v-ripple rounded color="primary" label="Add field" icon="add" @click="toggleDialog(true)")
+
     FieldList(:fields="fields")
+
+    FieldAddDialog(v-model="fieldDialogOpen" @change="toggleDialog")
 
 </template>
 
 <script>
 import FieldList from 'components/Dashboard/Farmer/FieldList'
+import FieldAddDialog from 'components/Dashboard/Farmer/FieldAddDialog'
 
 export default {
   name: 'DashboardFarmer',
   components: {
-    FieldList
+    FieldList,
+    FieldAddDialog
   },
   data() {
     return {
+      fieldDialogOpen: false,
       fields: [
         {
           id: 0,
@@ -48,6 +57,11 @@ export default {
           crop: 'Field 4'
         }
       ]
+    }
+  },
+  methods: {
+    toggleDialog(val) {
+      this.fieldDialogOpen = val
     }
   }
 }
