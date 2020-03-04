@@ -14,10 +14,10 @@
           q-item-section(avatar)
             q-icon(name="dashboard")
           q-item-section Dashboard
-        q-item(clickable v-ripple)
+        q-item(clickable to="/encyclopedia" v-ripple)
           q-item-section(avatar)
-            q-icon(name="star")
-          q-item-section Fields
+            q-icon(name="book")
+          q-item-section Encyclopedia
         q-item(clickable v-ripple)
           q-item-section(avatar)
             q-icon(name="account_circle")
@@ -28,7 +28,7 @@
           q-item-section About
         q-item(clickable v-ripple @click="darkMode = !darkMode")
           q-item-section(avatar)
-            q-icon(name="inbox")
+            q-icon(name="tonality")
           q-item-section Dark Mode
           q-item-section.absolute-right
             q-toggle(color="green" v-model="darkMode")
