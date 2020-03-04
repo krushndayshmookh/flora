@@ -14,6 +14,10 @@
           q-item-section(avatar)
             q-icon(name="dashboard")
           q-item-section Dashboard
+        q-item(clickable to="/farmer" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="spa")
+          q-item-section Farmer
         q-item(clickable to="/encyclopedia" v-ripple)
           q-item-section(avatar)
             q-icon(name="book")

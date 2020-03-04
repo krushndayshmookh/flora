@@ -1,13 +1,38 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    component: () => import('layouts/Dashboard.vue'),
     children: [
       { path: 'home', component: () => import('pages/Index.vue') },
-      { path: 'encyclopedia', component: () => import('pages/Encyclopedia/Index.vue') },
-      { path: 'encyclopedia/article/:id', component: () => import('pages/Encyclopedia/Article.vue') },
-      { path: 'farmer', component: () => import('pages/Dashboard/Farmer.vue') },
-      { path: 'farmer/field/:id', component: () => import('pages/Dashboard/Field.vue') },
+      {
+        path: 'encyclopedia',
+        children: [
+          {
+            path: '',
+            component: () => import('pages/Encyclopedia/Index.vue')
+          },
+          {
+            path: 'article/:id',
+            component: () => import('pages/Encyclopedia/Article.vue')
+          }
+        ],
+        component: () => import('layouts/Dashboard/Encyclopedia.vue')
+      },
+      {
+        path: 'farmer',
+        component: () => import('layouts/Dashboard/Farmer.vue'),
+        children: [
+          {
+            path: '',
+            component: () => import('pages/Dashboard/Farmer/Index.vue')
+          },
+          {
+            path: 'field/:id',
+            component: () => import('pages/Dashboard/Farmer/Field.vue')
+          }
+        ]
+      },
+
       { path: 'about', component: () => import('pages/About.vue') }
     ]
   }
