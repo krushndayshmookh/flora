@@ -32,7 +32,16 @@ const routes = [
           }
         ]
       },
-
+      {
+        path: 'investor',
+        component: () => import('layouts/Dashboard/Investor.vue'),
+        children: [
+          {
+            path: '',
+            component: () => import('pages/Dashboard/Investor/Index.vue')
+          }
+        ]
+      },
       { path: 'about', component: () => import('pages/About.vue') }
     ]
   }

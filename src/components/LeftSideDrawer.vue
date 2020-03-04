@@ -18,6 +18,10 @@
           q-item-section(avatar)
             q-icon(name="spa")
           q-item-section Farmer
+        q-item(clickable to="/investor" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="monetization_on")
+          q-item-section Investor
         q-item(clickable to="/encyclopedia" v-ripple)
           q-item-section(avatar)
             q-icon(name="book")
