@@ -3,6 +3,7 @@ const routes = [
     path: '/',
     component: () => import('layouts/Dashboard.vue'),
     children: [
+      { path: '', redirect: '/home' },
       { path: 'home', component: () => import('pages/Index.vue') },
       {
         path: 'encyclopedia',
