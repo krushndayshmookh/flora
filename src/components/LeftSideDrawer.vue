@@ -22,11 +22,15 @@
           q-item-section(avatar)
             q-icon(name="monetization_on")
           q-item-section Investor
+        q-item(clickable to="/consumer" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="shopping_cart")
+          q-item-section Consumer
         q-item(clickable to="/encyclopedia" v-ripple)
           q-item-section(avatar)
             q-icon(name="book")
           q-item-section Encyclopedia
-        q-item(clickable v-ripple)
+        q-item(clickable to="/profile" v-ripple)
           q-item-section(avatar)
             q-icon(name="account_circle")
           q-item-section Profile
@@ -34,6 +38,7 @@
           q-item-section(avatar)
             q-icon(name="info")
           q-item-section About
+
         q-item(clickable v-ripple @click="darkMode = !darkMode")
           q-item-section(avatar)
             q-icon(name="tonality")

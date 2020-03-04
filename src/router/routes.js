@@ -43,6 +43,17 @@ const routes = [
           }
         ]
       },
+      {
+        path: 'consumer',
+        component: () => import('layouts/Dashboard/Consumer.vue'),
+        children: [
+          {
+            path: '',
+            component: () => import('pages/Dashboard/Consumer/Index.vue')
+          }
+        ]
+      },
+      { path: 'profile', component: () => import('pages/Profile.vue') },
       { path: 'about', component: () => import('pages/About.vue') }
     ]
   }
