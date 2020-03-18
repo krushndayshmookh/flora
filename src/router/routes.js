@@ -53,6 +53,8 @@ const routes = [
           }
         ]
       },
+      { path: 'retina', component: () => import('pages/Retina/Index.vue') },
+      { path: 'fertilopedia', component: () => import('pages/Fertilopedia/Index.vue') },
       { path: 'profile', component: () => import('pages/Profile.vue') },
       { path: 'about', component: () => import('pages/About.vue') }
     ]
