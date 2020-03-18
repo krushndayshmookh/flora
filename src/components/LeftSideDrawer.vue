@@ -30,6 +30,14 @@
           q-item-section(avatar)
             q-icon(name="book")
           q-item-section Encyclopedia
+        q-item(clickable to="/retina" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="visibility")
+          q-item-section Retina
+        q-item(clickable to="/fertilopedia" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="map")
+          q-item-section Fertilopedia
         q-item(clickable to="/profile" v-ripple)
           q-item-section(avatar)
             q-icon(name="account_circle")
