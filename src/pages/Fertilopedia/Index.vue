@@ -34,8 +34,8 @@ export default {
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       icon: icon({
         iconUrl: 'statics/app-logo-128x128.png',
-        iconSize: [32, 37],
-        iconAnchor: [16, 37]
+        iconSize: [32, 32],
+        iconAnchor: [16, 16]
       })
     }
   },
