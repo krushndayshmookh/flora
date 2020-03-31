@@ -6,8 +6,9 @@
         spinner-color="white"
         style="height: 150px; width: 150px; border-radius: 100%"
       />
-      <h1>{{ user.name }}</h1>
-      <h3>{{ user.email }}</h3>
+      <h2>{{ user.name }}</h2>
+       <h4>{{ user.phone }}</h4>
+      <h4>{{ user.email }}</h4>
     </div>
   </q-page>
 </template>
@@ -17,9 +18,10 @@ export default {
   data() {
     return {
       user: {
-        name: 'kirti',
-        email: 'kirti.dayshmookh@gmail.com',
-        photourl: 'https://placeimg.com/500/300/nature'
+        name: 'kirti Togarwar',
+        email: 'kirti.togarwar@gmail.com',
+        photourl: 'https://placeimg.com/500/300/nature',
+        phone: '1234567890'
       }
     }
   }
