@@ -15,11 +15,15 @@
     "dev": "quasar dev"
   },
   "dependencies": {
+    "@capacitor/core": "^2.0.0",
+    "@ionic/pwa-elements": "^1.5.1",
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
+    "leaflet": "^1.6.0",
     "moment": "^2.24.0",
     "quasar": "^1.0.0",
-    "vue-i18n": "^8.0.0"
+    "vue-i18n": "^8.0.0",
+    "vue2-leaflet": "^2.5.2"
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",
