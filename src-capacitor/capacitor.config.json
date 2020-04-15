@@ -1,7 +1,0 @@
-{
-  "appId": "com.dayshmookh.flora",
-  "appName": "Flora",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www"
-}
