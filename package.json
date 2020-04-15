@@ -15,7 +15,6 @@
     "dev": "quasar dev"
   },
   "dependencies": {
-    "@capacitor/core": "^2.0.0",
     "@ionic/pwa-elements": "^1.5.1",
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
@@ -26,6 +25,9 @@
     "vue2-leaflet": "^2.5.2"
   },
   "devDependencies": {
+    "@capacitor/android": "^2.0.1",
+    "@capacitor/cli": "^2.0.1",
+    "@capacitor/core": "^2.0.1",
     "@quasar/app": "^1.0.0",
     "@quasar/quasar-app-extension-dotenv": "^1.0.0",
     "babel-eslint": "^10.0.1",
