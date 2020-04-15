@@ -69,7 +69,8 @@ module.exports = function (/* ctx */) {
         capacitor: {
           // requires Quasar v1.9.3+
           backButtonExit: false // Quasar handles app exit on mobile phone back button
-        }
+        },
+        notify: { /* Notify defaults */ }
       }
     },
 
