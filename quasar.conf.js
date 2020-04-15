@@ -63,7 +63,14 @@ module.exports = function (/* ctx */) {
       // Quasar plugins
       plugins: [
         'Notify'
-      ]
+      ],
+
+      config: {
+        capacitor: {
+          // requires Quasar v1.9.3+
+          backButtonExit: false // Quasar handles app exit on mobile phone back button
+        }
+      }
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
