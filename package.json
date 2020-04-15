@@ -11,17 +11,19 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ./",
     "test": "echo \"No test specified\" && exit 0",
     "build": "quasar build",
-    "deploy": "now",
+    "deploy": "cd dist/spa now",
     "dev": "quasar dev"
   },
   "dependencies": {
     "@ionic/pwa-elements": "^1.5.2",
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
+    "leaflet": "^1.6.0",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
     "quasar": "^1.0.0",
-    "vue-i18n": "^8.0.0"
+    "vue-i18n": "^8.0.0",
+    "vue2-leaflet": "^2.5.2"
   },
   "devDependencies": {
     "@capacitor/android": "^2.0.1",
