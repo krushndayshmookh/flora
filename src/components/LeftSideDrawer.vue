@@ -54,6 +54,17 @@
           q-item-section.absolute-right
             q-toggle(color="green" v-model="darkMode")
 
+        q-item(clickable to="/auth/login" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="lock")
+          q-item-section Login
+
+        q-item(clickable to="/auth/register" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="lock")
+          q-item-section Register
+
+
 </template>
 
 <script>

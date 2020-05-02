@@ -54,9 +54,26 @@ const routes = [
         ]
       },
       { path: 'retina', component: () => import('pages/Retina/Index.vue') },
-      { path: 'fertilopedia', component: () => import('pages/Fertilopedia/Index.vue') },
+      {
+        path: 'fertilopedia',
+        component: () => import('pages/Fertilopedia/Index.vue')
+      },
       { path: 'profile', component: () => import('pages/Profile.vue') },
       { path: 'about', component: () => import('pages/About.vue') }
+    ]
+  },
+  {
+    path: '/auth',
+    component: () => import('layouts/AuthLayout.vue'),
+    children: [
+      {
+        path: 'login',
+        component: () => import('pages/Auth/Login.vue')
+      },
+      {
+        path: 'register',
+        component: () => import('pages/Auth/Register.vue')
+      }
     ]
   }
 ]
