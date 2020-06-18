@@ -1,28 +1,32 @@
 <template>
-  <q-page padding class="flex flex-center bg-blue-9">
+  <q-page padding class="flex flex-center bg-blue-1">
     <div class="row justify-center full-width">
-      <q-card class="my-card col-4 q-pa-lg">
-        <img alt="Flora logo" src="~assets/quasar-logo-full.svg" />
-
-        <p class="text-h3 text-center">Login</p>
+      <q-card class="col-12 col-md-3 col-sm-6">
+        <q-img src="~assets/images/bg_card_login.jpg" basic>
+          <div class="absolute-bottom text-center">
+            <div class=" text-h4 ">Flora</div>
+          </div>
+        </q-img>
 
         <q-card-section>
           <q-input
             rounded
+            dense
             standout
             v-model="username"
             placeholder="username"
             input-class="text-center"
-            class="q-mb-lg q-mt-lg"
+            class="q-mb-md"
             type="text"
           />
           <q-input
             rounded
+            dense
             standout
             v-model="password"
             placeholder="password"
             input-class="text-center"
-            class="q-mb-lg"
+            class="q-mb-md"
             type="password"
           />
 
@@ -31,12 +35,29 @@
             color="primary"
             label="Log in"
             class="full-width"
-            size="lg"
             @click="login"
           />
         </q-card-section>
-        
       </q-card>
     </div>
   </q-page>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      username: '',
+      password: ''
+    }
+  },
+  methods: {
+    login() {
+      console.log({
+        username: this.username,
+        password: this.password
+      })
+    }
+  }
+}
+</script>
