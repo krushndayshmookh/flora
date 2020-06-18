@@ -8,7 +8,11 @@
     },
     "build_always": false,
     "__internal": {
-      "dev": {},
+      "dev": {
+        "spa": {
+          "iconHash": "bc4e2eb14a2970f5dc6d3a1e187014ba"
+        }
+      },
       "build": {
         "capacitor": {
           "iconHash": "bc4e2eb14a2970f5dc6d3a1e187014ba",
