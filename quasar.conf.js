@@ -1,14 +1,24 @@
+/* eslint-env node */
+
+/*
+ * This file runs in a Node context (it's NOT transpiled by Babel), so use only
+ * the ES6 features that are supported by your Node version. https://node.green/
+ */
+
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
-module.exports = function (ctx) {
+
+module.exports = function (/* ctx */) {
   return {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/cli-documentation/boot-files
     boot: [
+      
       'i18n',
-      'axios'
+      'axios',
+      'capacitor'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -19,7 +29,7 @@ module.exports = function (ctx) {
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
       // 'ionicons-v4',
-      // 'mdi-v4',
+      // 'mdi-v5',
       // 'fontawesome-v5',
       // 'eva-icons',
       // 'themify',
@@ -27,7 +37,10 @@ module.exports = function (ctx) {
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
       'roboto-font', // optional, you are not bound to it
-      'material-icons' // optional, you are not bound to it
+      'material-icons', // optional, you are not bound to it
+      'material-icons-outlined',
+      'material-icons-round',
+      'material-icons-sharp',
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
@@ -48,17 +61,31 @@ module.exports = function (ctx) {
       directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Notify'
+      ],
+
+      config: {
+        capacitor: {
+          // requires Quasar v1.9.3+
+          backButtonExit: false // Quasar handles app exit on mobile phone back button
+        },
+        notify: { /* Notify defaults */ }
+      }
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
     supportIE: false,
 
+    // https://quasar.dev/quasar-cli/cli-documentation/supporting-ts
+    supportTS: false,
+
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       vueRouterMode: 'hash', // available values: 'hash', 'history'
-      distDir: ctx.mode.spa ? 'public' : null,
+      // distDir: ctx.mode.spa ? 'public' : null,
 
+      // rtl: false, // https://quasar.dev/options/rtl-support
       // showProgress: false,
       // gzip: true,
       // analyze: true,
@@ -82,7 +109,7 @@ module.exports = function (ctx) {
           test: /\.pug$/,
           loader: 'pug-plain-loader'
         })
-      }
+      },
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
@@ -107,11 +134,14 @@ module.exports = function (ctx) {
       workboxOptions: {}, // only for GenerateSW
       manifest: {
         name: 'Flora',
+        
         short_name: 'Flora',
-        description: 'Farm assistant',
+        description: 'Friendly Farm Assistant',
         display: 'standalone',
         orientation: 'portrait',
+        
         background_color: '#ffffff',
+        
         theme_color: '#027be3',
         icons: [
           {
@@ -151,7 +181,7 @@ module.exports = function (ctx) {
 
     // Full list of options: https://quasar.dev/quasar-cli/developing-capacitor-apps/configuring-capacitor
     capacitor: {
-      hideSplashscreen: true
+      hideSplashscreen: false
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/developing-electron-apps/configuring-electron
@@ -180,7 +210,7 @@ module.exports = function (ctx) {
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration
       nodeIntegration: true,
 
-      extendWebpack (cfg) {
+      extendWebpack (/* cfg */) {
         // do something with Electron main process Webpack cfg
         // chainWebpack also available besides this extendWebpack
       }

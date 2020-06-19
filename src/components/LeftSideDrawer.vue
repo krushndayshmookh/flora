@@ -1,5 +1,5 @@
 <template lang="pug">
-  q-drawer(v-model="drawerOpen" show-if-above)
+  q-drawer(v-model="drawerOpen" show-if-above elevated)
 
     q-img.absolute-top(src="https://cdn.quasar.dev/img/material.png" style="height: 150px")
       .absolute-bottom.bg-transparent
@@ -8,17 +8,37 @@
         .text-weight-bold Krushn Dayshmookh
         div @kdayshmookh
 
-    q-scroll-area(style="height: calc(100% - 150px); margin-top: 150px; border-right: 1px solid #ddd")
+    q-scroll-area(style="height: calc(100% - 150px); margin-top: 150px")
       q-list(padding)
         q-item(clickable to="/home" v-ripple)
           q-item-section(avatar)
             q-icon(name="dashboard")
-          q-item-section Dashboard
-        q-item(clickable v-ripple)
+          q-item-section Home
+        q-item(clickable to="/farmer" v-ripple)
           q-item-section(avatar)
-            q-icon(name="star")
-          q-item-section Fields
-        q-item(clickable v-ripple)
+            q-icon(name="spa")
+          q-item-section Farmer
+        q-item(clickable to="/investor" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="monetization_on")
+          q-item-section Investor
+        q-item(clickable to="/consumer" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="shopping_cart")
+          q-item-section Consumer
+        q-item(clickable to="/encyclopedia" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="book")
+          q-item-section Encyclopedia
+        q-item(clickable to="/retina" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="visibility")
+          q-item-section Retina
+        q-item(clickable to="/fertilopedia" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="map")
+          q-item-section Fertilopedia
+        q-item(clickable to="/profile" v-ripple)
           q-item-section(avatar)
             q-icon(name="account_circle")
           q-item-section Profile
@@ -26,12 +46,24 @@
           q-item-section(avatar)
             q-icon(name="info")
           q-item-section About
+
         q-item(clickable v-ripple @click="darkMode = !darkMode")
           q-item-section(avatar)
-            q-icon(name="inbox")
+            q-icon(name="tonality")
           q-item-section Dark Mode
           q-item-section.absolute-right
             q-toggle(color="green" v-model="darkMode")
+
+        q-item(clickable to="/auth/login" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="lock")
+          q-item-section Login
+
+        q-item(clickable to="/auth/register" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="lock")
+          q-item-section Register
+
 
 </template>
 

@@ -1,8 +1,104 @@
 <template>
-    <div class="about">
-        <h1>About Flora</h1>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <p>Farmers face distress when weather or market situation is not favourable.We Plan to develop an e-portal for farmers for providing assistance for all their  agricultural needs. The farmers can directly communicate with the Doctors, Farmers, Traders and Experts for all the information they need. This portal will be monitored by government agencies, so  that farmers can register on the  portal  and government can automate, schedule and monitor farm activities. </p>
-        <p>Crop predictions  based on location, weather, state of farm can help them choose their crops. Also it  will provide assistance in buying and selling crops, seeds, tools, chemicals and getting loans.</p>
+  <q-page class="q-pa-md">
+    <div class="q-pt-lg row ">
+      <div class="col-12 col-sm-4 col-md-4 q-pa-lg">
+        <q-card bordered>
+          <q-card-section style="text-align:center">
+            <img
+              src="https://cdn.iconscout.com/icon/free/png-512/avatar-380-456332.png"
+              style="width:100px; height 100px"
+            />
+            <q-card-section>
+              <div class="text-h6">Krushn Dayshmookh</div>
+              <p>krushndayshmookh@gmail.com <br />1234567890</p>
+            </q-card-section>
+          </q-card-section>
+        </q-card>
+      </div>
+
+      <div class="col-12 col-sm-4 col-md-4 q-pa-lg">
+        <q-card bordered>
+          <q-card-section style="text-align:center">
+            <img
+              src="https://cdn.iconscout.com/icon/free/png-512/avatar-380-456332.png"
+              style="width:100px; height 100px"
+            />
+            <q-card-section>
+              <div class="text-h6">Kishor Baidya</div>
+              <p>kishorbaidya@gmail.com <br />1234567890</p>
+            </q-card-section>
+          </q-card-section>
+        </q-card>
+      </div>
+
+      <div class="col-12 col-sm-4 col-md-4 q-pa-lg">
+        <q-card bordered>
+          <q-card-section style="text-align:center">
+            <img
+              src="https://cdn.iconscout.com/icon/free/png-512/avatar-380-456332.png"
+              style="width:100px; height 100px"
+            />
+            <q-card-section>
+              <div class="text-h6">Vithika Jha</div>
+              <p>vithikajha@gmail.com <br />1234567890</p>
+            </q-card-section>
+          </q-card-section>
+        </q-card>
+      </div>
     </div>
+
+    <div class="q-pt-lg row ">
+      <div class="col-12 col-sm-4 col-md-4 q-pa-lg">
+        <q-card bordered>
+          <q-card-section style="text-align:center">
+            <img
+              src="https://cdn.iconscout.com/icon/free/png-512/avatar-380-456332.png"
+              style="width:100px; height 100px"
+            />
+            <q-card-section>
+              <div class="text-h6">Kirti Togarwar</div>
+              <p>kirtitogarwar@gmail.com <br />1234567890</p>
+            </q-card-section>
+          </q-card-section>
+        </q-card>
+      </div>
+
+      <div class="col-12 col-sm-4 col-md-4 q-pa-lg">
+        <q-card bordered>
+          <q-card-section style="text-align:center">
+            <img
+              src="https://cdn.iconscout.com/icon/free/png-512/avatar-380-456332.png"
+              style="width:100px; height 100px"
+            />
+            <q-card-section>
+              <div class="text-h6">Anuprita Dhoble</div>
+              <p>anupritadhoble@gmail.com <br />1234567890</p>
+            </q-card-section>
+          </q-card-section>
+        </q-card>
+      </div>
+
+      <div class="col-12 col-sm-4 col-md-4 q-pa-lg">
+        <q-card bordered>
+          <q-card-section style="text-align:center">
+            <img
+              src="https://cdn.iconscout.com/icon/free/png-512/avatar-380-456332.png"
+              style="width:100px; height 100px"
+            />
+            <q-card-section>
+              <div class="text-h6">Kaushal Agnihotri</div>
+              <p>kaushalagnihotri1997@gmail.com <br />1234567890</p>
+            </q-card-section>
+          </q-card-section>
+        </q-card>
+      </div>
+    </div>
+  </q-page>
 </template>
+
+<style lang="sass" scoped></style>
+
+<style lang="sass" scoped>
+.my-card
+  width: auto
+</style>
