@@ -34,6 +34,19 @@
           q-item-section(avatar)
             q-icon(name="visibility")
           q-item-section Retina
+
+        q-item(clickable to="/chatbox/chat" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="chat")
+          q-item-section Chatbox
+            
+      
+        q-item(clickable to="/chatbox/contacts" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="person")
+          q-item-section Contacts
+           
+            
         q-item(clickable to="/fertilopedia" v-ripple)
           q-item-section(avatar)
             q-icon(name="map")
