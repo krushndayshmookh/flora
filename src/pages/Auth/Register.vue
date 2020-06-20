@@ -22,12 +22,12 @@
                         <q-icon style="margin-right:25px" name="lock" />
                     </template></q-input>
 
-                
+
             <q-btn rounded dense size="18px" color="primary" label="Register" class="full-width" style="margin-top:12px"  @click="register" />
 
                 <div class=" text register ">Already Have an Account?
 
-                    <a href=""> Login Here </a>
+                    <q-btn flat to='/auth/login'> Login Here </q-btn>
                 </div>
                  <div class=" text-left register ">Flora version 1.1</div>
             </q-card-section>
@@ -71,7 +71,7 @@ export default {
     color:rgba(0, 0, 0, 0.54);
 }
 .box-shadow{
-  box-shadow: 
+  box-shadow:
   0 6.8px 8.2px rgba(0, 0, 0, 0.034),
   0 9.7px 12.3px rgba(0, 0, 0, 0.048),
   0 18.5px 23px rgba(0, 0, 0, 0.06),
@@ -79,6 +79,6 @@ export default {
   0 49.8px 54.4px rgba(0, 0, 0, 0.086),
   0 120px 89px rgba(0, 0, 0, 0.12)
   ;
-  
+
 }
 </style>
