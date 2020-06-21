@@ -76,6 +76,8 @@ const routes = [
       { path: 'about', component: () => import('pages/About.vue') },
       // { path: 'chatbox', component: () => import('pages/ChatBox/chat.vue') },
       // { path: 'contacts', component: () => import('pages/ChatBox/contacts.vue') }
+      { path: 'uploaddocument', component: () => import('pages/UploadDocuments/document.vue') }
+
     ]
   },
   {
