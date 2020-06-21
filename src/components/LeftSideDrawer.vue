@@ -59,6 +59,11 @@
           q-item-section(avatar)
             q-icon(name="info")
           q-item-section About
+          
+        q-item(clickable to="/uploaddocument" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="cloud_upload")
+          q-item-section Upload Documents
 
         q-item(clickable v-ripple @click="darkMode = !darkMode")
           q-item-section(avatar)
