@@ -1,21 +1,21 @@
 <template>
   <div class="q-pa-md doc-container">
-    <q-badge>Products Available</q-badge>
+    <!-- <q-badge>Products Available</q-badge> -->
     <q-input
       v-model="search"
       debounce="1000"
       filled
-      placeholder="Search"
-      hint="Search for Product"
-      style="margin-top:25px"
+      placeholder="Search for Product"
+      class="q-mb-md"
     >
       <template v-slot:append>
         <q-icon name="search" />
       </template>
     </q-input>
-    <div class="row items-start">
-      <div class="q-pa-md row items-start q-gutter-md">
-        <q-card class="my-card">
+
+    <div class="row items-start q-col-gutter-md">
+      <div class="col-12 col-sm-6 col-md-4">
+        <q-card>
           <q-img src="~assets/images/fertilizer1.jpg" />
 
           <q-card-section>
@@ -63,8 +63,8 @@
           </q-card-actions>
         </q-card>
       </div>
-      <div class="q-pa-md row items-start q-gutter-md">
-        <q-card class="my-card">
+      <div class="col-12 col-sm-6 col-md-4">
+        <q-card>
           <q-img src="~assets/images/fertilizer2.jpg" />
 
           <q-card-section>
@@ -112,8 +112,8 @@
           </q-card-actions>
         </q-card>
       </div>
-      <div class="q-pa-md row items-start q-gutter-md">
-        <q-card class="my-card">
+      <div class="col-12 col-sm-6 col-md-4">
+        <q-card>
           <q-img src="~assets/images/fertilizer3.jpg" />
 
           <q-card-section>
@@ -161,8 +161,8 @@
           </q-card-actions>
         </q-card>
       </div>
-      <div class="q-pa-md row items-start q-gutter-md">
-        <q-card class="my-card">
+      <div class="col-12 col-sm-6 col-md-4">
+        <q-card>
           <q-img src="~assets/images/fertilizer4.jpg" />
 
           <q-card-section>
@@ -211,8 +211,8 @@
         </q-card>
       </div>
 
-      <div class="q-pa-md row items-start q-gutter-md">
-        <q-card class="my-card">
+      <div class="col-12 col-sm-6 col-md-4">
+        <q-card>
           <q-img src="~assets/images/fertilizer5.jpg" />
 
           <q-card-section>
@@ -260,8 +260,8 @@
           </q-card-actions>
         </q-card>
       </div>
-      <div class="q-pa-md row items-start q-gutter-md">
-        <q-card class="my-card">
+      <div class="col-12 col-sm-6 col-md-4">
+        <q-card>
           <q-img src="~assets/images/fertilizer6.jpg" />
 
           <q-card-section>
@@ -309,8 +309,8 @@
           </q-card-actions>
         </q-card>
       </div>
-      <div class="q-pa-md row items-start q-gutter-md">
-        <q-card class="my-card">
+      <div class="col-12 col-sm-6 col-md-4">
+        <q-card>
           <q-img src="~assets/images/fertilizer3.jpg" />
 
           <q-card-section>
@@ -358,8 +358,8 @@
           </q-card-actions>
         </q-card>
       </div>
-      <div class="q-pa-md row items-start q-gutter-md">
-        <q-card class="my-card">
+      <div class="col-12 col-sm-6 col-md-4">
+        <q-card>
           <q-img src="~assets/images/fertilizer3.jpg" />
 
           <q-card-section>
@@ -407,8 +407,8 @@
           </q-card-actions>
         </q-card>
       </div>
-      <div class="q-pa-md row items-start q-gutter-md">
-        <q-card class="my-card">
+      <div class="col-12 col-sm-6 col-md-4">
+        <q-card>
           <q-img src="~assets/images/fertilizer4.jpg" />
 
           <q-card-section>
@@ -461,7 +461,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      stars: 4
+    }
+  }
+}
 </script>
 
 <style></style>
