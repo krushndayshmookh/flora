@@ -5,6 +5,7 @@
     </q-toolbar>
 
     <q-list bordered>
+      <q-item-label header>Online</q-item-label>
       <q-item v-for="contact in contacts" :key="contact.id" class="q-my-sm" clickable v-ripple>
         <q-item-section avatar>
           <q-avatar color="primary" text-color="white">
