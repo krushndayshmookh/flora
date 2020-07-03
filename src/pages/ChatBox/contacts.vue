@@ -76,7 +76,7 @@ const offline = [ {
 }, {
   id: 6,
   name: 'Anuprita Dhoble',
-  email: 'nupritadhoble@gmail.com',
+  email: 'anupritadhoble@gmail.com',
   avatar: 'avatar2.jpg'
 } ]
 
