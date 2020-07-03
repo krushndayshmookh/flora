@@ -1,7 +1,7 @@
 <template>
   <div class="q-pa-md">
     <div class="q-gutter-y-md column" style="max-width: 300px">
-      <q-input label="Add Document name here!" rounded outlined v-model="text">
+      <q-input label="Add Document name here!!" rounded outlined v-model="text">
         <template v-slot:append>
           <q-icon name="close" @click="text = ''" class="cursor-pointer" />
         </template>
