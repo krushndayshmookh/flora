@@ -50,7 +50,7 @@ export default {
       this.$q.notify({
         color: 'green-5',
         textColor: 'white',
-        icon: 'cloud_done',
+        icon: 'r_cloud_done',
         message: 'Created!'
       })
       this.show = false

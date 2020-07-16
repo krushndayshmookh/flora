@@ -269,7 +269,7 @@ export default {
       this.$q.notify({
         color: 'green-5',
         textColor: 'white',
-        icon: 'cloud_done',
+        icon: 'r_cloud_done',
         message: 'Saved!'
       })
       this.field.expectedDate = new moment(this.field.plantedDate)
