@@ -53,8 +53,45 @@ const routes = [
           }
         ]
       },
+      {
+        path: 'chatbox',
+        children: [
+          {
+            path: 'chat',
+            component: () => import('pages/ChatBox/chat.vue')
+          },
+          {
+            path: 'contacts',
+            component: () => import('pages/ChatBox/contacts.vue')
+          }
+        ],
+        component: () => import('layouts/ChatBox.vue')
+      },
+      { path: 'retina', component: () => import('pages/Retina/Index.vue') },
+      {
+        path: 'fertilopedia',
+        component: () => import('pages/Fertilopedia/Index.vue')
+      },
       { path: 'profile', component: () => import('pages/Profile.vue') },
-      { path: 'about', component: () => import('pages/About.vue') }
+      { path: 'about', component: () => import('pages/About.vue') },
+      // { path: 'chatbox', component: () => import('pages/ChatBox/chat.vue') },
+      // { path: 'contacts', component: () => import('pages/ChatBox/contacts.vue') }
+      { path: 'uploaddocument', component: () => import('pages/UploadDocuments/document.vue') }
+
+    ]
+  },
+  {
+    path: '/auth',
+    component: () => import('layouts/AuthLayout.vue'),
+    children: [
+      {
+        path: 'login',
+        component: () => import('pages/Auth/Login.vue')
+      },
+      {
+        path: 'register',
+        component: () => import('pages/Auth/Register.vue')
+      }
     ]
   }
 ]

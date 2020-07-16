@@ -30,6 +30,27 @@
           q-item-section(avatar)
             q-icon(name="book")
           q-item-section Encyclopedia
+        q-item(clickable to="/retina" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="visibility")
+          q-item-section Retina
+
+        q-item(clickable to="/chatbox/chat" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="chat")
+          q-item-section Chatbox
+            
+      
+        q-item(clickable to="/chatbox/contacts" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="person")
+          q-item-section Contacts
+           
+            
+        q-item(clickable to="/fertilopedia" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="map")
+          q-item-section Fertilopedia
         q-item(clickable to="/profile" v-ripple)
           q-item-section(avatar)
             q-icon(name="account_circle")
@@ -38,6 +59,11 @@
           q-item-section(avatar)
             q-icon(name="info")
           q-item-section About
+          
+        q-item(clickable to="/uploaddocument" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="cloud_upload")
+          q-item-section Upload Documents
 
         q-item(clickable v-ripple @click="darkMode = !darkMode")
           q-item-section(avatar)
@@ -45,6 +71,17 @@
           q-item-section Dark Mode
           q-item-section.absolute-right
             q-toggle(color="green" v-model="darkMode")
+
+        q-item(clickable to="/auth/login" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="lock")
+          q-item-section Login
+
+        q-item(clickable to="/auth/register" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="lock")
+          q-item-section Register
+
 
 </template>
 

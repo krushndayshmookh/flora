@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 
 import settings from './settings'
 
@@ -19,6 +20,7 @@ export default function(/* { ssrContext } */) {
     modules: {
       settings
     },
+    plugins: [createPersistedState()],
 
     // enable strict mode (adds overhead!)
     // for dev mode only
