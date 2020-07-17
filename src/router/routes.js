@@ -71,7 +71,20 @@ const routes = [
         component: () => import('layouts/ChatBox.vue')
       },
       { path: 'retina', component: () => import('pages/Retina/Index.vue') },
-      { path: 'marketplace', component: () => import('pages/Marketplace/market.vue') },
+      // { path: 'marketplace', component: () => import('pages/Marketplace/market.vue') },
+      {
+        path: 'Marketplace',
+        children: [
+          {
+            path: 'market',
+            component: () => import('pages/Marketplace/market.vue')
+          },
+         
+        ],
+        component: () => import('layouts/Marketplace.vue')
+      },
+
+
       {
         path: 'fertilopedia',
         component: () => import('pages/Fertilopedia/Index.vue')

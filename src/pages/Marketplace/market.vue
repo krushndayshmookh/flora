@@ -11,7 +11,7 @@
       </q-card-section>
 
       <q-card-section side class="q-pt-none">
-       <q-btn v-ripple rounded color="primary" label="view" @click="toggleDialog(true)" />
+       <q-btn clickableto="/pages/Marketplace/Seeds" v-ripple rounded color="primary" label="view" />
 
       </q-card-section>
      </q-card>

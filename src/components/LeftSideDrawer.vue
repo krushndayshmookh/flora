@@ -34,7 +34,7 @@
           q-item-section(avatar)
             q-icon(name="visibility")
           q-item-section Retina
-        q-item(clickable to="/Marketplace" v-ripple)
+        q-item(clickable to="/Marketplace/market" v-ripple)
           q-item-section(avatar)
             q-icon(name="place")
           q-item-section Marketplace
