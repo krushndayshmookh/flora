@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 /*
  * This file runs in a Node context (it's NOT transpiled by Babel), so use only
  * the ES6 features that are supported by your Node version. https://node.green/
@@ -7,15 +5,21 @@
 
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
-
+/* eslint-env node */
 
 module.exports = function (/* ctx */) {
   return {
+    // https://quasar.dev/quasar-cli/supporting-ts
+    supportTS: false,
+
+    // https://quasar.dev/quasar-cli/prefetch-feature
+    // preFetch: true,
+
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
-    // https://quasar.dev/quasar-cli/cli-documentation/boot-files
+    // https://quasar.dev/quasar-cli/boot-files
     boot: [
-      
+
       'i18n',
       'axios',
       'capacitor'
@@ -43,69 +47,33 @@ module.exports = function (/* ctx */) {
       'material-icons-sharp',
     ],
 
-    // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
-    framework: {
-      iconSet: 'material-icons', // Quasar icon set
-      lang: 'en-us', // Quasar language pack
-
-      // Possible values for "all":
-      // * 'auto' - Auto-import needed Quasar components & directives
-      //            (slightly higher compile time; next to minimum bundle size; most convenient)
-      // * false  - Manually specify what to import
-      //            (fastest compile time; minimum bundle size; most tedious)
-      // * true   - Import everything from Quasar
-      //            (not treeshaking Quasar; biggest bundle size; convenient)
-      all: 'auto',
-
-      components: [],
-      directives: [],
-
-      // Quasar plugins
-      plugins: [
-        'Notify',
-        'Loading',
-        'Dialog'
-      ],
-
-      config: {
-        capacitor: {
-          // requires Quasar v1.9.3+
-          backButtonExit: false // Quasar handles app exit on mobile phone back button
-        },
-        notify: { /* Notify defaults */ }
-      }
-    },
-
-    // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
-    supportIE: false,
-
-    // https://quasar.dev/quasar-cli/cli-documentation/supporting-ts
-    supportTS: false,
-
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       vueRouterMode: 'hash', // available values: 'hash', 'history'
-      // distDir: ctx.mode.spa ? 'public' : null,
+
+      // transpile: false,
+
+      // Add dependencies for transpiling with Babel (Array of string/regex)
+      // (from node_modules, which are by default not transpiled).
+      // Applies only if "transpile" is set to true.
+      // transpileDependencies: [],
 
       // rtl: false, // https://quasar.dev/options/rtl-support
+      // preloadChunks: true,
       // showProgress: false,
       // gzip: true,
       // analyze: true,
 
       // Options below are automatically set depending on the env, set them if you want to override
-      // preloadChunks: false,
       // extractCSS: false,
 
-      // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
+      // https://quasar.dev/quasar-cli/handling-webpack
       extendWebpack (cfg) {
         cfg.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /node_modules/,
-          options: {
-            formatter: require('eslint').CLIEngine.getFormatter('stylish')
-          }
+          exclude: /node_modules/
         })
         cfg.module.rules.push({
           test: /\.pug$/,
@@ -119,6 +87,21 @@ module.exports = function (/* ctx */) {
       https: false,
       port: 8080,
       open: true // opens browser window automatically
+    },
+
+    // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
+    framework: {
+      iconSet: 'material-icons', // Quasar icon set
+      lang: 'en-us', // Quasar language pack
+      config: {},
+
+      // Possible values for "importStrategy":
+      // * 'auto' - (DEFAULT) Auto-import needed Quasar components & directives
+      // * 'all'  - Manually specify what to import
+      importStrategy: 'auto',
+
+      // Quasar plugins
+      plugins: ['Notify', 'Dialog', 'Loading']
     },
 
     // animations: 'all', // --- includes all animations
@@ -136,14 +119,11 @@ module.exports = function (/* ctx */) {
       workboxOptions: {}, // only for GenerateSW
       manifest: {
         name: 'Flora',
-        
         short_name: 'Flora',
         description: 'Friendly Farm Assistant',
         display: 'standalone',
         orientation: 'portrait',
-        
         background_color: '#ffffff',
-        
         theme_color: '#027be3',
         icons: [
           {
@@ -212,7 +192,7 @@ module.exports = function (/* ctx */) {
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration
       nodeIntegration: true,
 
-      extendWebpack (/* cfg */) {
+      extendWebpack( /* cfg */ ) {
         // do something with Electron main process Webpack cfg
         // chainWebpack also available besides this extendWebpack
       }
