@@ -81,7 +81,7 @@ const routes = [
           },
          
         ],
-        component: () => import('layouts/Marketplace.vue')
+        component: () => import('layouts/Dashboard/Marketplace.vue')
       },
 
 
