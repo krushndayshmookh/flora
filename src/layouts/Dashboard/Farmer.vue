@@ -78,6 +78,11 @@ export default {
           link: '/auth/register',
           icon: 'lock',
           label: 'Register'
+        },
+        {
+          link: '/Advisory/Forum',
+          icon: 'lock',
+          label: 'Advisory'
         }
       ]
 
