@@ -57,14 +57,12 @@ const routes = [
           }
         ]
       },
-     
-   
 
       {
         path: 'chatbox',
         children: [
           {
-            path: 'chat',
+            path: 'chat/:id',
             component: () => import('pages/ChatBox/chat.vue')
           },
           {
@@ -83,7 +81,7 @@ const routes = [
           {
             path: 'forum',
             component: () => import('pages/Advisory/Forum.vue')
-          },
+          }
           // {
           //   path: 'contacts',
           //   component: () => import('pages/ChatBox/contacts.vue')
@@ -91,8 +89,6 @@ const routes = [
         ],
         component: () => import('layouts/Advisory.vue')
       },
-     
-
 
       {
         path: 'fertilopedia',
@@ -102,8 +98,10 @@ const routes = [
       { path: 'about', component: () => import('pages/About.vue') },
       // { path: 'chatbox', component: () => import('pages/ChatBox/chat.vue') },
       // { path: 'contacts', component: () => import('pages/ChatBox/contacts.vue') }
-      { path: 'uploaddocument', component: () => import('pages/UploadDocuments/document.vue') }
-
+      {
+        path: 'uploaddocument',
+        component: () => import('pages/UploadDocuments/document.vue')
+      }
     ]
   },
   {
