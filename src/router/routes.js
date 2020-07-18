@@ -48,6 +48,10 @@ const routes = [
         component: () => import('layouts/Dashboard/Consumer.vue'),
         children: [
           {
+            path: 'chemical/:id',
+            component: () => import('pages/Dashboard/Consumer/Chemical.vue')
+          },
+          {
             path: '',
             component: () => import('pages/Dashboard/Consumer/Index.vue')
           }
