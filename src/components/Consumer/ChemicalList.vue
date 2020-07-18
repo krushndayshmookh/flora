@@ -1,7 +1,7 @@
 <template lang="pug">
   .q-ma-md
     q-list
-      q-item.q-pa-md(clickable v-ripple v-for="chemical in chemicals" :key="chemical.id" :to="'dashboard/consumer/chemical/'+chemical.id")
+      q-item.q-pa-md(clickable v-ripple v-for="chemical in chemicals" :key="chemical.id" :to="'consumer/chemical/'+chemical.id")
         q-item-section
           q-item-label {{ chemical.title }}
           q-item-label(caption lines="1") {{ chemical.description }}
