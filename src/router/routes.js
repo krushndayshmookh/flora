@@ -68,7 +68,7 @@ const routes = [
             component: () => import('pages/ChatBox/contacts.vue')
           }
         ],
-        component: () => import('layouts/ChatBox.vue')
+        component: () => import('layouts/Chatbox.vue')
       },
       { path: 'retina', component: () => import('pages/Retina/Index.vue') },
       // { path: 'marketplace', component: () => import('pages/Marketplace/market.vue') },

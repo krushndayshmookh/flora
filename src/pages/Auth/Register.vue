@@ -25,7 +25,7 @@
 
             <q-btn rounded dense size="18px" color="primary" label="Register" class="full-width" style="margin-top:12px"  @click="register" />
 
-                <div class=" text register ">Already Have an Account?
+                <div class=" text register text-grey ">Already Have an Account?
 
                     <q-btn flat to='/auth/login'> Login Here </q-btn>
                 </div>
@@ -68,7 +68,7 @@ export default {
     margin-top: 18px;
     margin-bottom: 10px;
     text-align: center;
-    color:rgba(0, 0, 0, 0.54);
+    /* color:rgba(0, 0, 0, 0.54); */
 }
 .box-shadow{
   box-shadow:
