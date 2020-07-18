@@ -47,7 +47,6 @@ export default {
     },
     data() {
         return {
-
             field: {
                 title: null,
                 area: null,

@@ -5,6 +5,7 @@
     </q-toolbar>
 
     <q-list bordered>
+      <q-item-label header>Online</q-item-label>
       <q-item v-for="contact in contacts" :key="contact.id" class="q-my-sm" clickable v-ripple>
         <q-item-section avatar>
           <q-avatar color="primary" text-color="white">
@@ -48,36 +49,36 @@
 <script>
 const contacts = [ {
   id: 1,
-  name: 'Ruddy Jedrzej',
-  email: 'rjedrzej0@discuz.net',
-  letter: 'R'
+  name: 'Vithika jha',
+  email: 'vithikajha@gmail.com',
+  letter: 'V'
 }, {
   id: 2,
-  name: 'Mallorie Alessandrini',
-  email: 'malessandrini1@marketwatch.com',
-  letter: 'M'
+  name: 'Krushn Dayshmookh',
+  email: 'krushndayshmookh@gmail.com',
+  letter: 'K'
 }, {
   id: 3,
-  name: 'Elisabetta Wicklen',
-  email: 'ewicklen2@microsoft.com',
-  letter: 'E'
+  name: 'Krishnandu Baidhya',
+  email: 'krishnandubaidhya@gmail.com',
+  letter: 'K'
 }, {
   id: 4,
-  name: 'Seka Fawdrey',
-  email: 'sfawdrey3@wired.com',
-  letter: 'S'
+  name: 'Kaushal Kumar',
+  email: 'kuahalkumar@gmail.com',
+  letter: 'K'
 } ]
 
 const offline = [ {
   id: 5,
-  name: 'Brunhilde Panswick',
-  email: 'bpanswick4@csmonitor.com',
-  avatar: 'avatar2.jpg'
+  name: 'Kirti Togarwar',
+  email: 'kirtitogarwar@gmail.com',
+  avatar: 'avatar6.jpg'
 }, {
   id: 6,
-  name: 'Winfield Stapforth',
-  email: 'wstapforth5@pcworld.com',
-  avatar: 'avatar6.jpg'
+  name: 'Anuprita Dhoble',
+  email: 'anupritadhoble@gmail.com',
+  avatar: 'avatar2.jpg'
 } ]
 
 export default {

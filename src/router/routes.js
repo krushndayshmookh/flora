@@ -53,6 +53,9 @@ const routes = [
           }
         ]
       },
+     
+   
+
       {
         path: 'chatbox',
         children: [
@@ -68,6 +71,20 @@ const routes = [
         component: () => import('layouts/Chatbox.vue')
       },
       { path: 'retina', component: () => import('pages/Retina/Index.vue') },
+      // { path: 'marketplace', component: () => import('pages/Marketplace/market.vue') },
+      {
+        path: 'Marketplace',
+        children: [
+          {
+            path: 'market',
+            component: () => import('pages/Marketplace/market.vue')
+          },
+         
+        ],
+        component: () => import('layouts/Marketplace.vue')
+      },
+
+
       {
         path: 'fertilopedia',
         component: () => import('pages/Fertilopedia/Index.vue')
@@ -76,6 +93,8 @@ const routes = [
       { path: 'about', component: () => import('pages/About.vue') },
       // { path: 'chatbox', component: () => import('pages/ChatBox/chat.vue') },
       // { path: 'contacts', component: () => import('pages/ChatBox/contacts.vue') }
+      { path: 'uploaddocument', component: () => import('pages/UploadDocuments/document.vue') }
+
     ]
   },
   {

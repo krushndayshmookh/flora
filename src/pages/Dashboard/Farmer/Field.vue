@@ -14,11 +14,7 @@
                 q-popup-edit(:cover="false" v-model="field.area" title="Edit the Area" auto-save)
                   q-input(outlined v-model="field.area" dense autofocus)
 
-
-          .col-auto
-            q-btn(color="green" label="Save" v-if="changed" @click="saveField")
-
-    q-card.q-ma-md.q-mt-md
+                  q-card.q-ma-md.q-mt-md
       q-card-section
         h6.q-my-none Crop Details
       q-card-section.q-pt-none
@@ -44,6 +40,14 @@
         h5.text-weight-light.q-my-sm Expected on: {{ field.expectedDate }}
 
         h5.text-weight-light.q-mt-sm.q-mb-none Expected quantity: {{ field.expectedQuantity }} kg
+
+
+
+          .col-auto
+            q-btn(color="green" label="Save" v-if="changed" @click="saveField")
+
+    //-  q-card.q-ma-md.q-mt-md
+    
 
 
     q-card.q-ma-md.q-mt-md
@@ -269,7 +273,7 @@ export default {
       this.$q.notify({
         color: 'green-5',
         textColor: 'white',
-        icon: 'cloud_done',
+        icon: 'r_cloud_done',
         message: 'Saved!'
       })
       this.field.expectedDate = new moment(this.field.plantedDate)

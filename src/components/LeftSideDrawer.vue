@@ -34,6 +34,10 @@
           q-item-section(avatar)
             q-icon(name="visibility")
           q-item-section Retina
+        q-item(clickable to="/Marketplace/market" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="place")
+          q-item-section Marketplace
 
         q-item(clickable to="/chatbox/chat" v-ripple)
           q-item-section(avatar)
@@ -59,6 +63,11 @@
           q-item-section(avatar)
             q-icon(name="info")
           q-item-section About
+          
+        q-item(clickable to="/uploaddocument" v-ripple)
+          q-item-section(avatar)
+            q-icon(name="cloud_upload")
+          q-item-section Upload Documents
 
         q-item(clickable v-ripple @click="darkMode = !darkMode")
           q-item-section(avatar)

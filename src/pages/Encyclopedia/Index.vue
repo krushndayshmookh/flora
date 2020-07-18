@@ -1,9 +1,12 @@
-<template lang="pug">
-  q-page
-    EncyclopediaSearchHeader(:showBigHeader="showBigHeader" @exec-search="executeSearch")
-    EncyclopediaArticleList(:articles="searchResults")
-
+<template>
+  <q-page>
+    <EncyclopediaSearchHeader :showBigHeader="showBigHeader" @exec-search="executeSearch"></EncyclopediaSearchHeader>
+    <EncyclopediaArticleList :articles="searchResults"></EncyclopediaArticleList>
+  </q-page>
 </template>
+
+<style scoped>
+</style>
 
 <script>
 import EncyclopediaSearchHeader from 'components/Encyclopedia/SearchHeader'
