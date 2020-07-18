@@ -4,10 +4,15 @@
       q-toolbar
         q-btn(flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer")
         q-toolbar-title Flora
+        q-btn(flat dense round icon="notifications" aria-label="User" @click="toggleNotifications")
         q-btn(flat dense round icon="account_circle" aria-label="User" @click="toggleRightDrawer")
 
     LeftSideDrawer
     RightSideDrawer
+
+    q-dialog(v-model="showNotifications" position="top" maximized)
+      Notifications
+
     q-page-container
       router-view
 
@@ -16,17 +21,20 @@
 <script>
 import LeftSideDrawer from 'components/LeftSideDrawer'
 import RightSideDrawer from 'components/RightSideDrawer'
+import Notifications from 'components/Notifications'
 
 export default {
   name: 'MainLayout',
 
   components: {
     LeftSideDrawer,
-    RightSideDrawer
+    RightSideDrawer,
+    Notifications
   },
 
   data() {
     return {
+      showNotifications: false
     }
   },
   methods: {
@@ -35,6 +43,9 @@ export default {
     },
     toggleRightDrawer() {
       this.$store.dispatch('general/toggleRightSideDrawer')
+    },
+    toggleNotifications(){
+      this.showNotifications = !this.showNotifications
     }
   }
 }
