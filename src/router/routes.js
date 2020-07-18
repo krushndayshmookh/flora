@@ -75,18 +75,23 @@ const routes = [
         component: () => import('layouts/Chatbox.vue')
       },
       { path: 'retina', component: () => import('pages/Retina/Index.vue') },
-      // { path: 'marketplace', component: () => import('pages/Marketplace/market.vue') },
+
+      // { path: 'Advisory', component: () => import('pages/Advisory/Forum.vue') },
       {
-        path: 'Marketplace',
+        path: 'Advisory',
         children: [
           {
-            path: 'market',
-            component: () => import('pages/Marketplace/market.vue')
+            path: 'forum',
+            component: () => import('pages/Advisory/Forum.vue')
           },
-         
+          // {
+          //   path: 'contacts',
+          //   component: () => import('pages/ChatBox/contacts.vue')
+          // }
         ],
-        component: () => import('layouts/Dashboard/Marketplace.vue')
+        component: () => import('layouts/Advisory.vue')
       },
+     
 
 
       {

@@ -4,9 +4,10 @@
       q-toolbar
         q-btn(flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer")
         q-toolbar-title Flora
-        div Quasar v{{ $q.version }}
+        q-btn(flat dense round icon="account_circle" aria-label="User" @click="toggleRightDrawer")
 
-    LeftSideDrawer(v-model="leftDrawerOpen" @change="toggleLeftDrawer")
+    LeftSideDrawer
+    RightSideDrawer
     q-page-container
       router-view
 
@@ -14,22 +15,26 @@
 
 <script>
 import LeftSideDrawer from 'components/LeftSideDrawer'
+import RightSideDrawer from 'components/RightSideDrawer'
 
 export default {
   name: 'MainLayout',
 
   components: {
-    LeftSideDrawer
+    LeftSideDrawer,
+    RightSideDrawer
   },
 
   data() {
     return {
-      leftDrawerOpen: false
     }
   },
   methods: {
     toggleLeftDrawer() {
-      this.leftDrawerOpen = !this.leftDrawerOpen
+      this.$store.dispatch('general/toggleLeftSideDrawer')
+    },
+    toggleRightDrawer() {
+      this.$store.dispatch('general/toggleRightSideDrawer')
     }
   }
 }
