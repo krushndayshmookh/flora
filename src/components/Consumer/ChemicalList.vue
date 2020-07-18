@@ -15,6 +15,6 @@
 <script>
 export default {
   name: 'ConsumerChemicalList',
-  props: ['chemical']
+  props: ['chemicals']
 }
 </script>
