@@ -55,7 +55,6 @@
         //-   q-item-section(avatar)
         //-     q-icon(name="person")
         //-   q-item-section Contacts
-           
         //- q-item(clickable to="/fertilopedia" v-ripple)
         //-   q-item-section(avatar)
         //-     q-icon(name="map")
@@ -68,7 +67,7 @@
         //-   q-item-section(avatar)
         //-     q-icon(name="info")
         //-   q-item-section About
-          
+
         //- q-item(clickable to="/uploaddocument" v-ripple)
         //-   q-item-section(avatar)
         //-     q-icon(name="cloud_upload")
