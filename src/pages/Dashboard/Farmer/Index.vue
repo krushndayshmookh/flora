@@ -1,12 +1,7 @@
 <template lang="pug">
-  q-page.q-pa-md
+  q-page(padding)
 
-    h4.text-weight-light.q-px-md.q-my-sm Fields
-
-    .q-px-md.q-my-md
-      q-btn(v-ripple rounded color="primary" label="Add field" icon="add" @click="toggleDialog(true)")
-
-    FieldList(:fields="fields")
+    FieldList(:fields="fields" @add="toggleDialog(true)")
 
     FieldAddDialog(v-model="fieldDialogOpen" @change="toggleDialog")
 

@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-pa-md">
+  <q-page padding>
     <div style="text-align:center">
       <q-img
         src="https://cdn1.vectorstock.com/i/1000x1000/80/25/rice-plant-vector-18588025.jpg"
