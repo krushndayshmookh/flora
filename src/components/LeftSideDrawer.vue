@@ -34,10 +34,10 @@
           q-item-section(avatar)
             q-icon(name="visibility")
           q-item-section Retina
-        q-item(clickable to="/Marketplace/market" v-ripple)
+        q-item(clickable to="/Advisory/Forum" v-ripple)
           q-item-section(avatar)
-            q-icon(name="place")
-          q-item-section Marketplace
+            q-icon(name="person")
+          q-item-section Advisory
 
         q-item(clickable to="/chatbox/chat" v-ripple)
           q-item-section(avatar)
@@ -55,6 +55,7 @@
           q-item-section(avatar)
             q-icon(name="map")
           q-item-section Fertilopedia
+
         q-item(clickable to="/profile" v-ripple)
           q-item-section(avatar)
             q-icon(name="account_circle")
