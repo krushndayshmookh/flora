@@ -1,33 +1,38 @@
 <template lang="pug">
-  q-card.q-pa-md.bg-primary.text-white(square)
+  q-card.bg-primary.text-white(square)
+    q-card-section(v-if="showBigHeader")
+      .text-h4 Encyclopedia
+
     q-card-section
-      h2.q-ma-md(v-if="showBigHeader") Search Encyclopedia
-      .row.items-center
-        .col
-          q-input.q-mx-md(dark standout v-model="searchQuery" @keypress.enter="execSearch")
-            template(v-slot:prepend)
-              q-icon(v-if="searchQuery === ''" name="search")
-
-            template(v-slot:append)
-              q-icon.cursor-pointer(v-if="searchQuery !== ''" name="clear" @click="searchQuery = ''")
-        .col-auto
-          q-btn(round icon="search" v-if="searchQuery !== ''" color="accent" size="lg" @click="execSearch")
-
+      q-input(dark standout dense v-model="searchQuery" @keypress.enter="execSearch" placeholder="Search")
+        template(v-slot:prepend)
+          q-icon(v-if="searchQuery === ''" name="search")
+        template(v-slot:append)
+          q-icon.cursor-pointer(v-if="searchQuery !== ''" name="clear" @click="searchQuery = ''")
 
 </template>
 
 <script>
 export default {
   name: 'EncyclopediaSearchHeader',
+
   data() {
     return {
       searchQuery: ''
     }
   },
+
   props: ['showBigHeader'],
+
+  watch: {
+    searchQuery(query) {
+      this.execSearch()
+    }
+  },
+
   methods: {
     execSearch() {
-      this.$emit('exec-search', this.searchQuery)
+      if (this.searchQuery) this.$emit('exec-search', this.searchQuery)
     }
   }
 }
