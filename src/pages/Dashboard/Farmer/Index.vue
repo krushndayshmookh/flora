@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import FieldList from 'components/Dashboard/Farmer/FieldList'
-import FieldAddDialog from 'components/Dashboard/Farmer/FieldAddDialog'
+import FieldList from 'components/Farmer/FieldList'
+import FieldAddDialog from 'components/Farmer/FieldAddDialog'
 
 export default {
   name: 'DashboardFarmer',

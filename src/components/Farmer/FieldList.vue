@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import FieldCard from 'components/Dashboard/Farmer/FieldCard'
+import FieldCard from 'components/Farmer/FieldCard'
 
 export default {
   name:'FieldList',

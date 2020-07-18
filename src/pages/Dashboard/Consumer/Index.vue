@@ -9,8 +9,8 @@
 </style>
 
 <script>
-import ConsumerSearchHeader from 'components/Dashboard/Consumer/SearchHeader'
-import ConsumerChemicalList from 'components/Dashboard/Consumer/ChemicalList'
+import ConsumerSearchHeader from 'components/Consumer/SearchHeader'
+import ConsumerChemicalList from 'components/Consumer/ChemicalList'
 
 export default {
   name: 'Consumer',
