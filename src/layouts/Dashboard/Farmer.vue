@@ -17,17 +17,12 @@ export default {
         {
           link: '/farmer',
           icon: 'spa',
-          label: 'Farmer'
-        },
-        {
-          link: '/investor',
-          icon: 'monetization_on',
-          label: 'Investor'
+          label: 'Farm'
         },
         {
           link: '/consumer',
           icon: 'shopping_cart',
-          label: 'Consumer'
+          label: 'Market'
         },
         {
           link: '/encyclopedia',
@@ -40,19 +35,9 @@ export default {
           label: 'Retina'
         },
         {
-          link: '/Marketplace/market',
-          icon: 'place',
-          label: 'Marketplace'
-        },
-        {
-          link: '/chatbox/chat',
-          icon: 'chat',
-          label: 'Chatbox'
-        },
-        {
           link: '/chatbox/contacts',
-          icon: 'person',
-          label: 'Contacts'
+          icon: 'chat',
+          label: 'Forum'
         },
         {
           link: '/fertilopedia',
