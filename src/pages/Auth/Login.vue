@@ -45,10 +45,28 @@ export default {
     },
     methods: {
         login() {
-            console.log({
+      // console.log({
+      //   username: this.username,
+      //   password: this.password
+      // })
+
+      this.$q.loading.show()
+      this.$axios
+        .post(process.env.API + '/auth/login', {
                 username: this.username,
                 password: this.password
             })
+        .then(response => {
+          console.log(response.data)
+          this.$router.push('/')
+        })
+        .catch(error => {
+          console.error(error)
+          this.$q.notify('Error occured.')
+        })
+        .finally(() => {
+          this.$q.loading.hide()
+        })
         }
     }
 }
