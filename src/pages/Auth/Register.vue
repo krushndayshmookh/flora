@@ -49,7 +49,21 @@ export default {
     },
     methods: {
         register() {
-            console.log({ ...this.user })
+      //   console.log({ ...this.user })
+      this.$q.loading.show()
+      this.$axios
+        .post(process.env.API + '/auth/register', this.user)
+        .then(response => {
+          console.log(response.data)
+          this.$router.push('/profile/setup')
+        })
+        .catch(error => {
+          console.error(error)
+          this.$q.notify('Error occured.')
+        })
+        .finally(() => {
+          this.$q.loading.hide()
+        })
         }
     }
 }
