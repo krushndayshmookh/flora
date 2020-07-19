@@ -72,7 +72,7 @@ export default {
         },
         {
           link: '/Advisory/Forum',
-          icon: 'lock',
+          icon: 'help',
           label: 'Advisory'
         }
       ]
