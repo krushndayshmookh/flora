@@ -1,6 +1,7 @@
 <template>
   <div class="q-col-gutter-md">
-    <div class=" col text-h5 register text-grey text-weight-medium ">
+    <div class=" col text-h5 register text-white text-weight-medium " style="background-color:#da675b;position: relative;
+min-height: 50px;">
       We are here to Serve You !!!
     </div>
 
@@ -137,10 +138,11 @@ export default {
 
 <style>
 .register {
-  margin-top: 32px;
+ 
 
   /* margin-left: 24px; */
   text-align: center;
+  padding: 2%;
 
   /* color:rgba(0, 0, 0, 0.54); */
 }

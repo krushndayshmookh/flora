@@ -68,7 +68,8 @@
       </div>
     </div>
 
-    <div class=" col text-h5 register text-grey text-weight-medium ">
+    <div class=" col text-h5 register text-white text-weight-medium " style="background-color:#da675b;position: relative;
+min-height: 50px;">
       We are here to Serve You !!!
     </div>
 
@@ -210,14 +211,14 @@ export default {
 
 <style>
 .register {
-  margin-top: 32px;
-
+ 
+margin-top: 12px;
   /* margin-left: 24px; */
   text-align: center;
+  padding: 2%;
 
   /* color:rgba(0, 0, 0, 0.54); */
 }
-
 .select-box {
   /* margin-left: '35px'; */
   width: 'auto';
@@ -228,5 +229,23 @@ export default {
     0 9.7px 12.3px rgba(0, 0, 0, 0.048), 0 18.5px 23px rgba(0, 0, 0, 0.06),
     0 32.3px 29.9px rgba(0, 0, 0, 0.072), 0 49.8px 54.4px rgba(0, 0, 0, 0.086),
     0 120px 89px rgba(0, 0, 0, 0.12);
+}
+.arrow_box::after, .arrow_box::before {
+    left: 100%;
+    top: 67%;
+    border: solid transparent;
+        border-top-color: transparent;
+        border-top-width: medium;
+        border-right-color: transparent;
+        border-right-width: medium;
+        border-bottom-color: transparent;
+        border-bottom-width: medium;
+        border-left-color: transparent;
+        border-left-width: medium;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
 }
 </style>
