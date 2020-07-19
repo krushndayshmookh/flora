@@ -4,7 +4,10 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', redirect: '/home' },
-      { path: 'home', component: () => import('pages/Index.vue') },
+      {
+        path: 'home',
+        component: () => import('pages/Index.vue')
+      },
       {
         path: 'encyclopedia',
         children: [
@@ -61,7 +64,16 @@ const routes = [
           }
         ]
       },
-
+      {
+        path: '/product',
+        component: () => import('layouts/Dashboard/Product.vue'),
+        children: [
+          {
+            path: '',
+            component: () => import('pages/Dashboard/Product/Index.vue')
+          }
+        ]
+      },
       {
         path: 'chatbox',
         children: [
@@ -76,7 +88,10 @@ const routes = [
         ],
         component: () => import('layouts/Chatbox.vue')
       },
-      { path: 'retina', component: () => import('pages/Retina/Index.vue') },
+      {
+        path: 'retina',
+        component: () => import('pages/Retina/Index.vue')
+      },
 
       // { path: 'Advisory', component: () => import('pages/Advisory/Forum.vue') },
       {
@@ -98,8 +113,14 @@ const routes = [
         path: 'fertilopedia',
         component: () => import('pages/Fertilopedia/Index.vue')
       },
-      { path: 'profile', component: () => import('pages/Profile.vue') },
-      { path: 'about', component: () => import('pages/About.vue') },
+      {
+        path: 'profile',
+        component: () => import('pages/Profile.vue')
+      },
+      {
+        path: 'about',
+        component: () => import('pages/About.vue')
+      },
       // { path: 'chatbox', component: () => import('pages/ChatBox/chat.vue') },
       // { path: 'contacts', component: () => import('pages/ChatBox/contacts.vue') }
       {
@@ -108,6 +129,7 @@ const routes = [
       }
     ]
   },
+
   {
     path: '/auth',
     component: () => import('layouts/AuthLayout.vue'),

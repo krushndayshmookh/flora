@@ -24,6 +24,11 @@ export default {
           icon: 'shopping_cart',
           label: 'Market'
         },
+         {
+          link: '/product',
+          icon: 'shopping_cart',
+          label: 'Shopping'
+        },
         {
           link: '/encyclopedia',
           icon: 'book',
