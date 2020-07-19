@@ -5,6 +5,9 @@
 
     FieldAddDialog(v-model="fieldDialogOpen" @change="toggleDialog")
 
+    q-page-sticky.btn(position="bottom-right" :offset="[18, 18]")
+      q-btn(fab icon="add" color="primary" @click="toggleDialog(true)")
+
 </template>
 
 <script>

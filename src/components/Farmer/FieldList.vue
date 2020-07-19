@@ -1,7 +1,7 @@
 <template lang="pug">
 
-  .row.q-col-gutter-md
-    .col-12.col-sm-6.col-md-4
+  .row.q-col-gutter-md.q-pb-xl.q-mb-xl
+    //- .col-12.col-sm-6.col-md-4
       q-btn.fit.add-btn(outline size="lg" icon="add" @click="$emit('add')" label="Add Field" color="primary")
     .col-12.col-sm-6.col-md-4(v-for="field in fields" :key="field.id")
       FieldCard(:field="field")
