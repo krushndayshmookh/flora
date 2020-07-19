@@ -20,15 +20,16 @@ export default {
           label: 'Farm'
         },
         {
-          link: '/consumer',
-          icon: 'shopping_cart',
-          label: 'Market'
-        },
-         {
           link: '/product',
           icon: 'shopping_cart',
-          label: 'Shopping'
+          label: 'Products'
         },
+        {
+          link: '/consumer',
+          icon: 'shopping_cart',
+          label: 'Services'
+        },
+
         {
           link: '/encyclopedia',
           icon: 'book',
