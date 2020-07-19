@@ -1,7 +1,10 @@
 <template>
   <div class="q-col-gutter-md">
-    <div class=" col text-h5 register text-white text-weight-medium " style="background-color:#da675b;position: relative;
-min-height: 50px;">
+    <div
+      class=" col text-h5 register text-white text-weight-medium "
+      style="background-color:#da675b;position: relative;
+min-height: 50px;"
+    >
       We are here to Serve You !!!
     </div>
 
@@ -29,75 +32,75 @@ export default {
       ServiceShow: [
         {
           id: 0,
-          image: '/images/fertilizer1.jpg',
-          title: 'Agrovit - 500gm',
-          filter: 'Plant Fertilizer',
-          stock: 'In Stock (13pc) Price: ₹140.00',
+          image: '/images/service1.png',
+          title: 'Powertrac 445 PLUS',
+          filter: 'Machine and Service',
+          stock: 'Range Starts From Rs. 6.56 lakh - 6.94 lakh',
           description:
-            ' It is safe and an excellent wetting agent which improves wetting,spreading, sticking quality and enhance effectiveness of pesticidant spray.'
+            ' Welcome Buyers, this post is about Powertrac 445 PLUS Tractor, this tractor comes with all the advanced qualities. This post contains all the information about the tractor Powertrac 445 PLUS specifications, price, hp, engine and many more.'
         },
         {
           id: 1,
-          image: '/images/fertilizer2.jpg',
-          title: 'Humacid - 500ml',
-          filter: 'Plant Fertilizer',
+          image: '/images/service2.png',
+          title: 'Cultivator',
+          filter: 'Machine and Service',
           stock: 'In Stock (13pc) Price: ₹360.00',
           description:
-            ' It is safe and an excellent wetting agent which improves wetting,spreading, sticking quality and enhance effectiveness of pesticidant spray.'
+            'The spring loaded tiller is suitable for use in stone and root obstructed soil as the spring allows the tynes of the cultivator to lift upward when any load or stone comes into the passage.The Mahindra Rigid tyne cultivator is sturdy and capable of withstanding tough working conditions in heavy soil. This implement can break hard soil efficiently and uproot stubble to leave the ground perfectly worked. long lasting and fuel efficient.Mahindra Applitracs Spring loaded Cultivator is designed for all types of root crop and for general cultivation work. It helps prepare the seed bed quickly and economically'
         },
         {
           id: 2,
-          image: '/images/fertilizer3.jpg',
-          title: 'MahaFlora - 1 Kg',
-          filter: 'Plant Fertilizer',
+          image: '/images/service3.png',
+          title: 'Tractor Mounted Combine Harvester',
+          filter: 'Machine and Service',
           stock: 'In Stock (13pc) Price: ₹315.00',
           description:
-            ' It is safe and an excellent wetting agent which improves wetting,spreading, sticking quality and enhance effectiveness of pesticidant spray.'
+            ' Single machine that can do all operations from Harvesting, Threshing, Cleaning to Unloading of grains into gunny bags.Tractor can be put to multiple use when the tractor is dismounted from the combined harvester during off season.Saves time and manual effort and can be self driven on roads.Better design of threshing unit reduces grain damage and improves threshing efficiency.'
         },
         {
           id: 3,
-          image: '/images/fertilizer4.jpg',
-          title: 'MahaGreen - 1 Kg',
-          filter: 'Plant Fertilizer',
+          image: '/images/service4.png',
+          title: 'Trolley',
+          filter: 'Machine and Service',
           stock: 'In Stock (13pc) Price: ₹315.00',
           description:
-            ' It is safe and an excellent wetting agent which improves wetting,spreading, sticking quality and enhance effectiveness of pesticidant spray.'
+            'The Tractor Trolleys are available in Two and Four wheel models. The most basic term used for the tractor attachment is Trolley or Trailer. The Tractor Trolley is known for its quality, durability, best service and availability of spare parts.'
         },
         {
           id: 4,
-          image: '/images/fertilizer5.jpg',
-          title: 'Cow Manure - 5 Kg',
-          filter: 'Plant Fertilizer',
+          image: '/images/service2.png',
+          title: 'Cultivator',
+          filter: 'Machine and Service',
           stock: 'In Stock (13pc) Price: ₹315.00',
           description:
-            ' It is safe and an excellent wetting agent which improves wetting,spreading, sticking quality and enhance effectiveness of pesticidant spray.'
+            'The spring loaded tiller is suitable for use in stone and root obstructed soil as the spring allows the tynes of the cultivator to lift upward when any load or stone comes into the passage.The Mahindra Rigid tyne cultivator is sturdy and capable of withstanding tough working conditions in heavy soil. This implement can break hard soil efficiently and uproot stubble to leave the ground perfectly worked. long lasting and fuel efficient.Mahindra Applitracs Spring loaded Cultivator is designed for all types of root crop and for general cultivation work. It helps prepare the seed bed quickly and economically'
         },
         {
           id: 5,
-          image: '/images/fertilizer6.jpg',
-          title: 'Vermicompost - 5 kg',
-          filter: 'Plant Fertilizer',
+          image: '/images/service1.png',
+          title: 'Powertrac 445 PLUS',
+          filter: 'Machine and Service',
           stock: 'In Stock (13pc) Price: ₹315.00',
           description:
-            ' It is safe and an excellent wetting agent which improves wetting,spreading, sticking quality and enhance effectiveness of pesticidant spray.'
+            ' Welcome Buyers, this post is about Powertrac 445 PLUS Tractor, this tractor comes with all the advanced qualities. This post contains all the information about the tractor Powertrac 445 PLUS specifications, price, hp, engine and many more.'
         },
         {
           id: 6,
-          image: '/images/fertilizer5.jpg',
-          title: 'Cow Manure - 5 Kg',
-          filter: 'Plant Fertilizer',
+          image: '/images/service3.png',
+          title: 'Tractor Mounted Combine Harvester',
+          filter: 'Machine and Service',
           stock: 'In Stock (13pc) Price: ₹315.00',
           description:
-            ' It is safe and an excellent wetting agent which improves wetting,spreading, sticking quality and enhance effectiveness of pesticidant spray.'
+            ' Single machine that can do all operations from Harvesting, Threshing, Cleaning to Unloading of grains into gunny bags.Tractor can be put to multiple use when the tractor is dismounted from the combined harvester during off season.Saves time and manual effort and can be self driven on roads.Better design of threshing unit reduces grain damage and improves threshing efficiency.'
         },
         {
           id: 7,
-          image: '/images/fertilizer4.jpg',
-          title: 'MahaGreen - 1 Kg',
+          image: '/images/service4.png',
+          title: 'Trolley',
           filter: 'Plant Fertilizer',
           stock: 'In Stock (13pc) Price: ₹315.00',
           description:
-            ' It is safe and an excellent wetting agent which improves wetting,spreading, sticking quality and enhance effectiveness of pesticidant spray.'
+            'The Tractor Trolleys are available in Two and Four wheel models. The most basic term used for the tractor attachment is Trolley or Trailer. The Tractor Trolley is known for its quality, durability, best service and availability of spare parts.'
         }
       ]
     }
@@ -138,8 +141,6 @@ export default {
 
 <style>
 .register {
- 
-
   /* margin-left: 24px; */
   text-align: center;
   padding: 2%;

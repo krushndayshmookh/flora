@@ -3,13 +3,13 @@
     <div class="col-3 adjust-3" v-for="service in services" :key="service.id">
       <q-card class="my-card">
         <q-card-section horizontal>
-          <q-img class="col-4" src="https://cdn.quasar.dev/img/parallax1.jpg" />
+          <q-img class="col-4" :src="service.image" />
 
           <q-card-section>
             <div class="row no-wrap items-center">
-              <div class="col text-h6 ellipsis">
+              <div class="col text-h5 ellipsis">
                 <router-link
-                  style="color:grey;text-decoration:none"
+                  style="color:black;text-decoration:none"
                   :to="'/service/' + service.id"
                   >{{ service.title }}</router-link
                 >
@@ -21,7 +21,7 @@
                 {{ service.filter }}
               </div>
             </div>
-            <div class="text-caption" secoundary>{{ service.stock }}</div>
+            <div class="text-caption" style="color:red" secoundary>{{ service.stock }}</div>
             <div class="text-caption text-grey">{{ service.description }}</div>
           </q-card-section>
         </q-card-section>
