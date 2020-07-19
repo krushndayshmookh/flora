@@ -35,7 +35,7 @@
           style="top: 0; right: 12px; transform: translateY(-50%);"
         />
         <q-card-actions style="align:right">
-          <q-btn flat icon="info" color="primary"git
+          <q-btn flat icon="info" color="primary"
             >&nbsp; &nbsp;Authorize Dealer</q-btn
           >
           <q-btn flat icon="phone" color="success"
