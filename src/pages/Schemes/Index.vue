@@ -50,7 +50,10 @@
               For this it has implemented different schemes and programmes to revive agriculture sector and to improve economic conditions of the farmers. <br>
               These agricultural schemes and programmes are very beneficial for the farmers and they must know about it so as to take its benefit. <br>
               So through this article we will put a light on some of the most useful and popular government schemes in India.<br>
-              Under {{ props.row.name }}.
+              Under {{ props.row.name }}.<br>
+              <div class="text-h7">
+              <a href="http://agricoop.nic.in/programmes-schemes-listing">More Info</a>
+              </div>
             </div>
           </q-td>
         </q-tr>
@@ -89,13 +92,17 @@ export default {
           sortable: true,
           style: 'width: 10px'
         },
-        { name: 'edate', label: 'Application End Date', field: 'edate' },
+        { 
+          name: 'edate',
+          label: 'Application End Date', 
+          field: 'edate' 
+        },
         {
           name: 'apply',
           label: 'Apply here',
           field: 'apply',
           sortable: true,
-          sort: (a, b) => parseInt(a, 10) - parseInt(b, 10)
+          sort: (a, b) => parseInt(a, 10) - parseInt(b, 10),
         }
       ],
       data: [
