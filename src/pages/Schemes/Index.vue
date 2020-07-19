@@ -1,6 +1,23 @@
 <template>
   <div class="q-pa-md">
-    <q-table title="Treats" :data="data" :columns="columns" row-key="name">
+    <q-carousel
+      animated
+      v-model="slide"
+      navigation
+      infinite
+      :autoplay="autoplay"
+      arrows
+      transition-prev="slide-right"
+      transition-next="slide-left"
+      @mouseenter="autoplay = false"
+      @mouseleave="autoplay = true"
+    >
+      <q-carousel-slide :name="1" img-src="https://kj1bcdn.b-cdn.net/media/10448/agri1.jpg?format=webp" />
+      <q-carousel-slide :name="2" img-src="https://www.pmindia.gov.in/wp-content/uploads/2016/01/925b1b87-9efb-4bbb-8aad-0d7aa6f1770e.jpg" />
+      <q-carousel-slide :name="3" img-src="https://m.economictimes.com/thumb/msid-69702930,width-1200,height-900,resizemode-4,imgsize-574454/farmer.jpg" />
+      <q-carousel-slide :name="4" img-src="https://images.newindianexpress.com/uploads/user/imagelibrary/2020/2/9/w900X450/fertiliser_pic_eps.jpg" />
+    </q-carousel>
+    <q-table title="Agriculture Schemes" :data="data" :columns="columns" row-key="name">
       <template v-slot:header="props">
         <q-tr :props="props">
           <q-th auto-width />
@@ -29,7 +46,11 @@
         <q-tr v-show="props.expand" :props="props">
           <q-td colspan="100%">
             <div class="text-left">
-              This is expand slot for row above: {{ props.row.name }}.
+              Welfare of farmers has been the top priority of Government of India.<br>
+              For this it has implemented different schemes and programmes to revive agriculture sector and to improve economic conditions of the farmers. <br>
+              These agricultural schemes and programmes are very beneficial for the farmers and they must know about it so as to take its benefit. <br>
+              So through this article we will put a light on some of the most useful and popular government schemes in India.<br>
+              Under {{ props.row.name }}.
             </div>
           </q-td>
         </q-tr>
@@ -37,152 +58,109 @@
     </q-table>
   </div>
 </template>
+
 <script>
 export default {
   data() {
     return {
+      slide: 1,
+      autoplay: true,
       columns: [
         {
-          name: 'desc',
+          name: 'scheme',
           required: true,
-          label: 'Dessert (100g serving)',
+          label: 'Scheme Name',
           align: 'left',
           field: row => row.name,
           format: val => `${val}`,
           sortable: true
         },
         {
-          name: 'calories',
+          name: 'dept',
           align: 'center',
-          label: 'Calories',
-          field: 'calories',
+          label: 'Department Name',
+          field: 'dept',
           sortable: true
         },
         {
-          name: 'fat',
-          label: 'Fat (g)',
-          field: 'fat',
+          name: 'sdate',
+          label: 'Application Start Date',
+          field: 'sdate',
           sortable: true,
           style: 'width: 10px'
         },
-        { name: 'carbs', label: 'Carbs (g)', field: 'carbs' },
-        { name: 'protein', label: 'Protein (g)', field: 'protein' },
-        { name: 'sodium', label: 'Sodium (mg)', field: 'sodium' },
+        { name: 'edate', label: 'Application End Date', field: 'edate' },
         {
-          name: 'calcium',
-          label: 'Calcium (%)',
-          field: 'calcium',
-          sortable: true,
-          sort: (a, b) => parseInt(a, 10) - parseInt(b, 10)
-        },
-        {
-          name: 'iron',
-          label: 'Iron (%)',
-          field: 'iron',
+          name: 'apply',
+          label: 'Apply here',
+          field: 'apply',
           sortable: true,
           sort: (a, b) => parseInt(a, 10) - parseInt(b, 10)
         }
       ],
       data: [
         {
-          name: 'Frozen Yogurt',
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0,
-          sodium: 87,
-          calcium: '14%',
-          iron: '1%'
+          name: 'Pradhan Mantri Fasal Bima Yojana (PMFBY)',
+          dept: 'Central Government of India',
+          sdate: '30/5/2020',
+          edate: '30/7/2020',
+          apply: 'Apply here'
         },
         {
-          name: 'Ice cream sandwich',
-          calories: 237,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3,
-          sodium: 129,
-          calcium: '8%',
-          iron: '1%'
+          name: 'Paramparagat Krishi Vikas Yojana (PKVY)',
+          dept: 'NDA government',
+          sdate: '15/7/2020',
+          edate: '12/8/2020',
+          apply: 'Apply here'
         },
         {
-          name: 'Eclair',
-          calories: 262,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0,
-          sodium: 337,
-          calcium: '6%',
-          iron: '7%'
+          name: 'Pradhan Mantri Krishi Sinchai Yojana (PMKSY)',
+          dept: 'Central Government of India',
+          sdate: '5/1/2020',
+          edate: '22/4/2020',
+          apply: 'Apply here'
         },
         {
-          name: 'Cupcake',
-          calories: 305,
-          fat: 3.7,
-          carbs: 67,
-          protein: 4.3,
-          sodium: 413,
-          calcium: '3%',
-          iron: '8%'
+          name: 'Gramin Bhandaran Yojna',
+          dept: 'State Government',
+          sdate: '25/1/2020',
+          edate: '20/2/2020',
+          apply: 'Apply here'
         },
         {
-          name: 'Gingerbread',
-          calories: 356,
-          fat: 16.0,
-          carbs: 49,
-          protein: 3.9,
-          sodium: 327,
-          calcium: '7%',
-          iron: '16%'
+          name: 'Livestock insurance Scheme',
+          dept: 'State Government',
+          sdate: '2/6/2020',
+          edate: '8/8/2020',
+          apply: 'Apply here'
         },
         {
-          name: 'Jelly bean',
-          calories: 375,
-          fat: 0.0,
-          carbs: 94,
-          protein: 0.0,
-          sodium: 50,
-          calcium: '0%',
-          iron: '0%'
+          name: 'Micro Irrigation Fund (MIF)',
+          dept: 'Central Government of India',
+          sdate: '12/8/2020',
+          edate: '8/10/2020',
+          apply: 'Apply here'
         },
         {
-          name: 'Lollipop',
-          calories: 392,
-          fat: 0.2,
-          carbs: 98,
-          protein: 0,
-          sodium: 38,
-          calcium: '0%',
-          iron: '2%'
+          name: 'Soil Health Card Scheme',
+          dept: 'State Government',
+          sdate: '23/3/2020',
+          edate: '31/5/2020',
+          apply: 'Apply here'
         },
         {
-          name: 'Honeycomb',
-          calories: 408,
-          fat: 3.2,
-          carbs: 87,
-          protein: 6.5,
-          sodium: 562,
-          calcium: '0%',
-          iron: '45%'
+          name: 'National Mission For Sustainable Agriculture (NMSA)',
+          dept: 'Government of India',
+          sdate: '19/2/2020',
+          edate: '6/6/2020',
+          apply: 'Apply here'
         },
         {
-          name: 'Donut',
-          calories: 452,
-          fat: 25.0,
-          carbs: 51,
-          protein: 4.9,
-          sodium: 326,
-          calcium: '2%',
-          iron: '22%'
-        },
-        {
-          name: 'KitKat',
-          calories: 518,
-          fat: 26.0,
-          carbs: 65,
-          protein: 7,
-          sodium: 54,
-          calcium: '12%',
-          iron: '6%'
+          name: 'E-NAM',
+          dept: 'Government of India',
+          sdate: '9/9/2020',
+          edate: '30/11/2020',
+          apply: 'Apply here'
         }
       ]
     }
