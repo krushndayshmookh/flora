@@ -135,7 +135,12 @@ const routes = [{
             {
                 path: 'profile',
                 component: () =>
-                    import ('pages/Profile.vue')
+                    import ('pages/Profile/Index.vue')
+            },
+            {
+                path: 'profile/setup',
+                component: () =>
+                    import ('pages/Profile/Setup.vue')
             },
             {
                 path: 'about',
