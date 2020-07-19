@@ -101,11 +101,11 @@
           q-btn(fab icon="add" color="primary")
 
       q-tab-panel.q-pa-none(name="fertilizer")
-        q-card-section
+        //- q-card-section
           .text-h6 Fertilizer Record
 
         q-card-section.q-pa-none
-          q-table(:data="data" :columns="columns" flat row-key="name")
+          FieldFertilizerTimeline(:events="fertilizerRecord")
         
         q-page-sticky.btn(position="bottom-right" :offset="[18, 18]")
           q-btn(fab icon="add" color="primary")
@@ -128,12 +128,14 @@ import _ from 'lodash'
 import moment from 'moment'
 
 import FieldWaterTimeline from 'components/Farmer/FieldWaterTimeline'
+import FieldFertilizerTimeline from 'components/Farmer/FieldFertilizerTimeline'
 
 export default {
   name: 'DashboardFarmerField',
 
   components: {
-    FieldWaterTimeline
+    FieldWaterTimeline,
+    FieldFertilizerTimeline
   },
 
   data() {
@@ -146,6 +148,21 @@ export default {
       },
 
       waterRecord: [
+        {
+          _id: 0
+        },
+        {
+          _id: 1
+        },
+        {
+          _id: 2
+        },
+        {
+          _id: 3
+        }
+      ],
+
+      fertilizerRecord: [
         {
           _id: 0
         },
