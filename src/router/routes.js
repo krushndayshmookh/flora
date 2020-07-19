@@ -13,6 +13,10 @@ const routes = [
             component: () => import('pages/Encyclopedia/Index.vue')
           },
           {
+            path: 'new',
+            component: () => import('pages/Encyclopedia/New.vue')
+          },
+          {
             path: 'article/:id',
             component: () => import('pages/Encyclopedia/Article.vue')
           }

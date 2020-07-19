@@ -1,12 +1,19 @@
 <template>
   <q-page>
-    <EncyclopediaSearchHeader :showBigHeader="showBigHeader" @exec-search="executeSearch"></EncyclopediaSearchHeader>
-    <EncyclopediaArticleList :articles="searchResults"></EncyclopediaArticleList>
+    <EncyclopediaSearchHeader
+      :showBigHeader="showBigHeader"
+      @exec-search="executeSearch"
+    >
+    </EncyclopediaSearchHeader>
+
+    <EncyclopediaArticleList :articles="searchResults">
+    </EncyclopediaArticleList>
+
+    <q-page-sticky position="bottom-right" :offset="[18, 18]" class="btn">
+      <q-btn fab icon="add" color="primary" to="/encyclopedia/new" />
+    </q-page-sticky>
   </q-page>
 </template>
-
-<style scoped>
-</style>
 
 <script>
 import EncyclopediaSearchHeader from 'components/Encyclopedia/SearchHeader'
