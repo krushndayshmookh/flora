@@ -1,8 +1,12 @@
 <template>
   <q-page class="padding adjust-3">
     <div class="row q-col-gutter-md">
-      <div class="col-12 col-sm-3" v-for="product in products" :key="product.id">
-        <q-card >
+      <div
+        class="col-12 col-sm-3"
+        v-for="product in products"
+        :key="product.id"
+      >
+        <q-card>
           <q-img :src="product.image" />
 
           <q-card-section>
@@ -16,9 +20,15 @@
 
             <div class="row no-wrap items-center">
               <div class="col text-h6 ellipsis">
-                <router-link style="color:grey;text-decoration:none" :to="'/product/'+product.id">{{ product.title }}</router-link>
+                <router-link
+                  style="color:grey;text-decoration:none"
+                  :to="'/product/' + product.id"
+                  >{{ product.title }}</router-link
+                >
               </div>
-              <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
+              <div
+                class="col-auto text-grey text-caption q-pt-md row no-wrap items-center"
+              >
                 <q-icon name="place" />
                 {{ product.filter }}
               </div>
@@ -33,8 +43,12 @@
           </q-card-section>
           <q-separator />
           <q-card-actions>
-            <q-btn flat icon="shopping_cart" color="primary">&nbsp; &nbsp;Add to Cart</q-btn>
-            <q-btn flat icon="add_shopping_cart" color="primary">&nbsp; &nbsp;Buy Now</q-btn>
+            <q-btn flat icon="shopping_cart" color="primary"
+              >&nbsp; &nbsp;Add to Cart</q-btn
+            >
+            <q-btn flat icon="add_shopping_cart" color="primary"
+              >&nbsp; &nbsp;Buy Now</q-btn
+            >
           </q-card-actions>
         </q-card>
       </div>

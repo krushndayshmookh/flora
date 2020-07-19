@@ -63,7 +63,7 @@ const routes = [{
                 children: [{
                         path: 'chemical/:id',
                         component: () =>
-                            import ('pages/Dashboard/Consumer/Chemical.vue')
+                            import ('pages/Dashboard/Consumer/ServicesDescription.vue')
                     },
                     {
                         path: '',
