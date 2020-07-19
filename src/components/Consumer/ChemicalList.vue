@@ -13,7 +13,7 @@
 </template>
 
 <script>
-export default {
+export default { 
   name: 'ConsumerChemicalList',
   props: ['chemicals']
 }
