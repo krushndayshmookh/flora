@@ -38,58 +38,127 @@
         />
         <div class="q-pa-md q-gutter-sm">
           <q-card-actions>
-            <q-btn flat icon="info" color="primary" @click="dealer = true"
-              >&nbsp; &nbsp;Authorize Dealer</q-btn
-            >
+            <q-card-actions style="align:right">
+              <q-btn flat icon="info" color="primary" label="Authorize Dealer">
+                <q-popup-proxy>
+                  <q-toolbar class="bg-primary text-white shadow-2">
+                    <q-toolbar-title>Authorized Patners</q-toolbar-title>
+                  </q-toolbar>
 
-            <q-btn flat icon="phone" color="primary" @click="contact = true"
-              >&nbsp; &nbsp;Contact Number</q-btn
-            >
+                  <q-list bordered>
+                    <q-item
+                      v-for="contact in contacts"
+                      :key="contact.id"
+                      class="q-my-sm"
+                      clickable
+                      v-ripple
+                    >
+                      <q-item-section avatar>
+                        <q-avatar color="primary" text-color="white">
+                          {{ contact.letter }}
+                        </q-avatar>
+                      </q-item-section>
+
+                      <q-item-section>
+                        <q-item-label>{{ contact.shop }}</q-item-label>
+                        <q-item-label caption lines="1">{{
+                          contact.location
+                        }}</q-item-label>
+                      </q-item-section>
+                    </q-item>
+                  </q-list>
+                </q-popup-proxy>
+              </q-btn>
+
+              <q-btn
+                flat
+                push
+                icon="phone"
+                color="success"
+                label="Contact Detail"
+              >
+                <q-popup-proxy>
+                  <q-list bordered>
+                    <q-item
+                      v-for="contact in contacts"
+                      :key="contact.id"
+                      class="q-my-sm"
+                      clickable
+                      v-ripple
+                    >
+                      <q-item-section avatar>
+                        <q-avatar color="primary" text-color="white">
+                          {{ contact.letter }}
+                        </q-avatar>
+                      </q-item-section>
+
+                      <q-item-section>
+                        <q-item-label>{{ contact.name }}</q-item-label>
+                        <q-item-label caption lines="1">{{
+                          contact.email
+                        }}</q-item-label>
+                        <q-item-label caption lines="1">{{
+                          contact.number
+                        }}</q-item-label>
+                      </q-item-section>
+                    </q-item>
+                  </q-list>
+                </q-popup-proxy>
+              </q-btn>
+            </q-card-actions>
           </q-card-actions>
         </div>
       </q-card>
-      <q-dialog v-model="dealer">
-        <q-card>
-          <q-card-section class="row items-center q-pb-none">
-            <div class="text-h6">Close icon</div>
-            <q-space />
-            <q-btn icon="close" flat round dense v-close-popup />
-          </q-card-section>
-
-          <q-card-section>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-            repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis
-            perferendis totam, ea at omnis vel numquam exercitationem aut, natus
-            minima, porro labore.
-          </q-card-section>
-        </q-card>
-      </q-dialog>
-      <q-dialog v-model="contact">
-        <q-card style="width: 300px">
-          <q-card-section>
-            <div class="text-h6">Contact Number</div>
-          </q-card-section>
-
-          <q-card-section class="q-pt-none">
-            1800-123-12
-          </q-card-section>
-
-          <q-card-actions align="right" class="bg-white text-teal">
-            <q-btn flat label="OK" v-close-popup />
-          </q-card-actions>
-        </q-card>
-      </q-dialog>
     </div>
   </q-page>
 </template>
 <script>
+const contacts = [
+  {
+    id: 1,
+    shop: 'Sonalika Tractor',
+    location: 'Nagpur',
+    name: 'Ruddy Jedrzej',
+    email: 'rjedrzej0@discuz.net',
+    number: '123-123-1234',
+    letter: 'S'
+  },
+  {
+    id: 2,
+    shop: 'Sonalika Tractor',
+    location: 'Nagpur',
+    name: 'Mallorie Alessandrini',
+    email: 'malessandrini1@marketwatch.com',
+    number: '123-123-1234',
+    letter: 'S'
+  },
+  {
+    id: 3,
+    location: 'Nagpur',
+    shop: 'Sonalika Tractor',
+    name: 'Elisabetta Wicklen',
+    number: '123-123-1234',
+    email: 'ewicklen2@microsoft.com',
+    letter: 'S'
+  },
+  {
+    id: 4,
+    location: 'Nagpur',
+    shop: 'Sonalika Tractor',
+    number: '123-123-1234',
+    name: 'Seka Fawdrey',
+    email: 'sfawdrey3@wired.com',
+    letter: 'S'
+  }
+]
 export default {
   name: 'ServiceList',
   props: ['services'],
   data() {
     return {
       dealer: false,
-      contact: false
+      contact: false,
+      contacts
     }
   }
 }
