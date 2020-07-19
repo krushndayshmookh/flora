@@ -1,103 +1,124 @@
 <template lang="pug">
   q-page
-    q-card.q-pa-md.bg-primary.text-white(square)
-      q-card-section
-        .row
-          .col
-            .text-weight-light.q-my-sm.text-h3.underlined {{ field.title }}
-              q-popup-edit(:cover="false" v-model="field.title" title="Edit the Title" auto-save)
-                q-input(outlined v-model="field.title" dense autofocus)
-
-
-            h5.text-weight-light.q-my-none Area: {{ ' ' }}
-              span.underlined {{ field.area }} acres
-                q-popup-edit(:cover="false" v-model="field.area" title="Edit the Area" auto-save)
-                  q-input(outlined v-model="field.area" dense autofocus)
-
-                  q-card.q-ma-md.q-mt-md
-      q-card-section
-        h6.q-my-none Crop Details
-      q-card-section.q-pt-none
-        h5.text-weight-light.q-my-sm Crop: {{ ' ' }}
-          span.underlined {{ field.crop }}
-            q-popup-edit(:cover="false" v-model="field.crop" title="Edit the Crop" auto-save)
-              q-select(outlined dense v-model="field.crop" :options="options" @filter="filterFn" @filter-abort="abortFilterFn" style="width: 250px")
-                template(v-slot:no-option)
-                  q-item
-                    q-item-section.text-grey
-                      | No results
-
-
-        h5.text-weight-light.q-my-sm Planted on: {{ ' ' }}
-          span.underlined {{ field.plantedDate }}
-          q-popup-edit(:cover="false" v-model="field.plantedDate" title="Edit the planted date" auto-save mask="date" :rules="['date']")
-            q-input(outlined v-model="field.plantedDate" mask="date" :rules="['date']" dense autofocus)
-              template(v-slot:append)
-                q-icon.cursor-pointer(name="event")
-                  q-popup-proxy(ref="qDateProxy" transition-show="scale" transition-hide="scale")
-                    q-date(v-model="field.plantedDate" @input="() => $refs.qDateProxy.hide()")
-
-        h5.text-weight-light.q-my-sm Expected on: {{ field.expectedDate }}
-
-        h5.text-weight-light.q-mt-sm.q-mb-none Expected quantity: {{ field.expectedQuantity }} kg
-
-
-
-          .col-auto
-            q-btn(color="green" label="Save" v-if="changed" @click="saveField")
-
     //-  q-card.q-ma-md.q-mt-md
-    
+    q-tabs.text-primary(v-model="tab"  inline-label narrow-indicator  align="justify")
+      q-tab(name="info" icon="info" :label="tab=='info' ? 'Info': ''")
+      q-tab(name="water" icon="opacity" :label="tab=='water' ? 'Water': ''")
+      q-tab(name="fertilizer" icon="science" :label="tab=='fertilizer' ? 'Fertilizer': ''")
+      q-tab(name="activity" icon="agriculture" :label="tab=='activity' ? 'Activity': ''")
+
+    q-separator
+
+    q-tab-panels(v-model="tab" animated swipeable)
+      q-tab-panel.q-pa-none(name="info")
+        q-card-section
+          .text-h5 {{ field.title }}
 
 
-    q-card.q-ma-md.q-mt-md
-      q-card-section
-        .row
-          .col
-            h6.q-my-none Water Record
-          .col-auto
-            q-btn(color="primary" elevated rounded  label="Add record" )
+        q-card-section.q-pa-none
+          q-list
+            q-item(v-ripple)
+              q-item-section(avatar)
+                q-icon(color="primary" name="open_with")
+              q-item-section
+                q-item-label {{ field.area || 0 }}  acres
+              q-item-section(side)
+                q-item-label(caption) Area
+            
+            q-item(v-ripple)
+              q-item-section(avatar)
+                q-icon(color="primary" name="eco")
+              q-item-section
+                q-item-label {{ field.crop }}
+              q-item-section(side)
+                q-item-label(caption) Crop
+
+            q-item(v-ripple)
+              q-item-section(avatar)
+                q-icon(color="primary" name="today")
+              q-item-section
+                q-item-label {{ field.plantedDate }}
+              q-item-section(side)
+                q-item-label(caption) Planted on
+
+            q-item(v-ripple)
+              q-item-section(avatar)
+                q-icon(color="primary" name="event")
+              q-item-section
+                q-item-label {{ field.expectedDate }}
+              q-item-section(side)
+                q-item-label(caption) Expected on
+
+            q-item(v-ripple)
+              q-item-section(avatar)
+                q-icon(color="primary" name="widgets")
+              q-item-section
+                q-item-label {{ field.expectedQuantity || 0 }} kg
+              q-item-section(side)
+                q-item-label(caption) Expected quantity
+
+        q-page-sticky.btn(position="bottom-right" :offset="[18, 18]")
+          q-btn(fab icon="edit" color="primary")
+
+        //- q-card-section.q-pt-none
+          //- h5.text-weight-light.q-my-sm Crop: {{ ' ' }}
+            span.underlined 
+              q-popup-edit(:cover="false" v-model="field.crop" title="Edit the Crop" auto-save)
+                q-select(outlined dense v-model="field.crop" :options="options" @filter="filterFn" @filter-abort="abortFilterFn" style="width: 250px")
+                  template(v-slot:no-option)
+                    q-item
+                      q-item-section.text-grey
+                        | No results
 
 
-      q-card-section.q-pa-none
-        q-table(:data="data" :columns="columns" flat row-key="name")
+          //- h5.text-weight-light.q-my-sm Planted on: {{ ' ' }}
+            span.underlined {{ field.plantedDate }}
+            q-popup-edit(:cover="false" v-model="field.plantedDate" title="Edit the planted date" auto-save mask="date" :rules="['date']")
+              q-input(outlined v-model="field.plantedDate" mask="date" :rules="['date']" dense autofocus)
+                template(v-slot:append)
+                  q-icon.cursor-pointer(name="event")
+                    q-popup-proxy(ref="qDateProxy" transition-show="scale" transition-hide="scale")
+                      q-date(v-model="field.plantedDate" @input="() => $refs.qDateProxy.hide()")
 
-    q-card.q-ma-md.q-mt-md
-      q-card-section
-        .row
-          .col
-            h6.q-my-none Activity Record
-          .col-auto
-            q-btn(color="primary" elevated rounded  label="Add record" )
+          h5.text-weight-light.q-my-sm Expected on: {{ field.expectedDate }}
 
-
-      q-card-section.q-pa-none
-        q-table(:data="data" :columns="columns" flat row-key="name")
-
-    q-card.q-ma-md.q-mt-md
-      q-card-section
-        .row
-          .col
-            h6.q-my-none Fertilizer Record
-          .col-auto
-            q-btn(color="primary" elevated rounded  label="Add record" )
+          h5.text-weight-light.q-mt-sm.q-mb-none Expected quantity: {{ field.expectedQuantity }} kg
 
 
-      q-card-section.q-pa-none
-        q-table(:data="data" :columns="columns" flat row-key="name")
 
-    q-card.q-ma-md.q-mt-md
-      q-card-section
-        .row
-          .col
-            h6.q-my-none Expense Record
-          .col-auto
-            q-btn(color="primary" elevated rounded  label="Add record" )
+            .col-auto
+              q-btn(color="green" label="Save" v-if="changed" @click="saveField")
 
+        
+      q-tab-panel.q-pa-none(name="water")
+        //- q-card-section
+          .text-h6 Water Record
 
-      q-card-section.q-pa-none
-        q-table(:data="data" :columns="columns" flat row-key="name")
+        q-card-section.q-pa-none
+          FieldWaterTimeline(:events="waterRecord")
+        
+        q-page-sticky.btn(position="bottom-right" :offset="[18, 18]")
+          q-btn(fab icon="add" color="primary")
 
+      q-tab-panel.q-pa-none(name="fertilizer")
+        q-card-section
+          .text-h6 Fertilizer Record
+
+        q-card-section.q-pa-none
+          q-table(:data="data" :columns="columns" flat row-key="name")
+        
+        q-page-sticky.btn(position="bottom-right" :offset="[18, 18]")
+          q-btn(fab icon="add" color="primary")
+
+      q-tab-panel.q-pa-none(name="activity")
+        q-card-section
+          .text-h6 Activity Record
+
+        q-card-section.q-pa-none
+          q-table(:data="data" :columns="columns" flat row-key="name")
+        
+        q-page-sticky.btn(position="bottom-right" :offset="[18, 18]")
+          q-btn(fab icon="add" color="primary")
 
 
 </template>
@@ -106,8 +127,15 @@
 import _ from 'lodash'
 import moment from 'moment'
 
+import FieldWaterTimeline from 'components/Farmer/FieldWaterTimeline'
+
 export default {
   name: 'DashboardFarmerField',
+
+  components: {
+    FieldWaterTimeline
+  },
+
   data() {
     return {
       field: {
@@ -116,9 +144,25 @@ export default {
         crop: '',
         plantedDate: ''
       },
+
+      waterRecord: [
+        {
+          _id: 0
+        },
+        {
+          _id: 1
+        },
+        {
+          _id: 2
+        },
+        {
+          _id: 3
+        }
+      ],
+
       fieldInDB: null,
       options: null,
-
+      tab: 'info',
       columns: [
         {
           name: 'name',
