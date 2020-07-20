@@ -56,6 +56,11 @@ export default {
           label: 'Fertilopedia'
         },
         {
+          link: '/FertilizerCalci/Index',
+          icon: 'business',
+          label: 'FertilizerCalci'
+        },
+        {
           link: '/profile',
           icon: 'account_circle',
           label: 'Profile'

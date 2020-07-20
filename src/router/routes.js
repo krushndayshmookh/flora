@@ -136,6 +136,24 @@ const routes = [{
                 component: () =>
                     import ('layouts/Advisory.vue')
             },
+            {
+                path: 'FertilizerCalci',
+                children: [{
+                        path: 'Index',
+                        component: () =>
+                            import ('pages/FertilizerCalci/Index.vue')
+                    }
+                    
+                ],
+                component: () =>
+                    import ('layouts/FertilizerCalci.vue')
+            },
+
+
+
+
+
+
 
             {
                 path: 'fertilopedia',

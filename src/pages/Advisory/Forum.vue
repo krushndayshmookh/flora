@@ -78,7 +78,7 @@
           </q-card-section>
           <q-card-actions horizontal class="justify-around q-px-md">
             <q-btn flat round color="red" icon="favorite" />
-            <q-btn flat round color="accent" icon="comment" />
+            <q-btn v-model="expanded" flat round color="accent" icon="comment" />
             <q-btn flat round color="primary" icon="bookmark" />
           </q-card-actions>
         </q-card>
