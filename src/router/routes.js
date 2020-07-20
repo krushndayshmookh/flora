@@ -89,6 +89,16 @@ const routes = [{
                 ]
             },
             {
+                path: 'schemes',
+                component: () =>
+                    import ('layouts/Dashboard/Scheme.vue'),
+                children: [{
+                    path: '',
+                    component: () =>
+                        import ('pages/Schemes/Index.vue')
+                }]
+            },
+            {
                 path: 'chatbox',
                 children: [{
                         path: 'chat/:id',

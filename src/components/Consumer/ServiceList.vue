@@ -1,58 +1,166 @@
 <template>
   <q-page class="padding adjust-3">
     <div class="col-3 adjust-3" v-for="service in services" :key="service.id">
-      <q-card>
-        <!-- <q-img :src="service.image" /> -->
+      <q-card class="my-card">
+        <q-card-section horizontal>
+          <q-img class="col-4" :src="service.image" />
 
-        <q-card-section>
-          <q-btn
-            fab
-            color="primary"
-            icon="share"
-            class="absolute"
-            style="top: 0; right: 12px; transform: translateY(-50%);"
-          />
-
-          <div class="row no-wrap items-center">
-            <div class="col text-h6 ellipsis">
-              <router-link
-                style="color:grey;text-decoration:none"
-                :to="'/service/' + service.id"
-                >{{ service.title }}</router-link
+          <q-card-section>
+            <div class="row no-wrap items-center">
+              <div class="col text-h5 ellipsis">
+                <router-link
+                  style="color:black;text-decoration:none"
+                  :to="'/service/' + service.id"
+                  >{{ service.title }}</router-link
+                >
+              </div>
+              <div
+                class="col-auto text-grey text-caption q-pt-md row no-wrap items-center"
               >
+                <q-icon name="place" />
+                {{ service.filter }}
+              </div>
             </div>
-            <div
-              class="col-auto text-grey text-caption q-pt-md row no-wrap items-center"
-            >
-              <q-icon name="place" />
-              {{ service.filter }}
+            <div class="text-caption" style="color:red" secoundary>
+              {{ service.stock }}
             </div>
-          </div>
-
-          <q-rating v-model="stars" :max="5" size="32px" />
+            <div class="text-caption text-grey">{{ service.description }}</div>
+          </q-card-section>
         </q-card-section>
 
-        <q-card-section class="q-pt-none">
-          <div class="text-caption" secoundary>{{ service.stock }}</div>
-          <div class="text-caption text-grey">{{ service.description }}</div>
-        </q-card-section>
         <q-separator />
-        <q-card-actions>
-          <q-btn flat icon="info" color="primary"
-            >&nbsp; &nbsp;Authorize Dealer</q-btn
-          >
-          <q-btn flat icon="phone" color="primary"
-            >&nbsp; &nbsp;Contact Number</q-btn
-          >
-        </q-card-actions>
+        <q-btn
+          fab
+          color="primary"
+          icon="share"
+          class="absolute"
+          style="top: 0; right: 12px; transform: translateY(-50%);"
+        />
+        <div class="q-pa-md q-gutter-sm">
+          <q-card-actions>
+            <q-card-actions style="align:right">
+              <q-btn flat icon="info" color="primary" label="Authorize Dealer">
+                <q-popup-proxy>
+                  <q-toolbar class="bg-primary text-white shadow-2">
+                    <q-toolbar-title>Authorized Patners</q-toolbar-title>
+                  </q-toolbar>
+
+                  <q-list bordered>
+                    <q-item
+                      v-for="contact in contacts"
+                      :key="contact.id"
+                      class="q-my-sm"
+                      clickable
+                      v-ripple
+                    >
+                      <q-item-section avatar>
+                        <q-avatar color="primary" text-color="white">
+                          {{ contact.letter }}
+                        </q-avatar>
+                      </q-item-section>
+
+                      <q-item-section>
+                        <q-item-label>{{ contact.shop }}</q-item-label>
+                        <q-item-label caption lines="1">{{
+                          contact.location
+                        }}</q-item-label>
+                      </q-item-section>
+                    </q-item>
+                  </q-list>
+                </q-popup-proxy>
+              </q-btn>
+
+              <q-btn
+                flat
+                push
+                icon="phone"
+                color="success"
+                label="Contact Detail"
+              >
+                <q-popup-proxy>
+                  <q-list bordered>
+                    <q-item
+                      v-for="contact in contacts"
+                      :key="contact.id"
+                      class="q-my-sm"
+                      clickable
+                      v-ripple
+                    >
+                      <q-item-section avatar>
+                        <q-avatar color="primary" text-color="white">
+                          {{ contact.letter }}
+                        </q-avatar>
+                      </q-item-section>
+
+                      <q-item-section>
+                        <q-item-label>{{ contact.name }}</q-item-label>
+                        <q-item-label caption lines="1">{{
+                          contact.email
+                        }}</q-item-label>
+                        <q-item-label caption lines="1">{{
+                          contact.number
+                        }}</q-item-label>
+                      </q-item-section>
+                    </q-item>
+                  </q-list>
+                </q-popup-proxy>
+              </q-btn>
+            </q-card-actions>
+          </q-card-actions>
+        </div>
       </q-card>
     </div>
   </q-page>
 </template>
 <script>
+const contacts = [
+  {
+    id: 1,
+    shop: 'Sonalika Tractor',
+    location: 'Nagpur',
+    name: 'Ruddy Jedrzej',
+    email: 'rjedrzej0@discuz.net',
+    number: '123-123-1234',
+    letter: 'S'
+  },
+  {
+    id: 2,
+    shop: 'Sonalika Tractor',
+    location: 'Nagpur',
+    name: 'Mallorie Alessandrini',
+    email: 'malessandrini1@marketwatch.com',
+    number: '123-123-1234',
+    letter: 'S'
+  },
+  {
+    id: 3,
+    location: 'Nagpur',
+    shop: 'Sonalika Tractor',
+    name: 'Elisabetta Wicklen',
+    number: '123-123-1234',
+    email: 'ewicklen2@microsoft.com',
+    letter: 'S'
+  },
+  {
+    id: 4,
+    location: 'Nagpur',
+    shop: 'Sonalika Tractor',
+    number: '123-123-1234',
+    name: 'Seka Fawdrey',
+    email: 'sfawdrey3@wired.com',
+    letter: 'S'
+  }
+]
 export default {
   name: 'ServiceList',
-  props: ['services']
+  props: ['services'],
+  data() {
+    return {
+      dealer: false,
+      contact: false,
+      contacts
+    }
+  }
 }
 </script>
 <style scoped>

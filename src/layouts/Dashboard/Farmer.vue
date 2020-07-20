@@ -35,6 +35,11 @@ export default {
           icon: 'book',
           label: 'Encyclopedia'
         },
+         {
+          link: '/schemes',
+          icon: 'book',
+          label: 'Schemes'
+        },
         {
           link: '/retina',
           icon: 'visibility',
