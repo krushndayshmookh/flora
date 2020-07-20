@@ -9,3 +9,7 @@ export function rightSideDrawer(state) {
 export function leftSideDrawerOptions(state) {
   return state.leftSideDrawerOptions
 }
+
+export function currentUserType(state) {
+  return state.currentUserType
+}

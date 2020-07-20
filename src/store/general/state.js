@@ -1,9 +1,10 @@
-import { leftSideDrawer } from "./getters";
+import { leftSideDrawer } from './getters'
 
 export default function() {
   return {
     leftSideDrawer: false,
     rightSideDrawer: false,
-    leftSideDrawerOptions: []
+    leftSideDrawerOptions: [],
+    currentUserType: null
   }
 }

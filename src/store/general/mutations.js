@@ -17,3 +17,7 @@ export function setRightSideDrawer(state, payload) {
 export function setLeftSideDrawerOptions(state, payload) {
   state.leftSideDrawerOptions = payload
 }
+
+export function setCurrentUserType(state, payload) {
+  state.currentUserType = payload
+}

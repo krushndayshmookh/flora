@@ -1,0 +1,90 @@
+<template>
+  <q-card>
+    <q-list>
+      <q-list class="rounded-borders text-primary">
+        <q-item
+          v-for="userType in userTypes"
+          :key="userType._id"
+          clickable
+          v-ripple
+          :to="userType.link"
+          active-class="active-user-link"
+        >
+          <q-item-section avatar>
+            <q-icon :name="userType.icon" />
+          </q-item-section>
+
+          <q-item-section>{{ userType.label }}</q-item-section>
+        </q-item>
+      </q-list>
+    </q-list>
+  </q-card>
+</template>
+
+<script>
+export default {
+  name: 'UserChooser',
+
+  data() {
+    return {
+      userTypes: [
+        {
+          _id: 'farmer',
+          label: 'Farmer',
+          link: '/farmer',
+          icon: 'agriculture'
+        },
+        {
+          _id: 'trader',
+          label: 'Trader',
+          link: '/trader',
+          icon: 'local_shipping'
+        },
+        {
+          _id: 'doctor',
+          label: 'Doctor',
+          link: '/doctor',
+          icon: 'local_hospital'
+        },
+        {
+          _id: 'incestor',
+          label: 'Investor',
+          link: '/investor',
+          icon: 'monetization_on'
+        },
+        {
+          _id: 'expert',
+          label: 'Expert',
+          link: '/expert',
+          icon: 'school'
+        },
+        {
+          _id: 'consumer',
+          label: 'Consumer',
+          link: '/consumer',
+          icon: 'face'
+        },
+        {
+          _id: 'admin',
+          label: 'Admin',
+          link: '/admin',
+          icon: 'settings'
+        }
+      ]
+    }
+  },
+
+  computed: {
+    currentUserType() {
+      return this.$store.getters['general/currentUserType']
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+.active-user-link {
+  color: white;
+  background: #f2c037;
+}
+</style>

@@ -17,3 +17,7 @@ export function setRightSideDrawer(context, payload) {
 export function setLeftSideDrawerOptions(context, payload) {
   context.commit('setLeftSideDrawerOptions', payload)
 }
+
+export function setCurrentUserType(context, payload) {
+  context.commit('setCurrentUserType', payload)
+}

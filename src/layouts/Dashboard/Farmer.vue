@@ -35,7 +35,7 @@ export default {
           icon: 'book',
           label: 'Encyclopedia'
         },
-         {
+        {
           link: '/schemes',
           icon: 'book',
           label: 'Schemes'
@@ -83,6 +83,7 @@ export default {
       ]
 
       this.$store.dispatch('general/setLeftSideDrawerOptions', options)
+      this.$store.dispatch('general/setCurrentUserType', 'farmer')
     }
   },
 
