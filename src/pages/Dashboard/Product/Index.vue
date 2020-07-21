@@ -1,6 +1,6 @@
 <template>
   <div class="q-col-gutter-md">
-    <div class="row   " style="background-color: white">
+    <!-- <div class="row   " style="background-color: white">
       <div class=" col-1 col-sm-2 col-xs-3 text-h6 register text-grey ">
         Filters :
       </div>
@@ -65,9 +65,99 @@
             <q-icon name="search" />
           </template>
         </q-input>
+      </div>      
+    </div> -->
+
+
+
+    
+
+    <div class="row" style="background-color: white; overflow-x:auto">
+      <!-- <template> -->
+  <div class="q-pa-md col-12">
+    <q-card-section horizontal>
+    
+    <!-- <q-infinite-scroll @load="onLoad" :offset="250">
+      <div v-for="(item, index) in items" :key="index" class="caption"> -->
+          <div class=" col-1 col-sm-2 col-xs-3 text-h6 register text-grey ">
+             Filters :
+          </div>
+      <div class="col-2 col-sm-2 col-xs-4">
+        <q-select
+          bottom-slots
+          v-model="selectedCat"
+          :options="cat"
+          counter
+          maxlength="12"
+          :dense="dense"
+          :options-dense="denseOpts"
+          style="margin-right:14px"
+        >
+          <template v-slot:hint>
+            By Category
+          </template>
+        </q-select>
       </div>
+      <div class="col-2 col-sm-2 col-xs-5">
+        <q-select
+          bottom-slots
+          v-model="selectedSel"
+          :options="sel"
+          label=""
+          counter
+          maxlength="12"
+          :dense="dense"
+          :options-dense="denseOpts"
+          style="margin-right:14px"
+        >
+          <template v-slot:hint>
+            By Seller
+          </template>
+        </q-select>
+      </div>
+      <div class="col-3 col-sm-2 col-xs-5">
+        <q-select
+          bottom-slots
+          v-model="model"
+          use-input
+          use-chips
+          multiple
+          @new-value="createValue"
+          :options="filterOptions"
+          @filter="filterFn"
+          style="margin-right:14px"
+        >
+          <template v-slot:hint>
+            Select Multiple Brand
+          </template>
+        </q-select>
+      </div>
+      <div class="col-6 col-sm-2 col-xs-6">
+        <q-input
+          v-model="search"
+          debounce="1000"
+          placeholder="Search"
+          hint="Debouncing 1000ms"
+        >
+          <template v-slot:append>
+            <q-icon name="search" />
+          </template>
+        </q-input>
+      </div>
+      <!-- </div> -->
+      <!-- <template v-slot:loading>
+        <div class="row justify-center q-my-md">
+          <q-spinner-dots color="primary" size="40px" />
+        </div>
+      </template>
+    </q-infinite-scroll> -->
+    
+    </q-card-section>
+  </div>
+<!--  </template> -->
     </div>
 
+    
     <div class=" col text-h5 register text-white text-weight-medium " style="background-color:#da675b;position: relative;
 min-height: 50px;">
       We are here to Serve You !!!
@@ -87,6 +177,7 @@ export default {
 
   data() {
     return {
+      items: [ {}],
       model: null,
 
       selectedCat: 'All',
@@ -205,7 +296,17 @@ export default {
 
 
        }
-   }
+   },
+    methods: {
+    onLoad (index, done) {
+      setTimeout(() => {
+        if (this.items) {
+          this.items.push({})
+          done()
+        }
+      }, 2000)
+    }
+  }
 }
 </script>
 
