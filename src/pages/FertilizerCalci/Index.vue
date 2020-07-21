@@ -35,7 +35,12 @@
             Now click on the drop-down menu to select the specific crop that we are going to work on.
             <br />
 
-            <q-select standout="bg-white text-black" :options="options" label="Choose a crop" />
+            <q-select
+              standout="bg-white text-black"
+              v-model="model"
+              :options="options"
+              label="Choose a crop"
+            />
 
             <q-stepper-navigation>
               <q-btn @click="step = 3" color="primary" label="Continue" />
@@ -45,7 +50,12 @@
 
           <q-step :name="3" title="Region" icon="assignment" :done="step >3">
             It is important to know where the farm is located. Please select the region where your land is located from the drop-down menu
-            <q-select standout="bg-white text-black" :options="options" label="Choose a region" />
+            <q-select
+              standout="bg-white text-black"
+              v-model="single"
+              :options="options1"
+              label="Choose a region"
+            />
 
             <q-stepper-navigation>
               <q-btn @click="step = 4" color="primary" label="Continue" />
@@ -60,7 +70,22 @@
             <q-input outlined v-model="text" label="Area" />
 
             <q-stepper-navigation>
-              <q-btn color="primary" label="Finish" />
+              <q-btn color="primary" label="Finish" @click="card = true" />
+
+              <q-dialog v-model="card">
+                <q-card
+                  class="my-card text-white"
+                  style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)"
+                >
+                  <q-card-section>
+                    <div class="text-h6">Our Changing Planet</div>
+                    <div class="text-subtitle2">by John Doe</div>
+                  </q-card-section>
+
+                  <q-card-section class="q-pt-none">{{ lorem }}</q-card-section>
+                </q-card>
+              </q-dialog>
+
               <q-btn flat @click="step = 3" color="primary" label="Back" class="q-ml-sm" />
             </q-stepper-navigation>
           </q-step>
@@ -76,7 +101,8 @@ export default {
   data() {
     return {
       step: 1,
-
+      model: null,
+      single: null,
       options: [
         'Rice',
         'Wheat',
@@ -85,7 +111,9 @@ export default {
         'Cotton',
         'Jute',
         'Cocunut'
-      ]
+      ],
+      options1: ['Maharashtra', 'Telangana', 'Goa'],
+      card: false
     }
   }
 }
