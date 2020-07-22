@@ -78,11 +78,18 @@
                   style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)"
                 >
                   <q-card-section>
-                    <div class="text-h6">Our Changing Planet</div>
+                    <div class="text-h6">Fertilizer Required</div>
                     <div class="text-subtitle2">by John Doe</div>
                   </q-card-section>
 
-                  <q-card-section class="q-pt-none">{{ lorem }}</q-card-section>
+                  <q-table
+                    title="Fertilizer per kg/ha"
+                    :data="data"
+                    :columns="columns"
+                    row-key="name"
+                    dark
+                    color="amber"
+                  />
                 </q-card>
               </q-dialog>
 
@@ -113,7 +120,56 @@ export default {
         'Cocunut'
       ],
       options1: ['Maharashtra', 'Telangana', 'Goa'],
-      card: false
+      card: false,
+
+      columns: [
+        {
+          name: 'desc',
+          required: true,
+          label: 'Nutrients',
+          align: 'left',
+          field: row => row.name,
+          format: val => `${val}`,
+          sortable: true
+        },
+        {
+          name: 'Nitrogen',
+          align: 'center',
+          label: 'N(kg/ha)',
+          field: 'N',
+          sortable: true
+        },
+        { name: 'phosphorous', label: 'P2O5 (Kg/ha)', field: 'potassium', sortable: true },
+        { name: 'potassium', label: 'K2O (Kg/ha)', field: 'potassium' },
+        
+        
+      ],
+      data: [
+        {
+          name: 'Short duration varieties (dry season)',
+          N: 150,
+          phosphorous:50,
+          potassium:50
+        },
+        {
+          name: 'Medium and long duration varieties (wet season)',
+          N: 150,
+          phosphorous:50,
+          potassium:50
+        },
+        {
+          name: 'Hybrid rice',
+          N: 150,
+          phosphorous:50,
+          potassium:50
+        },
+        {
+          name: 'Low and responsive cultivars',
+          N: 150,
+          phosphorous:50,
+          potassium:50
+        },
+      ]
     }
   }
 }
