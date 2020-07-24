@@ -1,36 +1,111 @@
 <template lang="pug">
-  q-page.q-pa-md
-    h4.text-weight-light.q-px-md.q-my-sm Disease Detection
+  q-page(padding)
+    h4.text-weight-light.q-px-md.q-my-sm.text-center Disease Detection
     .q-px-md.q-my-sm
-      q-btn(color="primary" label="Get Picture" @click="captureImage")
-    .q-px-md.q-my-sm
-      img(:src="imageSrc")
+      q-btn.fit(color="primary" label="Get Picture" @click="captureImage")
+    .q-my-sm.text-center
+      video(ref="preview" autoplay="true")
+
+      q-img(:src="capturedImage" width="300px" height="300px")
+    
 </template>
 
 <script>
-import { Plugins, CameraResultType } from '@capacitor/core'
+// import { Plugins, CameraResultType } from '@capacitor/core'
 
-const { Camera } = Plugins
+// const { Camera } = Plugins
+
+async function getMediaStream(constraints) {
+  return new Promise(function(resolve, reject) {
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices
+        .getUserMedia(constraints)
+        .then(stream => resolve(stream))
+        .catch(err => reject(err))
+    } else {
+      const getUserMedia =
+        navigator.getUserMedia ||
+        navigator['webkitGetUserMedia'] ||
+        navigator['mozGetUserMedia'] ||
+        navigator['msGetUserMedia']
+      getUserMedia(
+        constraints,
+        stream => resolve(stream),
+        err => reject(err)
+      )
+    }
+  })
+}
 
 export default {
   data() {
     return {
-      imageSrc: ''
+      // previewVideo: ''
+      imageCapture: null,
+      capturedImage: null
     }
   },
   methods: {
-    async captureImage() {
-      const image = await Camera.getPhoto({
-        quality: 90,
-        allowEditing: true,
-        resultType: CameraResultType.Uri
+    // async captureImage() {
+    //   const image = await Camera.getPhoto({
+    //     quality: 90,
+    //     allowEditing: true,
+    //     resultType: CameraResultType.Uri
+    //   })
+    //   // image.webPath will contain a path that can be set as an image src.
+    //   // You can access the original file using image.path, which can be
+    //   // passed to the Filesystem API to read the raw data of the image,
+    //   // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
+    //   this.imageSrc = image.webPath
+    // }
+
+    startPreview() {
+      // var video = this.$refs.previewVideo
+      const vm = this
+      getMediaStream({
+        video: {
+          width: 300,
+          height: 300,
+          facingMode: 'environment'
+        }
       })
-      // image.webPath will contain a path that can be set as an image src.
-      // You can access the original file using image.path, which can be
-      // passed to the Filesystem API to read the raw data of the image,
-      // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-      this.imageSrc = image.webPath
+        .then(function(mediaStream) {
+          vm.$refs.preview.srcObject = mediaStream
+          const track = mediaStream.getVideoTracks()[0]
+          vm.imageCapture = new ImageCapture(track)
+        })
+        .catch(function(err) {
+          console.log('Something went wrong!')
+          console.error(err)
+        })
+    },
+
+    captureImage() {
+      this.imageCapture
+        .takePhoto()
+        .then(blob => {
+          this.capturedImage = URL.createObjectURL(blob)
+        })
+        .catch(function(err) {
+          console.error(err)
+        })
     }
+  },
+
+  mounted() {
+    this.startPreview()
   }
 }
 </script>
+
+<style lang="scss" scoped>
+#captureBtn {
+  min-height: 300px;
+}
+
+video {
+  width: 300px;
+  height: 300px;
+  border: 1px solid blue;
+}
+</style>
