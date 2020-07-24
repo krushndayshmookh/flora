@@ -62,8 +62,6 @@
     
     <q-separator />
 
-    
-
     <q-stepper
       v-model="step"
       header-nav
@@ -89,18 +87,18 @@
             <td class="text-right">0% to 2% of the loan amount</td>
           </tr> -->
                     <tr>
-                      <th class="text-left">Interest rate</th>
-                      <td class="text-right">8.80% p.a. onwards</td>
+                      <th class="text-left">Interest rate</th><br>
+                      <td class="text-right">8.80% p.a.</td>
                     </tr>
                     <tr>
                       <th class="text-left">Processing fee</th><br>
-                      <td class="text-right">0% to 2% of the loan amount</td>
+                      <td class="text-right">0% to 2%</td>
                     </tr>
         
 
-        <q-stepper-navigation>
+        <!-- <q-stepper-navigation>
           <q-btn @click="() => { done1 = true; step = 2 }" color="primary" label="Continue" />
-        </q-stepper-navigation>
+        </q-stepper-navigation> -->
       </q-step>
 
       <q-step
@@ -114,10 +112,10 @@
         Regardless of the channel that you choose, the lender will verify your application and approve it. Once your application gets approved, the loan amount will be disbursed into your account.
 
 
-        <q-stepper-navigation>
+        <!-- <q-stepper-navigation>
           <q-btn @click="() => { done2 = true; step = 3 }" color="primary" label="Continue" />
           <q-btn flat @click="step = 1" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        </q-stepper-navigation> -->
       </q-step>
 
       <q-step
@@ -138,10 +136,10 @@
 •	For fish farming
 
 
-        <q-stepper-navigation>
+        <!-- <q-stepper-navigation>
           <q-btn @click="() => { done3 = true; step = 4 }" color="primary" label="Continue" />
           <q-btn flat @click="step = 2" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        </q-stepper-navigation> -->
       </q-step>
 
       <q-step
@@ -159,10 +157,10 @@
 
 
 
-        <q-stepper-navigation>
+        <!-- <q-stepper-navigation>
           <q-btn @click="() => { done4 = true; step = 5 }" color="primary" label="Continue" />
           <q-btn flat @click="step = 3" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        </q-stepper-navigation> -->
       </q-step>
 
       <q-step
@@ -180,10 +178,10 @@
 
 
 
-        <q-stepper-navigation>
+        <!-- <q-stepper-navigation>
           <q-btn @click="() => { done5 = true; step = 6 }" color="primary" label="Continue" />
           <q-btn flat @click="step = 4" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        </q-stepper-navigation> -->
       </q-step>
 
       <q-step
@@ -199,10 +197,10 @@
 
 
 
-        <q-stepper-navigation>
+        <!-- <q-stepper-navigation>
           <q-btn @click="() => { done6 = true; step = 7 }" color="primary" label="Continue" />
           <q-btn flat @click="step = 5" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        </q-stepper-navigation> -->
       </q-step>
 
       <q-step
@@ -235,10 +233,10 @@
 
 
 
-        <q-stepper-navigation>
+        <!-- <q-stepper-navigation>
           <q-btn @click="() => { done7 = true; step = 8 }" color="primary" label="Continue" />
           <q-btn flat @click="step = 6" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        </q-stepper-navigation> -->
       </q-step>
 
       
@@ -274,10 +272,10 @@ Similarly, there is no margin for loans for purchase of land up to Rs 50,000 and
 
 
 
-        <q-stepper-navigation>
+        <!-- <q-stepper-navigation>
           <q-btn color="primary" @click="done8 = true" label="Finish" />
           <q-btn flat @click="step = 1" color="primary" label="Back" class="q-ml-sm" />
-        </q-stepper-navigation>
+        </q-stepper-navigation> -->
       </q-step>
       <q-btn label="Reset" push color="white" text-color="primary" @click="reset" class="q-mb-md" />
     </q-stepper>
