@@ -9,7 +9,7 @@
         q-btn(flat dense round icon="account_circle" aria-label="User" @click="toggleUserChooser")
 
     LeftSideDrawer
-    RightSideDrawer
+    //- RightSideDrawer
 
     q-dialog(v-model="showNotifications" position="top" maximized)
       Notifications
