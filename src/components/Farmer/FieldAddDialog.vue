@@ -1,5 +1,5 @@
 <template lang="pug">
-q-dialog(v-model="show")
+q-dialog(v-model="show" position="bottom")
 	q-card
 		q-card-section
 			.text-h6 Field Details
@@ -52,7 +52,7 @@ export default {
         message: 'Created!'
       })
       this.show = false
-    },
+    }
   }
 }
 </script>
