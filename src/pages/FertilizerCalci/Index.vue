@@ -10,93 +10,48 @@
             <div class="absolute-bottom text-h6 text-center">Fertilizer Calculator</div>
           </q-img>
         </q-card>
-        <q-stepper v-model="step" vertical color="primary" animated>
-          <q-step :name="1" title="Select Crop Type" icon="crop" :done="step > 1">
-            <div class="column" style="height: 150px padding: 10px 15px">
-              Start by selecting the type of crop on which you want to perform the fertilization calculations.
-              <br />
-            </div>
-            <br />
-            <p>Select from each column</p>
-            <div class="q-gutter-sm">
-              <q-btn outline color="teal" label="Button" />
-              <q-btn outline color="teal" label="Button" />
-              <br />
-              <q-btn outline color="teal" label="Button" />
-              <q-btn outline color="teal" label="Button" />
-            </div>
 
-            <q-stepper-navigation>
-              <q-btn @click="step = 2" color="primary" label="Continue" />
-            </q-stepper-navigation>
-          </q-step>
-
-          <q-step :name="2" title="Select Crop" icon="create_new_folder" :done="step > 2">
-            Now click on the drop-down menu to select the specific crop that we are going to work on.
-            <br />
-
+        <q-card class="my-card">
+          <q-card-section>
+            Select the Type of Crop
             <q-select
-              standout="bg-white text-black"
-              v-model="model"
-              :options="options"
-              label="Choose a crop"
+              outlined
+              v-model="selectedCrop"
+              :options="cropOptions"
+              label="Crop"
+              emit-value
+              map-options
             />
+          </q-card-section>
 
-            <q-stepper-navigation>
-              <q-btn @click="step = 3" color="primary" label="Continue" />
-              <q-btn flat @click="step = 1" color="primary" label="Back" class="q-ml-sm" />
-            </q-stepper-navigation>
-          </q-step>
+          <q-card-section>
+            Enter the Area of Farmland
+            <q-input style="max-width:100%" outlined v-model="SelectedArea" label="Area" />
+          </q-card-section>
 
-          <q-step :name="3" title="Region" icon="assignment" :done="step >3">
-            It is important to know where the farm is located. Please select the region where your land is located from the drop-down menu
-            <q-select
-              standout="bg-white text-black"
-              v-model="single"
-              :options="options1"
-              label="Choose a region"
-            />
-
-            <q-stepper-navigation>
-              <q-btn @click="step = 4" color="primary" label="Continue" />
-              <q-btn flat @click="step = 2" color="primary" label="Back" class="q-ml-sm" />
-            </q-stepper-navigation>
-          </q-step>
-
-          <q-step :name="4" title="Area of Farm" icon="add_comment">
-            Select area of farm
-            <br />
-
-            <q-input outlined v-model="text" label="Area" />
-
-            <q-stepper-navigation>
-              <q-btn color="primary" label="Finish" @click="card = true" />
-
-              <q-dialog v-model="card">
-                <q-card
-                  class="my-card text-white"
-                  style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)"
-                >
-                  <q-card-section>
-                    <div class="text-h6">Fertilizer Required</div>
-                    <div class="text-subtitle2">by John Doe</div>
-                  </q-card-section>
-
-                  <q-table
-                    title="Fertilizer per kg/ha"
-                    :data="data"
-                    :columns="columns"
-                    row-key="name"
-                    dark
-                    color="amber"
-                  />
-                </q-card>
-              </q-dialog>
-
-              <q-btn flat @click="step = 3" color="primary" label="Back" class="q-ml-sm" />
-            </q-stepper-navigation>
-          </q-step>
-        </q-stepper>
+          <div class="q-pa-md">
+            <q-markup-table  flat bordered>
+              <thead>
+                <tr>
+                  <th class="text-left">Crop</th>
+                  <th class="text-right">Urea(N)</th>
+                  <th class="text-right">Super Phosphate(P)</th>
+                  <th class="text-right">Potash(K)</th>
+                  <th class="text-right">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-left">{{selectedCrop}}</td>
+                  <td class="text-right">{{computed_n}}</td>
+                  <td class="text-right">{{computed_p}}</td>
+                  <td class="text-right">{{computed_k}}</td>
+                  <td class="text-right">{{computed_p+computed_k+computed_n}}</td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </div>
+        </q-card>
       </div>
     </div>
   </q-page>
@@ -105,72 +60,70 @@
 
 <script>
 export default {
+  
   data() {
     return {
-      step: 1,
-      model: null,
-      single: null,
-      options: [
-        'Rice',
-        'Wheat',
-        'Sugarcane',
-        'Bajra',
-        'Cotton',
-        'Jute',
-        'Cocunut'
-      ],
-      options1: ['Maharashtra', 'Telangana', 'Goa'],
-      card: false,
+      multipliers: {
+        rice: {
+          n: 23,
+          p: 8,
+          k: 30
+        },
+        wheat: {
+          n: 24,
+          p: 9,
+          k: 30
+        },
+         corn: {
+          n: 25,
+          p: 9,
+          k: 35
+        },
+         potato: {
+          n: 24,
+          p: 10,
+          k: 30
+        }
+      },
 
-      columns: [
+      selectedCrop:'rice',
+      SelectedArea: 0,
+
+      cropOptions: [
         {
-          name: 'desc',
-          required: true,
-          label: 'Nutrients',
-          align: 'left',
-          field: row => row.name,
-          format: val => `${val}`,
-          sortable: true
+          label: 'Rice',
+          value: 'rice'
         },
         {
-          name: 'Nitrogen',
-          align: 'center',
-          label: 'N(kg/ha)',
-          field: 'N',
-          sortable: true
-        },
-        { name: 'phosphorous', label: 'P2O5 (Kg/ha)', field: 'potassium', sortable: true },
-        { name: 'potassium', label: 'K2O (Kg/ha)', field: 'potassium' },
-        
-        
-      ],
-      data: [
-        {
-          name: 'Short duration varieties (dry season)',
-          N: 150,
-          phosphorous:50,
-          potassium:50
+          label: 'Wheat',
+          value: 'wheat'
         },
         {
-          name: 'Medium and long duration varieties (wet season)',
-          N: 150,
-          phosphorous:50,
-          potassium:50
+          label: 'corn',
+          value: 'corn'
         },
         {
-          name: 'Hybrid rice',
-          N: 150,
-          phosphorous:50,
-          potassium:50
-        },
-        {
-          name: 'Low and responsive cultivars',
-          N: 150,
-          phosphorous:50,
-          potassium:50
-        },
+          label: 'potato',
+          value: 'potato'
+        }
       ]
     }
-  }
+  },
+
+  computed: {
+    computed_n() {
+      return this.multipliers[this.selectedCrop].n * this.SelectedArea
+    },
+
+    computed_p() {
+      return this.multipliers[this.selectedCrop].p * this.SelectedArea
+    },
+
+    computed_k() {
+      return this.multipliers[this.selectedCrop].k * this.SelectedArea
+    }
+  },
+
+ 
 }
 </script>
