@@ -7,7 +7,9 @@
             src="https://www.letsnurture.com/wp-content/uploads/2019/01/Smart-farming-LetsNurture.jpg"
             basic
           >
-            <div class="absolute-bottom text-h6 text-center">Fertilizer Calculator</div>
+            <div class="absolute-bottom text-h6 text-center">
+              Fertilizer Calculator
+            </div>
           </q-img>
         </q-card>
 
@@ -19,34 +21,44 @@
               v-model="selectedCrop"
               :options="cropOptions"
               label="Crop"
-              emit-value
               map-options
             />
           </q-card-section>
 
           <q-card-section>
             Enter the Area of Farmland
-            <q-input style="max-width:100%" outlined v-model="SelectedArea" label="Area" />
+            <q-input
+              style="max-width:100%"
+              outlined
+              v-model="SelectedArea"
+              label="Area"
+            />
           </q-card-section>
 
           <div class="q-pa-md">
-            <q-markup-table  flat bordered>
-              <thead>
-                <tr>
-                  <th class="text-left">Crop</th>
-                  <th class="text-right">Urea(N)</th>
-                  <th class="text-right">Super Phosphate(P)</th>
-                  <th class="text-right">Potash(K)</th>
-                  <th class="text-right">Total</th>
-                </tr>
-              </thead>
+            <q-markup-table flat bordered>
               <tbody>
                 <tr>
-                  <td class="text-left">{{selectedCrop}}</td>
-                  <td class="text-right">{{computed_n}}</td>
-                  <td class="text-right">{{computed_p}}</td>
-                  <td class="text-right">{{computed_k}}</td>
-                  <td class="text-right">{{computed_p+computed_k+computed_n}}</td>
+                  <td>Crop</td>
+                  <td class="text-right">{{ selectedCrop.label }}</td>
+                </tr>
+                <tr>
+                  <td>Urea(N)</td>
+                  <td class="text-right">{{ computed_n }} kg</td>
+                </tr>
+                <tr>
+                  <td>Super Phosphate(P)</td>
+                  <td class="text-right">{{ computed_p }} kg</td>
+                </tr>
+                <tr>
+                  <td>Potash(K)</td>
+                  <td class="text-right">{{ computed_k }} kg</td>
+                </tr>
+                <tr>
+                  <td>Total</td>
+                  <td class="text-right">
+                    {{ computed_p + computed_k + computed_n }} kg
+                  </td>
                 </tr>
               </tbody>
             </q-markup-table>
@@ -57,10 +69,8 @@
   </q-page>
 </template>
 
-
 <script>
 export default {
-  
   data() {
     return {
       multipliers: {
@@ -74,19 +84,22 @@ export default {
           p: 9,
           k: 30
         },
-         corn: {
+        corn: {
           n: 25,
           p: 9,
           k: 35
         },
-         potato: {
+        potato: {
           n: 24,
           p: 10,
           k: 30
         }
       },
 
-      selectedCrop:'rice',
+      selectedCrop: {
+        label: 'Rice',
+        value: 'rice'
+      },
       SelectedArea: 0,
 
       cropOptions: [
@@ -99,11 +112,11 @@ export default {
           value: 'wheat'
         },
         {
-          label: 'corn',
+          label: 'Corn',
           value: 'corn'
         },
         {
-          label: 'potato',
+          label: 'Potato',
           value: 'potato'
         }
       ]
@@ -112,18 +125,16 @@ export default {
 
   computed: {
     computed_n() {
-      return this.multipliers[this.selectedCrop].n * this.SelectedArea
+      return this.multipliers[this.selectedCrop.value].n * this.SelectedArea
     },
 
     computed_p() {
-      return this.multipliers[this.selectedCrop].p * this.SelectedArea
+      return this.multipliers[this.selectedCrop.value].p * this.SelectedArea
     },
 
     computed_k() {
-      return this.multipliers[this.selectedCrop].k * this.SelectedArea
+      return this.multipliers[this.selectedCrop.value].k * this.SelectedArea
     }
-  },
-
- 
+  }
 }
 </script>
