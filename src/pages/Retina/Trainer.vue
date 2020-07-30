@@ -5,10 +5,10 @@
     </div>
     <div>
       <video
+        ref="webcam"
         autoplay
         playsinline
         muted
-        ref="webcam"
         width="224"
         height="224"
       ></video>
@@ -40,6 +40,15 @@ export default {
       prediction: null
     }
   },
+
+  async mounted() {
+    this.createClassifier()
+    await this.loadMobilenet()
+    await this.startWebcam()
+
+    this.startClassifier()
+  },
+
   methods: {
     async addClass(classId) {
       // Capture an image from the web camera.
@@ -107,14 +116,6 @@ export default {
 
       console.log(data)
     }
-  },
-
-  async mounted() {
-    this.createClassifier()
-    await this.loadMobilenet()
-    await this.startWebcam()
-
-    this.startClassifier()
   }
 }
 </script>
