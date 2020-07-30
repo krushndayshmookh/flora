@@ -49,6 +49,14 @@ export default {
     this.startClassifier()
   },
 
+  async destroyed() {
+    console.log(this.webcam)
+    this.webcam.stop()
+    this.webcam.stream.getTracks().forEach(function(track) {
+      track.stop()
+    })
+  },
+
   methods: {
     async addClass(classId) {
       // Capture an image from the web camera.
@@ -112,9 +120,11 @@ export default {
 
       const data = await Tensorset.stringify(dataset)
 
+      localStorage.setItem('model', data)
+
       // await this.model.save('downloads://my-model')
 
-      console.log(data)
+      // console.log(data)
     }
   }
 }

@@ -1,124 +1,112 @@
 <template lang="pug">
   q-page(padding)
     h4.text-weight-light.q-px-md.q-my-sm.text-center Disease Detection
-    .q-px-md.q-my-sm
-      q-btn.fit(color="primary" label="Get Picture" @click="captureImage")
     .q-my-sm.text-center
-      video(ref="preview" autoplay="true")
-
-      q-img(:src="capturedImage" width="300px" height="300px")
-    
+      video(ref="webcam" autoplay playsinline muted width="400" height="400")
+    .q-my-sm
+      p.text-center {{ prediction }}    
 </template>
 
 <script>
-// import { Plugins, CameraResultType } from '@capacitor/core'
-
-// const { Camera } = Plugins
-
-async function getMediaStream(constraints) {
-  return new Promise(function(resolve, reject) {
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices
-        .getUserMedia(constraints)
-        .then(stream => resolve(stream))
-        .catch(err => reject(err))
-    } else {
-      const getUserMedia =
-        navigator.getUserMedia ||
-        navigator['webkitGetUserMedia'] ||
-        navigator['mozGetUserMedia'] ||
-        navigator['msGetUserMedia']
-      getUserMedia(
-        constraints,
-        stream => resolve(stream),
-        err => reject(err)
-      )
-    }
-  })
-}
+import * as tf from '@tensorflow/tfjs'
+import * as mobilenet from '@tensorflow-models/mobilenet'
+import * as knnClassifier from '@tensorflow-models/knn-classifier'
+import Tensorset from 'tensorset'
 
 export default {
   data() {
     return {
-      // previewVideo: ''
-      imageCapture: null,
-      capturedImage: null,
-      mediaStream: null,
-      videoTrack: null
+      webcam: null,
+      classifier: null,
+      model: null,
+      prediction: null,
+      classifierStarted: false
     }
   },
 
-  mounted() {
-    this.startPreview()
+  async mounted() {
+    this.createClassifier()
+    await this.loadMobilenet()
+    await this.loadClassifierDataset()
+    await this.startWebcam()
+    this.startClassifier()
   },
 
-  destroyed() {
-    this.stopPreview()
+  async destroyed() {
+    this.stopClassifier()
+    this.stopWebcam()
   },
 
   methods: {
-    // async captureImage() {
-    //   const image = await Camera.getPhoto({
-    //     quality: 90,
-    //     allowEditing: true,
-    //     resultType: CameraResultType.Uri
-    //   })
-    //   // image.webPath will contain a path that can be set as an image src.
-    //   // You can access the original file using image.path, which can be
-    //   // passed to the Filesystem API to read the raw data of the image,
-    //   // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-    //   this.imageSrc = image.webPath
-    // }
-
-    startPreview() {
-      // var video = this.$refs.previewVideo
-      const vm = this
-      getMediaStream({
-        video: {
-          width: 300,
-          height: 300,
-          facingMode: 'environment'
-        }
-      })
-        .then(function(mediaStream) {
-          vm.mediaStream = mediaStream
-          vm.$refs.preview.srcObject = vm.mediaStream
-          vm.videoTrack = mediaStream.getVideoTracks()[0]
-          vm.imageCapture = new ImageCapture(vm.videoTrack)
-        })
-        .catch(function(err) {
-          console.log('Something went wrong!')
-          console.error(err)
-        })
+    createClassifier() {
+      this.classifier = knnClassifier.create()
     },
 
-    stopPreview() {
-      this.mediaStream.getTracks().forEach(function(track) {
+    async loadMobilenet() {
+      console.log('Loading mobilenet..')
+
+      // Load the model.
+      this.model = await mobilenet.load()
+      console.log('Successfully loaded model')
+    },
+
+    async startWebcam() {
+      // Create an object from Tensorflow.js data API which could capture image
+      // from the web camera as Tensor.
+      this.webcam = await tf.data.webcam(this.$refs.webcam)
+    },
+
+    async startClassifier() {
+      this.classifierStarted = true
+      while (this.classifierStarted) {
+        if (this.classifier.getNumClasses() > 0) {
+          const img = await this.webcam.capture()
+
+          // Get the activation from mobilenet from the webcam.
+          const activation = this.model.infer(img, 'conv_preds')
+          // Get the most likely class and confidence from the classifier module.
+          const result = await this.classifier.predictClass(activation)
+
+          const classes = ['A', 'B', 'C']
+          this.prediction = `
+            prediction: ${classes[result.label]}\n
+            probability: ${result.confidences[result.label]}
+            `
+
+          // Dispose the tensor to release the memory.
+          img.dispose()
+        }
+
+        await tf.nextFrame()
+      }
+    },
+
+    async stopWebcam() {
+      this.webcam.stop()
+      this.webcam.stream.getTracks().forEach(function(track) {
         track.stop()
       })
     },
-    captureImage() {
-      this.imageCapture
-        .takePhoto()
-        .then(blob => {
-          this.capturedImage = URL.createObjectURL(blob)
-        })
-        .catch(function(err) {
-          console.error(err)
-        })
+
+    async stopClassifier() {
+      this.classifierStarted = false
+    },
+
+    async loadClassifierDataset() {
+      // const data = localStorage.getItem('model')
+      const { data } = await this.$axios.get('/dataset.json')
+
+      const dataset = await Tensorset.parse(JSON.stringify(data))
+      this.classifier.setClassifierDataset(dataset)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-#captureBtn {
-  min-height: 300px;
-}
-
 video {
-  width: 300px;
-  height: 300px;
-  border: 1px solid blue;
+  width: 400px;
+  height: 400px;
+  // border: 1px solid blue;
 }
 </style>
