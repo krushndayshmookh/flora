@@ -110,10 +110,10 @@
         <q-spinner-dots size="2rem" />
       </q-chat-message>
 
-      <q-input label="typing..." rounded outlined v-model="text">
+      <q-input v-model="text" label="typing..." rounded outlined>
         <template v-slot:append>
           <q-spinner-dots size="2rem" />
-          <q-icon name="close" @click="text = ''" class="cursor-pointer" />
+          <q-icon name="close" class="cursor-pointer" @click="text = ''" />
         </template>
       </q-input>
     </div>

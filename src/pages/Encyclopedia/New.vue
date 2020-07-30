@@ -1,6 +1,6 @@
 <template>
   <q-page padding="">
-    <q-editor v-model="editor" height="80vh" ref="editor"/>
+    <q-editor ref="editor" v-model="editor" height="80vh"/>
   </q-page>
 </template>
 
@@ -13,11 +13,11 @@ export default {
         editor: ''
     }
   },
-  methods: {
-  },
   mounted(){
     console.log(this.$refs.editor)
 
+  },
+  methods: {
   }
 }
 </script>

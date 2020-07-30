@@ -19,12 +19,17 @@
 <script>
 export default {
   name: 'ConsumerSearchHeader',
+  props: {
+    showBigHeader: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       searchQuery: ''
     }
   },
-  props: ['showBigHeader'],
   methods: {
     execSearch() {
       this.$emit('exec-search', this.searchQuery)

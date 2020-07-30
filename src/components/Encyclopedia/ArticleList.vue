@@ -14,6 +14,11 @@
 <script>
 export default {
   name: 'EncyclopediaArticleList',
-  props: ['articles']
+  props: {
+    articles: {
+      type: Array,
+      default: () => []
+    }
+  }
 }
 </script>

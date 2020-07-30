@@ -22,15 +22,10 @@ q-dialog(v-model="show" position="bottom")
 <script>
 export default {
   name: 'FieldAddDialog',
-  props: ['value'],
-  computed: {
-    show: {
-      get() {
-        return this.value
-      },
-      set(opened) {
-        this.$emit('change', opened)
-      }
+  props: {
+    value: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -39,6 +34,16 @@ export default {
         title: null,
         area: null,
         crop: null
+      }
+    }
+  },
+  computed: {
+    show: {
+      get() {
+        return this.value
+      },
+      set(opened) {
+        this.$emit('change', opened)
       }
     }
   },

@@ -42,8 +42,8 @@
               >
                 Rating:
                 <q-rating
-                  :max="5"
                   v-model="ratingModel"
+                  :max="5"
                   size="1em"
                   color="grey"
                   :color-selected="ratingColors"
@@ -116,8 +116,8 @@
                 </div>
                 <div class="q-pa-xs">
                   <q-input
-                    outline
                     v-model="text"
+                    outline
                     :dense="dense"
                     style="max-width:300px"
                     ><q-btn flat> Dilevery</q-btn>

@@ -12,10 +12,15 @@
 import FieldCard from 'components/Farmer/FieldCard'
 
 export default {
-  name:'FieldList',
-  props:['fields'],
-  components:{
+  name: 'FieldList',
+  components: {
     FieldCard
+  },
+  props: {
+    fields: {
+      type: Array,
+      default: () => []
+    }
   }
 }
 </script>

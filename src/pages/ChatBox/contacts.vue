@@ -4,9 +4,9 @@
     <q-item
       v-for="contact in contacts"
       :key="contact.id"
+      v-ripple
       class="q-my-sm"
       clickable
-      v-ripple
       :to="'/chatbox/chat/' + contact.id"
     >
       <q-item-section avatar>
@@ -31,9 +31,9 @@
     <q-item
       v-for="contact in offline"
       :key="contact.id"
+      v-ripple
       class="q-mb-sm"
       clickable
-      v-ripple
     >
       <q-item-section avatar>
         <q-avatar>

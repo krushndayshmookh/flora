@@ -2,9 +2,9 @@
   <q-page class="padding adjust-3">
     <div class="row q-col-gutter-md">
       <div
-        class="col-12 col-sm-3"
         v-for="product in products"
         :key="product.id"
+        class="col-12 col-sm-3"
       >
         <q-card>
           <q-img :src="product.image" />
@@ -58,7 +58,12 @@
 <script>
 export default {
   name: 'ProductList',
-  props: ['products']
+  props: {
+    products: {
+      type: Array,
+      default: () => []
+    }
+  }
 }
 </script>
 <style scoped>

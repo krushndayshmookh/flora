@@ -33,57 +33,65 @@ q-dialog(v-model="show")
 
 <script>
 export default {
-    name: 'FieldAddDialog',
-    props: ['value'],
-    computed: {
-        show: {
-            get() {
-                return this.value
-            },
-            set(opened) {
-                this.$emit('change', opened)
-            }
-        }
-    },
-    data() {
-        return {
-            field: {
-                title: null,
-                area: null,
-                name: null,
-                age: null,
-                gender: null,
-                farea: null,
-                rarea: null,
-                aadhar: null,
-                exprience: null,
-                accept: false,
-            }
-        }
-    },
+  name: 'FieldAddDialog',
 
-    methods: {
-        onSubmit() {
-            this.$q.notify({
-                color: 'green-5',
-                textColor: 'white',
-                icon: 'cloud_done',
-                message: 'Created!'
-            })
-            this.show = false
-        },
-
-        onReset() {
-            this.field.field = null
-            this.field.area = null
-            this.show = false
-        }
+  props: {
+    value: {
+      type: Boolean,
+      default: false
     }
+  },
+
+  data() {
+    return {
+      field: {
+        title: null,
+        area: null,
+        name: null,
+        age: null,
+        gender: null,
+        farea: null,
+        rarea: null,
+        aadhar: null,
+        exprience: null,
+        accept: false
+      }
+    }
+  },
+
+  computed: {
+    show: {
+      get() {
+        return this.value
+      },
+      set(opened) {
+        this.$emit('change', opened)
+      }
+    }
+  },
+
+  methods: {
+    onSubmit() {
+      this.$q.notify({
+        color: 'green-5',
+        textColor: 'white',
+        icon: 'cloud_done',
+        message: 'Created!'
+      })
+      this.show = false
+    },
+
+    onReset() {
+      this.field.field = null
+      this.field.area = null
+      this.show = false
+    }
+  }
 }
 </script>
 
 <style scoped>
 .field-block {
-    min-width: '600vh'
+  min-width: '600vh';
 }
 </style>

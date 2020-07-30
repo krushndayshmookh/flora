@@ -314,6 +314,10 @@ export default {
     }
   },
 
+  mounted() {
+    this.fetchField()
+  },
+
   methods: {
     fetchField() {
       this.fieldInDB = {
@@ -359,10 +363,6 @@ export default {
     abortFilterFn() {
       // console.log('delayed filter aborted')
     }
-  },
-
-  mounted() {
-    this.fetchField()
   }
 }
 </script>

@@ -9,9 +9,9 @@
         </q-img>
         <q-card-section>
           <q-input
+            v-model="username"
             color="teal"
             filled
-            v-model="username"
             placeholder="Username"
             input-class="text-left"
             class="q-mb-md"
@@ -22,9 +22,9 @@
             </template>
           </q-input>
           <q-input
+            v-model="password"
             color="teal"
             filled
-            v-model="password"
             placeholder="Password"
             input-class="text-left"
             class="q-mb-md"

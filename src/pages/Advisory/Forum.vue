@@ -39,9 +39,9 @@
             </q-item>
 
             <q-input
+              v-model="question"
               outlined
               standout="text-primary"
-              v-model="question"
               label="Add a Question"
               dense
             />

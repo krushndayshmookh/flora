@@ -1,6 +1,6 @@
 <template>
   <q-page class="padding adjust-3">
-    <div class="col-3 adjust-3" v-for="service in services" :key="service.id">
+    <div v-for="service in services" :key="service.id" class="col-3 adjust-3">
       <q-card class="my-card">
         <q-card-section horizontal>
           <q-img class="col-4" :src="service.image" />
@@ -49,9 +49,9 @@
                     <q-item
                       v-for="contact in contacts"
                       :key="contact.id"
+                      v-ripple
                       class="q-my-sm"
                       clickable
-                      v-ripple
                     >
                       <q-item-section avatar>
                         <q-avatar color="primary" text-color="white">
@@ -82,9 +82,9 @@
                     <q-item
                       v-for="contact in contacts"
                       :key="contact.id"
+                      v-ripple
                       class="q-my-sm"
                       clickable
-                      v-ripple
                     >
                       <q-item-section avatar>
                         <q-avatar color="primary" text-color="white">
@@ -153,7 +153,12 @@ const contacts = [
 ]
 export default {
   name: 'ServiceList',
-  props: ['services'],
+  props: {
+    services: {
+      type: Array,
+      default: () => []
+    }
+  },
   data() {
     return {
       dealer: false,

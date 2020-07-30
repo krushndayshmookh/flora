@@ -24,6 +24,11 @@
 export default {
   name: 'FieldWaterTimeline',
 
-  props: ['events']
+  props: {
+    events: {
+      type: Array,
+      default: () => []
+    }
+  }
 }
 </script>

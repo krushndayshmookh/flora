@@ -5,7 +5,7 @@
         February 22, 1986
       </template>
       <template v-slot:title>
-         fertiliser
+        fertiliser
       </template>
       <div>
         <div class="text-body2">Some description or notes</div>
@@ -18,6 +18,11 @@
 export default {
   name: 'FieldFertilizerTimeline',
 
-  props: ['events']
+  props: {
+    events: {
+      type: Array,
+      default: () => []
+    }
+  }
 }
 </script>

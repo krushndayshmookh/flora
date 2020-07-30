@@ -1,8 +1,8 @@
 <template>
   <div class="q-pa-md">
     <q-carousel
-      animated
       v-model="slide"
+      animated
       navigation
       infinite
       :autoplay="autoplay"
@@ -35,8 +35,8 @@
               color="accent"
               round
               dense
-              @click="props.expand = !props.expand"
               :icon="props.expand ? 'remove' : 'add'"
+              @click="props.expand = !props.expand"
             />
           </q-td>
           <q-td v-for="col in props.cols" :key="col.name" :props="props">
@@ -63,9 +63,9 @@
     <q-separator />
 
     <q-stepper
+      ref="stepper"
       v-model="step"
       header-nav
-      ref="stepper"
       vertical
       color="primary"
       animated
@@ -277,7 +277,7 @@ Similarly, there is no margin for loans for purchase of land up to Rs 50,000 and
           <q-btn flat @click="step = 1" color="primary" label="Back" class="q-ml-sm" />
         </q-stepper-navigation> -->
       </q-step>
-      <q-btn label="Reset" push color="white" text-color="primary" @click="reset" class="q-mb-md" />
+      <q-btn label="Reset" push color="white" text-color="primary" class="q-mb-md" @click="reset" />
     </q-stepper>
   </div>  
 </template>

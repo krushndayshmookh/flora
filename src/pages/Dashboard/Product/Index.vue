@@ -84,8 +84,8 @@
           </div>
       <div class="col-2 col-sm-2 col-xs-4">
         <q-select
-          bottom-slots
           v-model="selectedCat"
+          bottom-slots
           :options="cat"
           counter
           maxlength="12"
@@ -100,8 +100,8 @@
       </div>
       <div class="col-2 col-sm-2 col-xs-5">
         <q-select
-          bottom-slots
           v-model="selectedSel"
+          bottom-slots
           :options="sel"
           label=""
           counter
@@ -117,15 +117,15 @@
       </div>
       <div class="col-3 col-sm-2 col-xs-5">
         <q-select
-          bottom-slots
           v-model="model"
+          bottom-slots
           use-input
           use-chips
           multiple
-          @new-value="createValue"
           :options="filterOptions"
-          @filter="filterFn"
           style="margin-right:14px"
+          @new-value="createValue"
+          @filter="filterFn"
         >
           <template v-slot:hint>
             Select Multiple Brand

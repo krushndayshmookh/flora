@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <EncyclopediaSearchHeader
-      :showBigHeader="showBigHeader"
+      :show-big-header="showBigHeader"
       @exec-search="executeSearch"
     >
     </EncyclopediaSearchHeader>

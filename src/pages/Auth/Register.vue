@@ -9,9 +9,9 @@
         </q-img>
         <q-card-section>
           <q-input
+            v-model="user.name"
             color="teal"
             filled
-            v-model="user.name"
             placeholder="Name"
             input-class="text"
             class="q-mb-md"
@@ -21,9 +21,9 @@
               <q-icon style="margin-right:25px" name="person" /> </template
           ></q-input>
           <q-input
+            v-model="user.username"
             color="teal"
             filled
-            v-model="user.username"
             placeholder="Username"
             input-class="text"
             class="q-mb-md"
@@ -34,9 +34,9 @@
           ></q-input>
 
           <q-input
+            v-model="user.password"
             color="teal"
             filled
-            v-model="user.password"
             placeholder="Password"
             input-class="text"
             class="q-mb-md"

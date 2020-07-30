@@ -26,6 +26,10 @@ export default {
     }
   },
 
+  mounted() {
+    this.fetchFeeds()
+  },
+
   methods: {
     fetchFeeds() {
       this.$q.loading.show()
@@ -63,10 +67,6 @@ export default {
         this.$q.loading.hide()
       }, 500)
     }
-  },
-
-  mounted() {
-    this.fetchFeeds()
   }
 }
 </script>

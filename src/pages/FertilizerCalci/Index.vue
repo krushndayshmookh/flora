@@ -17,8 +17,8 @@
           <q-card-section>
             Select the Type of Crop
             <q-select
-              outlined
               v-model="selectedCrop"
+              outlined
               :options="cropOptions"
               label="Crop"
               map-options
@@ -28,9 +28,9 @@
           <q-card-section>
             Enter the Area of Farmland
             <q-input
+              v-model="SelectedArea"
               style="max-width:100%"
               outlined
-              v-model="SelectedArea"
               label="Area"
             />
           </q-card-section>

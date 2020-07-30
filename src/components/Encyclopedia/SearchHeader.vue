@@ -16,13 +16,18 @@
 export default {
   name: 'EncyclopediaSearchHeader',
 
+  props: {
+    showBigHeader: {
+      type: Boolean,
+      default: false
+    }
+  },
+
   data() {
     return {
       searchQuery: ''
     }
   },
-
-  props: ['showBigHeader'],
 
   watch: {
     searchQuery(query) {

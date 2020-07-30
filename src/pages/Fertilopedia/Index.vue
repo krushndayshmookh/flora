@@ -24,6 +24,12 @@ import { LMap, LTileLayer, LMarker, LIcon } from 'vue2-leaflet'
 import 'leaflet/dist/leaflet.css'
 
 export default {
+  components: {
+    LMap,
+    LTileLayer,
+    LMarker,
+    LIcon
+  },
   data() {
     return {
       position: 'determining...',
@@ -39,18 +45,9 @@ export default {
       })
     }
   },
-  components: {
-    LMap,
-    LTileLayer,
-    LMarker,
-    LIcon
-  },
-  methods: {
-    getCurrentPosition() {
-      Geolocation.getCurrentPosition().then(position => {
-        console.log('Current', position)
-        this.position = position
-      })
+  computed: {
+    center() {
+      return [this.position.coords.latitude, this.position.coords.longitude]
     }
   },
   mounted() {
@@ -66,9 +63,12 @@ export default {
     // we do cleanup
     Geolocation.clearWatch(this.geoId)
   },
-  computed: {
-    center() {
-      return [this.position.coords.latitude, this.position.coords.longitude]
+  methods: {
+    getCurrentPosition() {
+      Geolocation.getCurrentPosition().then(position => {
+        console.log('Current', position)
+        this.position = position
+      })
     }
   }
 }

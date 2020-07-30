@@ -5,8 +5,8 @@
         <q-item
           v-for="userType in userTypes"
           :key="userType._id"
-          clickable
           v-ripple
+          clickable
           :to="userType.link"
           active-class="active-user-link"
         >

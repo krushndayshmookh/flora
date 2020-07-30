@@ -6,6 +6,10 @@
 export default {
   name: 'LayoutDashboardFarmer',
 
+  mounted() {
+    this.setLeftDrawerOptions()
+  },
+
   methods: {
     setLeftDrawerOptions() {
       let options = [
@@ -90,10 +94,6 @@ export default {
       this.$store.dispatch('general/setLeftSideDrawerOptions', options)
       this.$store.dispatch('general/setCurrentUserType', 'farmer')
     }
-  },
-
-  mounted() {
-    this.setLeftDrawerOptions()
   }
 }
 </script>

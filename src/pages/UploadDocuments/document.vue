@@ -1,9 +1,9 @@
 <template>
   <div class="q-pa-md">
     <div class="q-gutter-y-md column" style="max-width: 300px">
-      <q-input label="Add Document name here!!" rounded outlined v-model="text">
+      <q-input v-model="text" label="Add Document name here!!" rounded outlined>
         <template v-slot:append>
-          <q-icon name="close" @click="text = ''" class="cursor-pointer" />
+          <q-icon name="close" class="cursor-pointer" @click="text = ''" />
         </template>
       </q-input>
       <div class="q-pa-md">
@@ -17,20 +17,20 @@
               <q-btn
                 v-if="scope.queuedFiles.length > 0"
                 icon="clear_all"
-                @click="scope.removeQueuedFiles"
                 round
                 dense
                 flat
+                @click="scope.removeQueuedFiles"
               >
                 <q-tooltip>Clear All</q-tooltip>
               </q-btn>
               <q-btn
                 v-if="scope.uploadedFiles.length > 0"
                 icon="done_all"
-                @click="scope.removeUploadedFiles"
                 round
                 dense
                 flat
+                @click="scope.removeUploadedFiles"
               >
                 <q-tooltip>Remove Uploaded Files</q-tooltip>
               </q-btn>
@@ -55,10 +55,10 @@
               <q-btn
                 v-if="scope.canUpload"
                 icon="cloud_upload"
-                @click="scope.upload"
                 round
                 dense
                 flat
+                @click="scope.upload"
               >
                 <q-tooltip>Upload Files</q-tooltip>
               </q-btn>
@@ -66,10 +66,10 @@
               <q-btn
                 v-if="scope.isUploading"
                 icon="clear"
-                @click="scope.abort"
                 round
                 dense
                 flat
+                @click="scope.abort"
               >
                 <q-tooltip>Abort Upload</q-tooltip>
               </q-btn>

@@ -28,12 +28,14 @@
 <script>
 export default {
   name: 'LeftSideDrawer',
-  props: ['value'],
+  props: {
+    value: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {}
-  },
-  created() {
-    this.$q.dark.set(this.darkMode)
   },
   computed: {
     drawerOpen: {
@@ -60,6 +62,9 @@ export default {
     darkMode(enabled) {
       this.$q.dark.set(enabled)
     }
+  },
+  created() {
+    this.$q.dark.set(this.darkMode)
   }
 }
 </script>

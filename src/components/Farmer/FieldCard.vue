@@ -12,6 +12,16 @@
 <script>
 export default {
   name: 'FieldCard',
-  props: ['field']
+  props: {
+    field: {
+      type: Object,
+      default: () => ({
+        id: 0,
+        image: '',
+        title: '',
+        crop: ''
+      })
+    }
+  }
 }
 </script>
