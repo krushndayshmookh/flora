@@ -42,9 +42,20 @@ export default {
     return {
       // previewVideo: ''
       imageCapture: null,
-      capturedImage: null
+      capturedImage: null,
+      mediaStream: null,
+      videoTrack: null
     }
   },
+
+  mounted() {
+    this.startPreview()
+  },
+
+  destroyed() {
+    this.stopPreview()
+  },
+
   methods: {
     // async captureImage() {
     //   const image = await Camera.getPhoto({
@@ -70,9 +81,10 @@ export default {
         }
       })
         .then(function(mediaStream) {
-          vm.$refs.preview.srcObject = mediaStream
-          const track = mediaStream.getVideoTracks()[0]
-          vm.imageCapture = new ImageCapture(track)
+          vm.mediaStream = mediaStream
+          vm.$refs.preview.srcObject = vm.mediaStream
+          vm.videoTrack = mediaStream.getVideoTracks()[0]
+          vm.imageCapture = new ImageCapture(vm.videoTrack)
         })
         .catch(function(err) {
           console.log('Something went wrong!')
@@ -80,6 +92,11 @@ export default {
         })
     },
 
+    stopPreview() {
+      this.mediaStream.getTracks().forEach(function(track) {
+        track.stop()
+      })
+    },
     captureImage() {
       this.imageCapture
         .takePhoto()
@@ -90,10 +107,6 @@ export default {
           console.error(err)
         })
     }
-  },
-
-  mounted() {
-    this.startPreview()
   }
 }
 </script>
