@@ -124,6 +124,11 @@ const routes = [{
                 component: () =>
                     import ('pages/Retina/Trainer.vue')
             },
+            {
+                path: 'retina/trainer/auto',
+                component: () =>
+                    import ('pages/Retina/TrainerAuto.vue')
+            },
 
             // { path: 'Advisory', component: () => import('pages/Advisory/Forum.vue') },
             {
