@@ -104,7 +104,7 @@
 
             .col-auto
               q-btn(color="green" label="Save" v-if="changed" @click="saveField")
-        q-dialog(v-model="editDialog")
+        q-dialog(v-model="editDialog" position="bottom")
           FieldEditDialog(:field="field" @done="handleEditDone")
         
       q-tab-panel.q-pa-none(name="water")
