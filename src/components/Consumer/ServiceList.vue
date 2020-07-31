@@ -1,3 +1,4 @@
+<!-- eslint-disable -->
 <template>
   <q-page class="padding adjust-3">
     <div v-for="service in services" :key="service.id" class="col-3 adjust-3">
