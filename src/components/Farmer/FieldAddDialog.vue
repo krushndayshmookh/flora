@@ -11,7 +11,7 @@ q-dialog(v-model="show" position="bottom")
 					q-input(outlined color="teal" v-model="field.area" placeholder="Area" class="col" type="number" suffix="Acres" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']")
 						template(v-slot:prepend)
 							q-icon(name="open_with")
-					q-input(outlined color="teal" v-model="field.crop" placeholder="Crop" class="col" type="text" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']")
+					//- q-input(outlined color="teal" v-model="field.crop" placeholder="Crop" class="col" type="text" lazy-rules :rules="[ val => val && val.length > 0 || 'Please type something']")
 						template(v-slot:prepend)
 							q-icon(name="eco")
 		q-card-actions.q-pa-md(align="right")
@@ -50,13 +50,31 @@ export default {
 
   methods: {
     onSubmit() {
-      this.$q.notify({
-        color: 'green-5',
-        textColor: 'white',
-        icon: 'cloud_done',
-        message: 'Created!'
-      })
-      this.show = false
+      this.$q.loading.show()
+      this.$axios
+        .post(process.env.API + '/fields', this.field)
+        .then(response => {
+          console.log(response.data)
+          this.$q.notify({
+            color: 'green-5',
+            textColor: 'white',
+            icon: 'cloud_done',
+            message: 'Created!'
+          })
+          this.show = false
+        })
+        .catch(err => {
+          console.error(err)
+          this.$q.notify({
+            color: 'negative',
+            textColor: 'white',
+            icon: 'error',
+            message: 'Error!'
+          })
+        })
+        .finally(() => {
+          this.$q.loading.hide()
+        })
     }
   }
 }
