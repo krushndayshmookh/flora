@@ -84,7 +84,8 @@ export default {
         })
         .then(response => {
           console.log(response.data)
-          this.$router.push('/')
+          this.$store.dispatch('auth/login', response.data.data)
+          this.$router.replace('/')
         })
         .catch(error => {
           console.error(error)
