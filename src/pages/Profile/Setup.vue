@@ -7,7 +7,7 @@
       <q-card-section>
         <div class="row q-col-gutter-md">
           <!-- <div class="col-6">
-            <q-btn color="primary" class="fit" outline stack>
+            <q-btn color="primary" class="fit" outline stack @click="selectRole()">
               <q-img
                 src="https://img.icons8.com/plasticine/400/000000/field.png"
               />
@@ -15,14 +15,14 @@
             </q-btn>
           </div> -->
           <div class="col-6">
-            <q-btn color="primary" class="fit" outline stack>
+            <q-btn color="primary" class="fit" outline stack @click="selectRole('farmer')">
               <q-img src="https://img.icons8.com/color/400/000000/field.png" />
               Farmer
             </q-btn>
           </div>
 
           <!-- <div class="col-6">
-            <q-btn color="primary" class="fit" outline stack>
+            <q-btn color="primary" class="fit" outline stack @click="selectRole()">
               <q-img
                 src="https://img.icons8.com/plasticine/400/000000/shipped.png"
               />
@@ -30,7 +30,7 @@
             </q-btn>
           </div> -->
           <div class="col-6">
-            <q-btn color="primary" class="fit" outline stack>
+            <q-btn color="primary" class="fit" outline stack @click="selectRole('trader')">
               <q-img
                 src="https://img.icons8.com/color/400/000000/shipped.png"
               />
@@ -39,7 +39,7 @@
           </div>
 
           <!-- <div class="col-6">
-            <q-btn color="primary" class="fit" outline stack>
+            <q-btn color="primary" class="fit" outline stack @click="selectRole()">
               <q-img
                 src="https://img.icons8.com/plasticine/400/000000/doctor-female.png"
               />
@@ -47,7 +47,7 @@
             </q-btn>
           </div> -->
           <div class="col-6">
-            <q-btn color="primary" class="fit" outline stack>
+            <q-btn color="primary" class="fit" outline stack @click="selectRole('doctor')">
               <q-img
                 src="https://img.icons8.com/color/400/000000/doctor-female.png"
               />
@@ -56,7 +56,7 @@
           </div>
 
           <!-- <div class="col-6">
-            <q-btn color="primary" class="fit" outline stack>
+            <q-btn color="primary" class="fit" outline stack @click="selectRole()">
               <q-img
                 src="https://img.icons8.com/plasticine/400/000000/shopping-cart.png"
               />
@@ -64,7 +64,7 @@
             </q-btn>
           </div> -->
           <div class="col-6">
-            <q-btn color="primary" class="fit" outline stack>
+            <q-btn color="primary" class="fit" outline stack @click="selectRole('consumer')">
               <q-img
                 src="https://img.icons8.com/color/400/000000/shopping-cart.png"
               />
@@ -73,7 +73,7 @@
           </div>
 
           <!-- <div class="col-6">
-            <q-btn color="primary" class="fit" outline stack>
+            <q-btn color="primary" class="fit" outline stack @click="selectRole()">
               <q-img
                 src="https://img.icons8.com/plasticine/400/000000/literature.png"
               />
@@ -81,7 +81,7 @@
             </q-btn>
           </div> -->
           <div class="col-6">
-            <q-btn color="primary" class="fit" outline stack>
+            <q-btn color="primary" class="fit" outline stack @click="selectRole('expert')">
               <q-img
                 src="https://img.icons8.com/color/400/000000/literature.png"
               />
@@ -90,7 +90,7 @@
           </div>
 
           <!-- <div class="col-6">
-            <q-btn color="primary" class="fit" outline stack>
+            <q-btn color="primary" class="fit" outline stack @click="selectRole()">
               <q-img
                 src="https://img.icons8.com/plasticine/400/000000/administrative-tools.png"
               />
@@ -98,7 +98,7 @@
             </q-btn>
           </div> -->
           <div class="col-6">
-            <q-btn color="primary" class="fit" outline stack>
+            <q-btn color="primary" class="fit" outline stack @click="selectRole('admin')">
               <q-img
                 src="https://img.icons8.com/color/400/000000/administrative-tools.png"
               />
@@ -110,3 +110,48 @@
     </q-card>
   </q-page>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      roles: []
+    }
+  },
+
+  methods: {
+    selectRole(role) {
+      this.roles.push(role)
+      this.updateUser()
+    },
+
+    updateUser() {
+      this.$q.loading.show()
+      this.$axios
+        .put(process.env.API + '/users/roles', { roles: this.roles })
+        .then(response => {
+          console.log(response.data)
+          this.$q.notify({
+            color: 'green-5',
+            textColor: 'white',
+            icon: 'cloud_done',
+            message: 'Updated!'
+          })
+          this.$router.replace('/')
+        })
+        .catch(err => {
+          console.error(err)
+          this.$q.notify({
+            color: 'negative',
+            textColor: 'white',
+            icon: 'error',
+            message: 'Error!'
+          })
+        })
+        .finally(() => {
+          this.$q.loading.hide()
+        })
+    }
+  }
+}
+</script>
