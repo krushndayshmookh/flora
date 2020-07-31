@@ -55,7 +55,23 @@
               q-item-section
                 q-item-label {{ field.expectedQuantity || 0 }} kg
               q-item-section(side)
-                q-item-label(caption) Expected quantity
+                q-item-label(caption) Expected Quantity
+
+            q-item(v-ripple)
+              q-item-section(avatar)
+                q-icon(color="primary" name="event_available")
+              q-item-section
+                q-item-label {{ field.harvestedDate }}
+              q-item-section(side)
+                q-item-label(caption) Harvested on
+
+            q-item(v-ripple)
+              q-item-section(avatar)
+                q-icon(color="primary" name="category")
+              q-item-section
+                q-item-label {{ field.harvestedQuantity || 0 }} kg
+              q-item-section(side)
+                q-item-label(caption) Harvested Quantity
 
         q-page-sticky.btn(position="bottom-right" :offset="[18, 18]")
           q-btn(fab icon="edit" color="primary")
@@ -324,13 +340,19 @@ export default {
         title: 'title',
         area: 9,
         crop: 'wheat',
-        plantedDate: new moment().format('YYYY/MM/DD')
+        plantedDate: new moment().format('D MMM, YYYY')
       }
       this.fieldInDB.expectedDate = new moment(this.fieldInDB.plantedDate)
         .add(3, 'months')
-        .format('YYYY/MM/DD')
+        .format('D MMM, YYYY')
+
+      this.fieldInDB.harvestedDate = new moment(this.fieldInDB.plantedDate)
+        .add(3, 'months')
+        .add(3, 'days')
+        .format('D MMM, YYYY')
 
       this.fieldInDB.expectedQuantity = 900
+      this.fieldInDB.harvestedQuantity = 900 + 5 
 
       this.field = _.clone(this.fieldInDB, true)
     },
@@ -343,7 +365,7 @@ export default {
       })
       this.field.expectedDate = new moment(this.field.plantedDate)
         .add(3, 'months')
-        .format('YYYY/MM/DD')
+        .format('D MMM, YYYY')
       this.fieldInDB = _.clone(this.field, true)
     },
     filterFn(val, update, abort) {
