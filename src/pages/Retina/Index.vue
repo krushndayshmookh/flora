@@ -67,11 +67,13 @@ export default {
           // Get the most likely class and confidence from the classifier module.
           const result = await this.classifier.predictClass(activation)
 
-          const classes = ['A', 'B', 'C']
-          this.prediction = `
-            prediction: ${classes[result.label]}\n
-            probability: ${result.confidences[result.label]}
-            `
+          console.log(activation)
+          console.log(result)
+
+          this.prediction = ''
+          Object.keys(result.confidences).forEach(k => {
+            this.prediction += `${k} = ${result.confidences[k]}\n`
+          })
 
           // Dispose the tensor to release the memory.
           img.dispose()
