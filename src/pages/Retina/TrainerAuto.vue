@@ -50,6 +50,83 @@ export default {
           label: 'cat',
           src: '/images/retina/cat_white/5.jpg'
         },
+        {
+          label: 'cat',
+          src: '/images/retina/cat_white/cat1.jpg'
+        },
+        {
+          label: 'cat',
+          src: '/images/retina/cat_white/cat2.jpg'
+        },
+        {
+          label: 'cat',
+          src: '/images/retina/cat_white/cat3.jpg'
+        },
+        {
+        label: 'cat',
+          src: '/images/retina/cat_white/cat4.jpg'
+        },
+        {
+          label: 'cat',
+          src: '/images/retina/cat_white/cat5.jpg'
+        },
+        {
+          label: 'cat',
+          src: '/images/retina/cat_white/cat6.jpg'
+        },
+        {
+          label: 'cat',
+          src: '/images/retina/cat_white/cat7.jpg'
+        },
+        {
+          label: 'cat',
+          src: '/images/retina/cat_white/cat8.jpg'
+        },
+        {
+          label: 'cat',
+          src: '/images/retina/cat_white/cat9.jpg'
+        },
+        {
+          label: 'cat',
+          src: '/images/retina/cat_white/cat10.jpg'
+        },
+        {
+          label: 'cat',
+          src: '/images/retina/cat_white/cat11.jpg'
+        },
+        {
+          label: 'cat',
+          src: '/images/retina/cat_white/cat12.jpg'
+        },
+        {
+          label: 'cat',
+          src: '/images/retina/cat_white/cat13.jpg'
+        },
+        {
+          label: 'cat',
+          src: '/images/retina/cat_white/cat14.jpg'
+        },
+        {
+          label: 'cat',
+          src: '/images/retina/cat_white/cat15.jpg'
+        },{
+          label: 'cat',
+          src: '/images/retina/cat_white/cat16.jpg'
+        },{
+          label: 'cat',
+          src: '/images/retina/cat_white/cat17.jpg'
+        },{
+          label: 'cat',
+          src: '/images/retina/cat_white/cat18.jpg'
+        },{
+          label: 'cat',
+          src: '/images/retina/cat_white/cat19.jpg'
+        },{
+          label: 'cat',
+          src: '/images/retina/cat_white/cat20.jpg'
+        },
+
+
 
         {
           label: 'dog',
@@ -70,7 +147,69 @@ export default {
         {
           label: 'dog',
           src: '/images/retina/labrador_black/5.jpg'
-        }
+        },
+         {
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab1.jpg'
+        },
+        {
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab2.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab3.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab4.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab5.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab6.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab7.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab8.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab9.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab10.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab11.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab12.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab13.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab14.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab15.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab16.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab17.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab18.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab19.jpg'
+        },{
+          label: 'dog',
+          src: '/images/retina/labrador_black/lab20.jpg'
+        },
       ]
     }
   },
