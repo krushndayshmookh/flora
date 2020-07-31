@@ -8,6 +8,9 @@
     q-page-sticky.btn(position="bottom-right" :offset="[18, 18]")
       q-btn(fab icon="add" color="primary" @click="toggleDialog(true)")
 
+    q-page-sticky.btn(position="bottom-left" :offset="[18, 18]")
+      q-btn(fab icon="report" color="negative" @click="reportProductionFail")
+
 </template>
 
 <script>
@@ -60,7 +63,9 @@ export default {
   methods: {
     toggleDialog(val) {
       this.fieldDialogOpen = val
-    }
+    },
+
+    reportProductionFail() {}
   }
 }
 </script>
