@@ -74,7 +74,7 @@
                 q-item-label(caption) Harvested Quantity
 
         q-page-sticky.btn(position="bottom-right" :offset="[18, 18]")
-          q-btn(fab icon="edit" color="primary")
+          q-btn(fab icon="edit" color="primary" @click="showEditDialog")
 
         //- q-card-section.q-pt-none
           //- h5.text-weight-light.q-my-sm Crop: {{ ' ' }}
@@ -104,7 +104,8 @@
 
             .col-auto
               q-btn(color="green" label="Save" v-if="changed" @click="saveField")
-
+        q-dialog(v-model="editDialog")
+          FieldEditDialog(:field="field" @done="handleEditDone")
         
       q-tab-panel.q-pa-none(name="water")
         //- q-card-section
@@ -145,17 +146,21 @@ import moment from 'moment'
 
 import FieldWaterTimeline from 'components/Farmer/FieldWaterTimeline'
 import FieldFertilizerTimeline from 'components/Farmer/FieldFertilizerTimeline'
+import FieldEditDialog from 'components/Farmer/FieldEditDialog.vue'
 
 export default {
   name: 'DashboardFarmerField',
 
   components: {
     FieldWaterTimeline,
-    FieldFertilizerTimeline
+    FieldFertilizerTimeline,
+    FieldEditDialog
   },
 
   data() {
     return {
+      editDialog: false,
+
       field: {
         title: '',
         area: 0,
@@ -384,6 +389,18 @@ export default {
 
     abortFilterFn() {
       // console.log('delayed filter aborted')
+    },
+
+    showEditDialog() {
+      this.editDialog = true
+    },
+
+    hideEditDialog() {
+      this.editDialog = false
+    },
+
+    handleEditDone() {
+      this.hideEditDialog()
     }
   }
 }
