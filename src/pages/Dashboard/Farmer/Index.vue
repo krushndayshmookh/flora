@@ -29,32 +29,32 @@ export default {
       fields: [
         {
           id: 0,
-          image: 'https://cdn.quasar.dev/img/parallax1.jpg',
-          title: 'Field 0',
+          image: 'images/banner-1.jpg',
+          title: 'Wheat',
           crop: 'Field 0'
         },
         {
           id: 1,
-          image: 'https://cdn.quasar.dev/img/parallax2.jpg',
-          title: 'Field 1',
+         image: 'images/baner-3.png',
+          title: 'Corn',
           crop: 'Field 1'
         },
         {
           id: 2,
-          image: 'https://cdn.quasar.dev/img/parallax1.jpg',
-          title: 'Field 2',
+          image: 'images/banner-2.jpg',
+          title: 'Rice',
           crop: 'Field 2'
         },
         {
           id: 3,
-          image: 'https://cdn.quasar.dev/img/parallax2.jpg',
-          title: 'Field 2',
-          crop: 'Field 2'
+         image: 'images/baner-3.png',
+          title: 'Cotton',
+          crop: 'Field 3'
         },
         {
           id: 4,
-          image: 'https://cdn.quasar.dev/img/parallax1.jpg',
-          title: 'Field 4',
+          image: 'images/banner-2.jpg',
+          title: 'Dal',
           crop: 'Field 4'
         }
       ]

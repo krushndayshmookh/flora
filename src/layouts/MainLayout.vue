@@ -5,17 +5,20 @@
         q-btn(flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer")
         q-toolbar-title Flora
         q-btn(flat dense round icon="notifications" aria-label="User" @click="toggleNotifications")
-        //- q-btn(flat dense round icon="account_circle" aria-label="User" @click="toggleRightDrawer")
         q-btn(flat dense round icon="account_circle" aria-label="User" @click="toggleUserChooser")
+        q-btn(flat dense round icon="person" aria-label="User" @click="toggleRightDrawer")
 
     LeftSideDrawer
-    //- RightSideDrawer
+    
 
     q-dialog(v-model="showNotifications" position="top" maximized)
       Notifications
 
     q-dialog(v-model="showUserChooser" position="right")
       UserChooser
+      
+    q-dialog(v-model="showRightSideDrawer" position="right")
+      RightSideDrawer
 
     q-page-container
       router-view
@@ -24,7 +27,7 @@
 
 <script>
 import LeftSideDrawer from 'components/LeftSideDrawer'
-// import RightSideDrawer from 'components/RightSideDrawer'
+import RightSideDrawer from 'components/RightSideDrawer'
 import Notifications from 'components/Notifications'
 import UserChooser from 'components/UserChooser'
 
@@ -33,7 +36,7 @@ export default {
 
   components: {
     LeftSideDrawer,
-    // RightSideDrawer,
+    RightSideDrawer,
     Notifications,
     UserChooser
   },
@@ -41,20 +44,21 @@ export default {
   data() {
     return {
       showNotifications: false,
-      showUserChooser: false
+      showUserChooser: false,
+      showRightSideDrawer: false
     }
   },
   methods: {
     toggleLeftDrawer() {
       this.$store.dispatch('general/toggleLeftSideDrawer')
     },
-    // toggleRightDrawer() {
-    //   this.$store.dispatch('general/toggleRightSideDrawer')
-    // },
-    toggleNotifications(){
+    toggleRightDrawer() {
+      this.showRightSideDrawer = !this.showRightSideDrawer
+    },
+    toggleNotifications() {
       this.showNotifications = !this.showNotifications
     },
-    toggleUserChooser(){
+    toggleUserChooser() {
       this.showUserChooser = !this.showUserChooser
     }
   }
