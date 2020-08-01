@@ -37,30 +37,30 @@ export default {
         this.feeds = [
           {
             _id: 0,
-            overline: 'Overline 0',
-            title: 'Title 0',
+            overline: 'Field-0',
+            title: 'Wheat',
             caption:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            image: 'https://cdn.quasar.dev/img/parallax2.jpg',
-            link: 'https://cdn.quasar.dev/img/parallax2.jpg'
+              'Wheat is a grass widely cultivated for its seed, a cereal grain which is a worldwide staple food. The many species of wheat together make up the genus Triticum; the most widely grown is common wheat (T. aestivum). The archaeological record suggests that wheat was first cultivated in the regions of the Fertile Crescent around 9600 BCE. Botanically, the wheat kernel is a type of fruit called a caryopsis.Wheat is grown on more land area than any other food crop (220.4 million hectares, 2014).[5] World trade in wheat is greater than for all other crops combined. ',
+            image: 'images/banner-1.jpg',
+            link: '#'
           },
           {
             _id: 1,
-            overline: 'Overline 1',
-            title: 'Title 1',
+            overline: 'Field-1',
+            title: 'Wheat',
             caption:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            image: 'https://cdn.quasar.dev/img/parallax2.jpg',
-            link: 'https://cdn.quasar.dev/img/parallax2.jpg'
+              'Wheat is a grass widely cultivated for its seed, a cereal grain which is a worldwide staple food. The many species of wheat together make up the genus Triticum; the most widely grown is common wheat (T. aestivum). The archaeological record suggests that wheat was first cultivated in the regions of the Fertile Crescent around 9600 BCE. Botanically, the wheat kernel is a type of fruit called a caryopsis.Wheat is grown on more land area than any other food crop (220.4 million hectares, 2014).[5] World trade in wheat is greater than for all other crops combined. ',
+            image: 'images/banner-2.jpg',
+            link: '#'
           },
           {
             _id: 2,
-            overline: 'Overline 2',
-            title: 'Title 2',
+            overline: 'Field-2',
+            title: 'Wheat',
             caption:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            image: 'https://cdn.quasar.dev/img/parallax2.jpg',
-            link: 'https://cdn.quasar.dev/img/parallax2.jpg'
+              'Wheat is a grass widely cultivated for its seed, a cereal grain which is a worldwide staple food. The many species of wheat together make up the genus Triticum; the most widely grown is common wheat (T. aestivum). The archaeological record suggests that wheat was first cultivated in the regions of the Fertile Crescent around 9600 BCE. Botanically, the wheat kernel is a type of fruit called a caryopsis.Wheat is grown on more land area than any other food crop (220.4 million hectares, 2014).[5] World trade in wheat is greater than for all other crops combined. ',
+            image: 'images/baner-3.png',
+            link: '#'
           }
         ]
 

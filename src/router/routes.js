@@ -20,8 +20,13 @@ const routes = [
             component: () => import('pages/Encyclopedia/New.vue')
           },
           {
+            path: 'new-article',
+            component: () => import('components/Encyclopedia/ArticleEdit.vue')
+          },
+          {
             path: 'article/:id',
-            component: () => import('pages/Encyclopedia/Article.vue')
+            component: () => import('components/Encyclopedia/ArticleView.vue')
+            // component: () => import('pages/Encyclopedia/Article.vue')
           }
         ],
         component: () => import('layouts/Dashboard/Encyclopedia.vue')

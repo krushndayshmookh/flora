@@ -23,11 +23,11 @@ export default {
           icon: 'spa',
           label: 'Farm'
         },
-        {
-          link: '/product',
-          icon: 'shopping_cart',
-          label: 'Products'
-        },
+        // {
+        //   link: '/product',
+        //   icon: 'shopping_cart',
+        //   label: 'Products'
+        // },
         {
           link: '/consumer',
           icon: 'shopping_cart',
@@ -40,8 +40,8 @@ export default {
         },
         {
           link: '/schemes',
-          icon: 'book',
-          label: 'Schemes'
+          icon: 'announcement',
+          label: 'Schemes and Loans'
         },
         {
           link: '/retina',
@@ -63,26 +63,26 @@ export default {
           icon: 'business',
           label: 'Fertilizer Calculator'
         },
-        {
-          link: '/profile',
-          icon: 'account_circle',
-          label: 'Profile'
-        },
+        // {
+        //   link: '/profile',
+        //   icon: 'account_circle',
+        //   label: 'Profile'
+        // },
         {
           link: '/about',
           icon: 'info',
           label: 'About'
         },
-        {
-          link: '/auth/login',
-          icon: 'lock',
-          label: 'Login'
-        },
-        {
-          link: '/auth/register',
-          icon: 'lock',
-          label: 'Register'
-        },
+        // {
+        //   link: '/auth/login',
+        //   icon: 'lock',
+        //   label: 'Login'
+        // },
+        // {
+        //   link: '/auth/register',
+        //   icon: 'lock',
+        //   label: 'Register'
+        // },
         {
           link: '/Advisory/Forum',
           icon: 'help',
