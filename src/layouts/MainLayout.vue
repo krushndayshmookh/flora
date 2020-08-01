@@ -61,6 +61,12 @@ export default {
     toggleUserChooser() {
       this.showUserChooser = !this.showUserChooser
     }
+  },
+
+  sockets: {
+    notification(data) {
+      this.$store.dispatch('general/addNotification', data)
+    }
   }
 }
 </script>
