@@ -65,12 +65,12 @@ export default {
           label: 'FertilizerCalci'
         },
         {
-          link: '/farmer/profile',
+          link: '/profile',
           icon: 'account_circle',
           label: 'Profile'
         },
         {
-          link: '/farmer/about',
+          link: '/about',
           icon: 'info',
           label: 'About'
         },
