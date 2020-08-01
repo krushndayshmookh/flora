@@ -31,7 +31,7 @@ export default {
         {
           link: '/consumer',
           icon: 'shopping_cart',
-          label: 'Services'
+          label: 'Market'
         },
         {
           link: '/encyclopedia',
