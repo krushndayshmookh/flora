@@ -5,6 +5,7 @@ export default function() {
     leftSideDrawer: false,
     rightSideDrawer: false,
     leftSideDrawerOptions: [],
-    currentUserType: null
+    currentUserType: null,
+    notifications: []
   }
 }
