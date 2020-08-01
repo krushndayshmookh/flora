@@ -9,7 +9,7 @@
       q-btn(fab icon="add" color="primary" @click="toggleDialog(true)")
 
     q-page-sticky.btn(position="bottom-left" :offset="[18, 18]")
-      q-btn(fab icon="report" color="negative" @click="reportProductionFail")
+      q-btn(fab icon="report" color="negative" to="/farmer/report")
 
 </template>
 

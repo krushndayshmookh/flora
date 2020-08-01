@@ -43,6 +43,11 @@ const routes = [{
                         path: 'field/:id',
                         component: () =>
                             import ('pages/Dashboard/Farmer/Field.vue')
+                    },
+                    {
+                        path: 'report',
+                        component: () =>
+                            import ('pages/Dashboard/Farmer/Report.vue')
                     }
                 ]
             },
