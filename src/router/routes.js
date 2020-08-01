@@ -44,6 +44,26 @@ const routes = [
           }
         ]
       },
+
+      {
+        path: 'admin',
+        component: () => import('layouts/Dashboard/Admin.vue'),
+        children: [
+          {
+            path: '',
+            redirect: '/admin/reports'
+          },
+          //   {
+          //     path: 'field/:id',
+          //     component: () => import('pages/Dashboard/Admin/Field.vue')
+          //   },
+          {
+            path: 'reports',
+            component: () => import('pages/Dashboard/Admin/Reports.vue')
+          }
+        ]
+      },
+
       {
         path: 'investor',
         component: () => import('layouts/Dashboard/Investor.vue'),
