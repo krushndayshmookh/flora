@@ -5,7 +5,8 @@
         q-btn(flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer")
         q-toolbar-title Flora
         q-btn(flat dense round icon="notifications" aria-label="User" @click="toggleNotifications")
-        q-btn(flat dense round icon="account_circle" aria-label="User" @click="toggleUserChooser")
+          q-badge(color="red" floating v-show="notificationCount") {{ notificationCount }}
+        q-btn(flat dense round class="q-mx-sm" icon="account_circle" aria-label="User" @click="toggleUserChooser")
         q-btn(flat dense round icon="person" aria-label="User" @click="toggleRightDrawer")
 
     LeftSideDrawer
@@ -48,6 +49,13 @@ export default {
       showRightSideDrawer: false
     }
   },
+
+  computed: {
+    notificationCount() {
+      return this.$store.getters['general/notificationCount']
+    }
+  },
+
   methods: {
     toggleLeftDrawer() {
       this.$store.dispatch('general/toggleLeftSideDrawer')
