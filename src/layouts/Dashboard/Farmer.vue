@@ -14,78 +14,78 @@ export default {
     setLeftDrawerOptions() {
       let options = [
         {
-          link: '/home',
+          link: '/farmer/home',
           icon: 'dashboard',
           label: 'Home'
         },
         {
-          link: '/farmer',
+          link: '/farmer/farm',
           icon: 'spa',
           label: 'Farm'
         },
         {
-          link: '/product',
+          link: '/farmer/product',
           icon: 'shopping_cart',
           label: 'Products'
         },
         {
-          link: '/consumer',
+          link: '/farmer/consumer',
           icon: 'shopping_cart',
           label: 'Services'
         },
 
         {
-          link: '/encyclopedia',
+          link: '/farmer/encyclopedia',
           icon: 'book',
           label: 'Encyclopedia'
         },
         {
-          link: '/schemes',
+          link: '/farmer/schemes',
           icon: 'book',
           label: 'Schemes'
         },
         {
-          link: '/retina',
+          link: '/farmer/retina',
           icon: 'visibility',
           label: 'Retina'
         },
         {
-          link: '/chatbox/contacts',
+          link: '/farmer/chatbox/contacts',
           icon: 'chat',
           label: 'Forum'
         },
         {
-          link: '/fertilopedia',
+          link: '/farmer/fertilopedia',
           icon: 'map',
           label: 'Fertilopedia'
         },
         {
-          link: '/FertilizerCalci/Index',
+          link: '/farmer/FertilizerCalci/Index',
           icon: 'business',
           label: 'FertilizerCalci'
         },
         {
-          link: '/profile',
+          link: '/farmer/profile',
           icon: 'account_circle',
           label: 'Profile'
         },
         {
-          link: '/about',
+          link: '/farmer/about',
           icon: 'info',
           label: 'About'
         },
         {
-          link: '/auth/login',
+          link: '/farmer/auth/login',
           icon: 'lock',
           label: 'Login'
         },
         {
-          link: '/auth/register',
+          link: '/farmer/auth/register',
           icon: 'lock',
           label: 'Register'
         },
         {
-          link: '/Advisory/Forum',
+          link: '/farmer/Advisory/Forum',
           icon: 'help',
           label: 'Advisory'
         }
