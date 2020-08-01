@@ -69,6 +69,10 @@ const routes = [
           {
             path: 'notifications',
             component: () => import('pages/Dashboard/Admin/Notifications.vue')
+          },
+          {
+            path: 'farmers',
+            component: () => import('pages/Dashboard/Admin/Farmers.vue')
           }
         ]
       },
