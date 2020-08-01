@@ -63,7 +63,7 @@ export default {
     sendReport() {
       this.$q.loading.show()
       this.$axios
-        .post(process.env.API + '/report', this.report)
+        .post(process.env.API + '/reports', this.report)
         .then(response => {
           console.log(response.data)
           this.$q.notify({
