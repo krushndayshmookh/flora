@@ -17,6 +17,8 @@
       <q-btn @click="addClass(0)">Add A</q-btn>
       <q-btn @click="addClass(1)">Add B</q-btn>
       <q-btn @click="addClass(2)">Add C</q-btn>
+      <q-btn @click="addClass(3)">Add D</q-btn>
+      <q-btn @click="addClass(4)">Add E</q-btn>
     </div>
 
     <div>
