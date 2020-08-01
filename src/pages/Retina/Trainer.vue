@@ -101,7 +101,7 @@ export default {
           // Get the most likely class and confidence from the classifier module.
           const result = await this.classifier.predictClass(activation)
 
-          const classes = ['A', 'B', 'C']
+          const classes = ['AA variegated loquat (Eriobotrya japonica) that could be mistaken for a disease', 'Spores on the underside of fern leaves can sometimes be confused with insects', 'A chrysanthemum showing necrotic tissue','Shot-hole fungus on Prunus sp','Scorched dogwood (Cornus sp.) leaves']
           this.prediction = `
             prediction: ${classes[result.label]}\n
             probability: ${result.confidences[result.label]}
