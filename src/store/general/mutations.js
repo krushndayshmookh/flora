@@ -21,3 +21,11 @@ export function setLeftSideDrawerOptions(state, payload) {
 export function setCurrentUserType(state, payload) {
   state.currentUserType = payload
 }
+
+export function clearNotifications(state) {
+  state.notifications = []
+}
+
+export function addNotification(state, payload) {
+  state.notifications.push(payload)
+}
