@@ -21,3 +21,11 @@ export function setLeftSideDrawerOptions(context, payload) {
 export function setCurrentUserType(context, payload) {
   context.commit('setCurrentUserType', payload)
 }
+
+export function clearNotifications(context) {
+  context.commit('clearNotifications')
+}
+
+export function addNotification(context, payload) {
+  context.commit('addNotification', payload)
+}

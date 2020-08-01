@@ -13,3 +13,11 @@ export function leftSideDrawerOptions(state) {
 export function currentUserType(state) {
   return state.currentUserType
 }
+
+export function notifications(state) {
+  return state.notifications
+}
+
+export function notificationCount(state) {
+  return state.notifications.length
+}

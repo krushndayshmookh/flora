@@ -9,8 +9,17 @@
         <q-input
           v-model="newNotification.title"
           filled
-          placeholder="Title"
+          label="Title"
           type="text"
+          class="q-mb-md"
+        />
+        <q-select
+          v-model="newNotification.type"
+          filled
+          label="Type"
+          map-options
+          emit-value
+          :options="notificationTypes"
           class="q-mb-md"
         />
         <q-input
@@ -35,9 +44,21 @@ export default {
   data() {
     return {
       newNotification: {
-        title: '',
-        body: ''
-      }
+        title: null,
+        body: null,
+        type: 'general'
+      },
+
+      notificationTypes: [
+        {
+          value: 'urgent',
+          label: 'Urgent'
+        },
+        {
+          value: 'general',
+          label: 'General'
+        }
+      ]
     }
   },
 
@@ -56,6 +77,11 @@ export default {
             icon: 'check',
             message: 'Sent!'
           })
+          this.newNotification = {
+            title: null,
+            body: null,
+            type: 'general'
+          }
         })
         .catch(err => {
           console.error(err)
