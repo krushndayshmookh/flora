@@ -29,6 +29,20 @@ export default {
           label: 'Farmers'
         },
         {
+          link: '/admin/farmers',
+          icon: 'book',
+          label: 'Schemes'
+        },{
+          link: '/admin/farmers',
+          icon: 'money',
+          label: 'Market Pricing Monitor'
+        },
+        {
+          link: '/admin/farmers',
+          icon: 'chat',
+          label: 'Forum'
+        },
+        {
           link: '/profile',
           icon: 'account_circle',
           label: 'Profile'

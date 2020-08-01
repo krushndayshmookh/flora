@@ -33,7 +33,6 @@ export default {
           icon: 'shopping_cart',
           label: 'Services'
         },
-
         {
           link: '/encyclopedia',
           icon: 'book',
@@ -47,7 +46,7 @@ export default {
         {
           link: '/retina',
           icon: 'visibility',
-          label: 'Retina'
+          label: 'Disease Detection'
         },
         {
           link: '/chatbox/contacts',
@@ -57,12 +56,12 @@ export default {
         {
           link: '/fertilopedia',
           icon: 'map',
-          label: 'Fertilopedia'
+          label: 'Crop Suggestion'
         },
         {
           link: '/FertilizerCalci/Index',
           icon: 'business',
-          label: 'FertilizerCalci'
+          label: 'Fertilizer Calculator'
         },
         {
           link: '/profile',
