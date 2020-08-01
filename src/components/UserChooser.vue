@@ -69,6 +69,18 @@ export default {
           label: 'Admin',
           link: '/admin',
           icon: 'settings'
+        },
+        {
+          _id: 'login',
+          label: 'Login',
+          link: '/auth/login',
+          icon: 'vpn_key'
+        },
+        {
+          _id: 'register',
+          label: 'Register',
+          link: '/auth/register',
+          icon: 'lock'
         }
       ]
     }

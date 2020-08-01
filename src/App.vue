@@ -5,6 +5,11 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  sockets: {
+    connect() {
+      console.log('Socket connected.')
+    }
+  }
 }
 </script>
