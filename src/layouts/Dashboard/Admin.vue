@@ -29,16 +29,16 @@ export default {
           label: 'Farmers'
         },
         {
-          link: '/admin/farmers',
+          link: '/admin/schemes',
           icon: 'book',
           label: 'Schemes'
         },{
-          link: '/admin/farmers',
+          link: '/admin/market',
           icon: 'money',
           label: 'Market Pricing Monitor'
         },
         {
-          link: '/admin/farmers',
+          link: '/admin/forum',
           icon: 'chat',
           label: 'Forum'
         },
