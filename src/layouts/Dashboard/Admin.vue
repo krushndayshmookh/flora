@@ -14,56 +14,20 @@ export default {
     setLeftDrawerOptions() {
       let options = [
         {
-          link: '/admin',
-          icon: 'dashboard',
-          label: 'Home'
+          link: '/admin/reports',
+          icon: 'report',
+          label: 'Reports'
         },
-        // {
-        //   link: '/farmer',
-        //   icon: 'spa',
-        //   label: 'Farm'
-        // },
-        // {
-        //   link: '/product',
-        //   icon: 'shopping_cart',
-        //   label: 'Products'
-        // },
-        // {
-        //   link: '/consumer',
-        //   icon: 'shopping_cart',
-        //   label: 'Services'
-        // },
-
-        // {
-        //   link: '/encyclopedia',
-        //   icon: 'book',
-        //   label: 'Encyclopedia'
-        // },
         {
-          link: '/schemes',
-          icon: 'book',
-          label: 'Schemes'
+          link: '/admin/notifications',
+          icon: 'notifications',
+          label: 'Notifications'
         },
-        // {
-        //   link: '/retina',
-        //   icon: 'visibility',
-        //   label: 'Retina'
-        // },
-        // {
-        //   link: '/chatbox/contacts',
-        //   icon: 'chat',
-        //   label: 'Forum'
-        // },
-        // {
-        //   link: '/fertilopedia',
-        //   icon: 'map',
-        //   label: 'Fertilopedia'
-        // },
-        // {
-        //   link: '/FertilizerCalci/Index',
-        //   icon: 'business',
-        //   label: 'FertilizerCalci'
-        // },
+        {
+          link: '/admin/farmers',
+          icon: 'spa',
+          label: 'Farmers'
+        },
         {
           link: '/profile',
           icon: 'account_circle',
@@ -73,21 +37,6 @@ export default {
           link: '/about',
           icon: 'info',
           label: 'About'
-        },
-        {
-          link: '/auth/login',
-          icon: 'lock',
-          label: 'Login'
-        },
-        {
-          link: '/auth/register',
-          icon: 'lock',
-          label: 'Register'
-        },
-        {
-          link: '/Advisory/Forum',
-          icon: 'help',
-          label: 'Advisory'
         }
       ]
 
