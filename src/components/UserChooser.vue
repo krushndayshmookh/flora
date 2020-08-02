@@ -71,17 +71,23 @@ export default {
           icon: 'settings'
         },
         {
-          _id: 'login',
-          label: 'Login',
-          link: '/auth/login',
-          icon: 'vpn_key'
+          _id: 'procurement',
+          label: 'Procurement Center',
+          link: '/procurement',
+          icon: 'archive'
         },
-        {
-          _id: 'register',
-          label: 'Register',
-          link: '/auth/register',
-          icon: 'lock'
-        }
+        // {
+        //   _id: 'login',
+        //   label: 'Login',
+        //   link: '/auth/login',
+        //   icon: 'vpn_key'
+        // },
+        // {
+        //   _id: 'register',
+        //   label: 'Register',
+        //   link: '/auth/register',
+        //   icon: 'lock'
+        // }
       ]
     }
   },
