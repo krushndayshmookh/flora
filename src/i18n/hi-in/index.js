@@ -4,5 +4,6 @@
 export default {
   failed: 'Action failed',
   success: 'Action was successful',
-  label_language: 'Language'
+  label_language: 'Bhasha'
+
 }

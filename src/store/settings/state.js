@@ -1,5 +1,6 @@
 export default function() {
   return {
-    darkMode: true
+    darkMode: true,
+    language: 'en-us'
   }
 }
