@@ -4,7 +4,7 @@
     .q-my-sm.text-center
       video(ref="webcam" autoplay playsinline muted width="400" height="400")
     .q-my-sm
-      p.text-center {{ prediction }}    
+      p.text-center(v-for="(p,i) in prediction") {{ p }}    
 </template>
 
 <script>
@@ -20,7 +20,15 @@ export default {
       classifier: null,
       model: null,
       prediction: null,
-      classifierStarted: false
+      classifierStarted: false,
+
+      labels: [
+        'A variegated loquat (Eriobotrya japonica) that could be mistaken for a disease',
+        'Spores on the underside of fern leaves can sometimes be confused with insects',
+        'A chrysanthemum showing necrotic tissue',
+        'Shot-hole fungus on Prunus sp',
+        'Scorched dogwood (Cornus sp.) leaves'
+      ]
     }
   },
 
@@ -70,9 +78,9 @@ export default {
           console.log(activation)
           console.log(result)
 
-          this.prediction = ''
+          this.prediction = []
           Object.keys(result.confidences).forEach(k => {
-            this.prediction += `${k} = ${result.confidences[k]}\n`
+            this.prediction.push(`${this.labels[k]} = ${result.confidences[k]}`)
           })
 
           // Dispose the tensor to release the memory.
