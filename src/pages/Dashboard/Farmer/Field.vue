@@ -14,6 +14,29 @@
         q-card-section
           .text-h5 {{ field.title }}
 
+        q-separator
+        
+        q-card-section.q-pa-none
+          q-stepper(flat v-model="cultivationStep" vertical color="primary" animated)
+            q-step(:name="-1" title="Plant a crop" icon="settings" :done="cultivationStep > -1")
+              | Choose a crop from most profitable crops in your area or cultivate an incentivized crop.
+              q-stepper-navigation
+                q-btn(@click="cropStage = 'planted'" color="primary" label="Plant")
+            q-step(:name="0" title="Harvest Field" icon="settings" :done="cultivationStep > 0")
+              q-stepper-navigation
+                q-btn(@click="cropStage = 'harvested'" color="primary" label="Harvest")
+            q-step(:name="1" title="Sell it" icon="settings" :done="cultivationStep > 1")
+              q-stepper-navigation
+                q-btn(@click="cropStage = 'procured'" color="primary" label="Finish")
+            q-step(:name="2" title="Done" icon="settings" :done="cultivationStep > 2")
+              q-stepper-navigation
+                //- q-btn(@click="cropStage = 'procured'" color="primary" label="Finish")
+
+
+
+
+
+        q-separator
 
         q-card-section.q-pa-none
           q-list
@@ -174,6 +197,8 @@ export default {
         crop: '',
         plantedDate: ''
       },
+
+      cropStage: '',
 
       waterRecord: [
         {
@@ -339,6 +364,12 @@ export default {
   computed: {
     changed() {
       return !_.isEqual(this.field, this.fieldInDB)
+    },
+
+    cultivationStep() {
+      const stages = ['planted', 'harvested', 'procured']
+      const stage = this.cropStage
+      return stages.indexOf(stage)
     }
   },
 
