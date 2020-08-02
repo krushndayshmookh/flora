@@ -9,8 +9,8 @@
       q-card(style="height:600px;")
         l-map(:zoom="zoom" :center="center")
           l-tile-layer(:url="url" :attribution="attribution")
-          l-marker(:lat-lng="center" :icon="icon")
-        
+          l-marker(:lat-lng="center" :icon="icon") 
+    q-btn( label="Request For Soil Testing" @click="onSubmit" color="primary") 
 </template>
 
 
