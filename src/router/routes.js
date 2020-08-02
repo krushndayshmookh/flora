@@ -109,6 +109,21 @@ const routes = [{
                         path: 'farmers/:id/fields',
                         component: () =>
                             import ('pages/Dashboard/Admin/DBTFarmerFields.vue')
+                    },
+                    {
+                        path: 'schemes',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/Schemes.vue')
+                    },
+                    {
+                        path: 'schemes/new',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/SchemeCreate.vue')
+                    },
+                    {
+                        path: 'schemes/:id',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/SchemeDetails.vue')
                     }
                 ]
             },
