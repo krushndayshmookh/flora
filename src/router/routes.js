@@ -64,21 +64,41 @@ const routes = [{
                     import ('layouts/Dashboard/Admin.vue'),
                 children: [{
                         path: '',
-                        redirect: '/admin/reports'
+                        redirect: '/admin/statistics'
                     },
                     //   {
                     //     path: 'field/:id',
                     //     component: () => import('pages/Dashboard/Admin/Field.vue')
                     //   },
                     {
+                        path: 'statistics',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/Statistics.vue')
+                    },
+                    {
                         path: 'reports',
                         component: () =>
                             import ('pages/Dashboard/Admin/Reports.vue')
                     },
                     {
+                        path: 'incentive',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/Incentive.vue')
+                    },
+                    {
                         path: 'procurement',
                         component: () =>
                             import ('pages/Dashboard/Admin/Procurement.vue')
+                    },
+                    {
+                        path: 'procurement/new/plan',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/ProcurementPlanForm.vue')
+                    },
+                    {
+                        path: 'procurement/new/notice',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/ProcurementNoticeForm.vue')
                     },
                     {
                         path: 'notifications',
@@ -99,6 +119,21 @@ const routes = [{
                         path: 'farmers/:id/fields',
                         component: () =>
                             import ('pages/Dashboard/Admin/DBTFarmerFields.vue')
+                    },
+                    {
+                        path: 'schemes',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/Schemes.vue')
+                    },
+                    {
+                        path: 'schemes/new',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/SchemeCreate.vue')
+                    },
+                    {
+                        path: 'schemes/:id',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/SchemeDetails.vue')
                     }
                 ]
             },
@@ -186,10 +221,8 @@ const routes = [{
                 component: () =>
                     import ('pages/Retina/TrainerAuto.vue')
             },
-
-            // { path: 'Advisory', component: () => import('pages/Advisory/Forum.vue') },
             {
-                path: 'Advisory',
+                path: 'advisory',
                 children: [{
                         path: 'forum',
                         component: () =>

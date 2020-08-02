@@ -26,22 +26,12 @@ export default {
         {
           link: '/product',
           icon: 'shopping_cart',
-          label: 'Products'
+          label: 'Market - Products'
         },
         {
           link: '/consumer',
           icon: 'shopping_cart',
-          label: 'Market'
-        },
-        {
-          link: '/encyclopedia',
-          icon: 'book',
-          label: 'Encyclopedia'
-        },
-        {
-          link: '/schemes',
-          icon: 'announcement',
-          label: 'Schemes and Loans'
+          label: 'Market - Services'
         },
         {
           link: '/retina',
@@ -49,44 +39,35 @@ export default {
           label: 'Disease Detection'
         },
         {
-          link: '/chatbox/contacts',
-          icon: 'chat',
-          label: 'Forum'
+          link: '/encyclopedia',
+          icon: 'book',
+          label: 'Encyclopedia'
         },
         {
           link: '/fertilopedia',
-          icon: 'map',
+          icon: 'eco',
           label: 'Crop Suggestion'
         },
         {
           link: '/FertilizerCalci/Index',
-          icon: 'business',
+          icon: 'calculate',
           label: 'Fertilizer Calculator'
         },
-        // {
-        //   link: '/profile',
-        //   icon: 'account_circle',
-        //   label: 'Profile'
-        // },
         {
-          link: '/about',
-          icon: 'info',
-          label: 'About'
+          link: '/schemes',
+          icon: 'announcement',
+          label: 'Schemes and Loans'
         },
-        // {
-        //   link: '/auth/login',
-        //   icon: 'lock',
-        //   label: 'Login'
-        // },
-        // {
-        //   link: '/auth/register',
-        //   icon: 'lock',
-        //   label: 'Register'
-        // },
+
         {
-          link: '/Advisory/Forum',
+          link: '/chatbox/contacts',
+          icon: 'chat',
+          label: 'Chat'
+        },
+        {
+          link: '/advisory/forum',
           icon: 'help',
-          label: 'Advisory'
+          label: 'Forum'
         }
       ]
 

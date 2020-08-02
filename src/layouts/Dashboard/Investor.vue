@@ -29,34 +29,14 @@ export default {
           label: 'Schemes'
         },
         {
-          link: '/investor/chatbox/contacts',
+          link: '/chatbox/contacts',
           icon: 'chat',
-          label: 'Forum'
+          label: 'Chat'
         },
         {
-          link: '/profile',
-          icon: 'account_circle',
-          label: 'Profile'
-        },
-        {
-          link: '/about',
-          icon: 'info',
-          label: 'About'
-        },
-        {
-          link: '/investor/auth/login',
-          icon: 'lock',
-          label: 'Login'
-        },
-        {
-          link: '/investor/auth/register',
-          icon: 'lock',
-          label: 'Register'
-        },
-        {
-          link: '/investor/Advisory/Forum',
+          link: '/advisory/forum',
           icon: 'help',
-          label: 'Advisory'
+          label: 'Forum'
         }
       ]
 
