@@ -44,7 +44,7 @@ export default {
           label: 'Schemes'
         },
         {
-          link: '/admin/incentives',
+          link: '/admin/incentive',
           icon: 'redeem',
           label: 'Incentives'
         },
