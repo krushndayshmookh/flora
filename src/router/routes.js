@@ -88,7 +88,17 @@ const routes = [{
                     {
                         path: 'farmers',
                         component: () =>
-                            import ('pages/Dashboard/Admin/Farmers.vue')
+                            import ('pages/Dashboard/Admin/DBTFarmers.vue')
+                    },
+                    {
+                        path: 'farmers/:id/profile',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/DBTFarmerProfile.vue')
+                    },
+                    {
+                        path: 'farmers/:id/fields',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/DBTFarmerFields.vue')
                     }
                 ]
             },

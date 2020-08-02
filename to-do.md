@@ -1,0 +1,41 @@
+# To Do
+
+- [ ] ADMIN -stats
+  - [ ] by crop 
+  - [ ] by area
+  - [ ] by collection centre
+ - [ ] ADMIN-farmer overview
+ - [ ] ADMIN- reports
+    - [ ] resolved
+    - [ ] unresolved
+    - [ ] details
+ - [ ] Schemes and incentives
+ - [x] DBT
+ - [ ] notifications
+ - [ ] market pricing
+ - [ ] forum
+ - [ ] advisory
+ - [ ] procurement
+ - [ ] collection centres
+ - [ ] plant add/delete
+ 
+ - [ ] PAGES
+    - [ ] crop overview 
+    - [ ] selected region and crop
+    - [ ] selected region and govt. centre
+    - [ ] list of collection centres in selected region
+    - [ ] incoming reports
+    - [ ] scheme list and details
+    - [ ] incentive list
+    - [ ] add new incentive
+    - [ ] view all incentives
+    - [ ] plant list, create plant, crop cycle input
+    - [x] DBT Accounts 
+    - [x] DBT acc details
+    - [x] DBT farming profile
+    - [ ] ~farmer history page~ _**we'll think about this thoda aur if time permits**_
+    - [x] Crop details (refer to farmer field details page)
+    - [ ] Create notif
+    - [ ] Market price monitor 
+    - [ ] page where farmer can see orders, order creator and approve sale
+    - [ ] Procurement plan creator
