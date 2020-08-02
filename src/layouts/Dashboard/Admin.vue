@@ -26,7 +26,7 @@ export default {
         {
           link: '/admin/farmers',
           icon: 'spa',
-          label: 'Farmers'
+          label: 'DBT'
         },
         {
           link:'/admin/procurement',
