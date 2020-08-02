@@ -11,7 +11,7 @@
     - [ ] details
  - [ ] Schemes and incentives
  - [x] DBT
- - [ ] notifications
+ - [x] notifications
  - [ ] market pricing
  - [ ] forum
  - [ ] advisory
