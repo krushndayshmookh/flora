@@ -24,16 +24,49 @@
         suffix="Acres"
       />
 
+      <q-input
+        v-model="normalizedField.location"
+        outlined
+        color="teal"
+        label="Location"
+        type="tesxt"
+        class="col"
+      />
+      <!-- 
       <q-select
         v-model="normalizedField.crop"
         outlined
+        color="teal"
         :options="cropOptions"
         label="Crop"
         class="col"
         map-options
         emit-value
+      /> -->
+
+      <!-- <q-input
+        v-model="normalizedField.datePlanted"
+        outlined
+        color="teal"
+        mask="date"
+        class="col"
+        label="Date Planted"
       >
-      </q-select>
+        <template v-slot:append>
+          <q-icon name="event" class="cursor-pointer">
+            <q-popup-proxy
+              ref="qDateProxy"
+              transition-show="scale"
+              transition-hide="scale"
+            >
+              <q-date
+                v-model="normalizedField.datePlanted"
+                @input="() => $refs.qDateProxy.hide()"
+              />
+            </q-popup-proxy>
+          </q-icon>
+        </template>
+      </q-input>-->
     </q-card-section>
 
     <q-card-actions class="q-pa-md" align="right">
@@ -55,7 +88,12 @@ export default {
 
   data() {
     return {
-      normalizedField: null,
+      normalizedField: {
+        title: null,
+        area: null,
+        crop: null,
+        datePlanted: null
+      },
 
       cropOptions: [
         {
@@ -94,16 +132,17 @@ export default {
     saveField() {
       this.$q.loading.show()
       this.$axios
-        .post('', this.normalizedField)
+        .put(process.env.API + '/fields', this.normalizedField)
         .then(response => {
+          // if(response.data.success)
           console.log(response.data)
+          this.$emit('done')
         })
         .catch(err => {
           console.error(err)
         })
         .finally(() => {
           this.$q.loading.hide()
-          this.$emit('done')
         })
     }
   }
