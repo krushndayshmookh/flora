@@ -28,11 +28,7 @@ export default {
           icon: 'notifications',
           label: 'Notifications'
         },
-        {
-          link: '/admin/procurement',
-          icon: 'eco',
-          label: 'Procurement'
-        },
+
         {
           link: '/admin/farmers',
           icon: 'account_balance_wallet',
@@ -42,6 +38,11 @@ export default {
           link: '/admin/schemes',
           icon: 'book',
           label: 'Schemes'
+        },
+        {
+          link: '/admin/procurement',
+          icon: 'eco',
+          label: 'Procurement'
         },
         {
           link: '/admin/incentive',

@@ -86,6 +86,16 @@ const routes = [{
                             import ('pages/Dashboard/Admin/Incentive.vue')
                     },
                     {
+                        path: 'incentive/new/plan',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/IncentiveNewForm.vue')
+                    },
+                    {
+                        path: 'incentive/new/notice',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/IncentiveNewNotice.vue')
+                    },
+                    {
                         path: 'procurement',
                         component: () =>
                             import ('pages/Dashboard/Admin/Procurement.vue')
@@ -221,8 +231,10 @@ const routes = [{
                 component: () =>
                     import ('pages/Retina/TrainerAuto.vue')
             },
+
+            // { path: 'Advisory', component: () => import('pages/Advisory/Forum.vue') },
             {
-                path: 'advisory',
+                path: 'Advisory',
                 children: [{
                         path: 'forum',
                         component: () =>

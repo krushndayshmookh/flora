@@ -1,38 +1,63 @@
 <template>
   <q-page padding>
-    <div class="text-h4 q-my-md">Procurement</div>
+    <div class="text-h6 q-my-md">Procurement</div>
+<div class="row q-col-gutter-md q-pa-md">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <q-card class="my-card" flat bordered>
+          <q-card-section horizontal>
+            <q-card-section class="q-pa-md">
+              <q-btn
+                class="fit q-pa-md"
+                color="primary"
+                
+                stack
+                icon="add"
+                size="lg"
+                to="/admin/procurement/new/plan"
+              >
+              Issue Prodcurement Notice
+              </q-btn>
+            </q-card-section>
 
-    <div class="row q-col-gutter-md">
-      <div class="col-6">
-        <q-btn
-          class="fit q-pa-md"
-          color="primary"
-          outline
-          stack
-          icon="notifications"
-          size="lg"
-          to="/admin/procurement/new/notice"
-        >
-          Issue Prodcurement Notice
-        </q-btn>
+            <q-card-section class="col-6 flex flex-end ">
+              <q-img
+                class="rounded-borders"
+                src="images/incentive-2.jpg"
+              />
+            </q-card-section>
+          </q-card-section>
+        </q-card>
       </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <q-card class="my-card" flat bordered>
+          <q-card-section horizontal>
+            <q-card-section class="q-pa-md">
+              <q-btn
+                class="fit q-pa-md"
+                color="secondary"
+                
+                stack
+                icon="notifications"
+                size="lg"
+                to="/admin/procurement/new/notice"
+              >
+                 Create Prodcurement Plan
+              </q-btn>
+            </q-card-section>
 
-      <div class="col-6">
-        <q-btn
-          class="fit q-pa-md"
-          color="secondary"
-          outline
-          stack
-          icon="eco"
-          size="lg"
-          to="/admin/procurement/new/plan"
-        >
-          Create Prodcurement Plan
-        </q-btn>
+            <q-card-section class="col-6 flex flex-end ">
+              <q-img
+                class="rounded-borders"
+                src="images/incentive-2.jpg"
+              />
+            </q-card-section>
+          </q-card-section>
+        </q-card>
       </div>
     </div>
   </q-page>
 </template>
+    
 
 <script>
 export default {
