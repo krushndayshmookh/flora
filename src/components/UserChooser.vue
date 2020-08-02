@@ -66,7 +66,7 @@ export default {
         },
         {
           _id: 'admin',
-          label: 'Admin',
+          label: 'Government',
           link: '/admin',
           icon: 'settings'
         },
