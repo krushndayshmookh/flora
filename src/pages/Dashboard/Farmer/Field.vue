@@ -99,7 +99,7 @@
         q-page-sticky(position="bottom-right" :offset="[18, 18]")
           q-fab(v-model="fab1" external-label color="purple" icon="keyboard_arrow_up" direction="up")
             q-fab-action(external-label label-position="left" color="blue" @click="editField" icon="edit" label="Edit Field Details")
-            q-fab-action(external-label label-position="left" color="secondary" @click="editCrop" icon="spa" label="Edit Crop Details")
+            q-fab-action(external-label label-position="left" color="secondary" @click="editCropPlant" icon="spa" label="Edit Crop Details")
             q-fab-action(external-label label-position="left" color="secondary" @click="plantCrop" icon="spa" label="Plant a Crop")
             q-fab-action(external-label label-position="left" color="orange" @click="harvestCrop" icon="agriculture" label="Harvest Crop")
 
@@ -134,6 +134,8 @@
               q-btn(color="green" label="Save" v-if="changed" @click="saveField")
         q-dialog(v-model="editDialog" position="bottom")
           FieldEditDialog(:field="field" @done="handleEditDone")
+        q-dialog(v-model="editCrop" position="bottom")
+          CropPlantDialog(:field="field" @done="handleEditDone")
         
       q-tab-panel.q-pa-none(name="water")
         //- q-card-section
@@ -175,6 +177,8 @@ import moment from 'moment'
 import FieldWaterTimeline from 'components/Farmer/FieldWaterTimeline'
 import FieldFertilizerTimeline from 'components/Farmer/FieldFertilizerTimeline'
 import FieldEditDialog from 'components/Farmer/FieldEditDialog.vue'
+import CropPlantDialog from 'components/Farmer/CropPlantDialog.vue'
+
 
 export default {
   name: 'DashboardFarmerField',
@@ -182,7 +186,8 @@ export default {
   components: {
     FieldWaterTimeline,
     FieldFertilizerTimeline,
-    FieldEditDialog
+    FieldEditDialog,
+    CropPlantDialog
   },
 
   data() {
@@ -190,6 +195,7 @@ export default {
       fab1: false,
 
       editDialog: false,
+      editCrop: false,
 
       field: {
         title: '',
@@ -433,8 +439,8 @@ export default {
       this.editDialog = true
     },
 
-    editCrop() {
-      // this.editDialog = true
+    editCropPlant() {
+       this.editCrop = true
     },
     plantCrop() {
       // this.editDialog = true
@@ -446,9 +452,15 @@ export default {
     hideEditDialog() {
       this.editDialog = false
     },
+    hideEditCrop() {
+      this.editCrop = false
+    },
 
     handleEditDone() {
       this.hideEditDialog()
+    },
+    handleEditDoneCrop() {
+      this.hideEditCrop()
     }
   }
 }
