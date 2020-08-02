@@ -17,22 +17,27 @@
         </q-avatar>
       </q-item-section>
       <q-item-section>
-        <q-card class=" text q-pa-md">
-          <q-card-section>
-            <div class="text-overline">{{ report.date }}</div>
-            <!-- <div class="text-body1 ">{{ report.title }}</div> -->
-            <div class="text-h6 q-pa-xs ">
-              Name :{{ report.first_name }} {{ report.last_name }}
-            </div>
-            <div class="text-h6 q-pa-xs ">Phone :{{ report.phone }}</div>
-            <div class="text-h6 q-pa-xs">Filed :{{ report.field }}</div>
-            <div class="text-h6 q-pa-xs">Crop :{{ report.crop }}</div>
-            <div class="text-h6 q-pa-xs">
-              Failure Type :{{ report.failure }}
-            </div>
-            <!-- <div class="text-caption">{{ report.reporter.name }}</div>
-        <div class="text-caption">{{ report.reporter.name }}</div> -->
+        <q-card class="my-card" bordered>
+          <q-card-section horizontal>
+            <q-card-section class="q-pt-xs">
+              <div class="text-overline">{{ report.date }}</div>
+              <div class="text-subtitle q-mt-sm q-pa-xs">
+                Name :{{ report.first_name }} {{ report.last_name }}
+              </div>
+
+              <div class="text-caption text-grey q-mt-sm q-pa-xs ">
+                Phone : {{ report.phone }}<br />
+                Filed : {{ report.field }}<br />
+                Crop : {{ report.crop }}<br />
+                Failure Type : {{ report.failure }}
+              </div>
+            </q-card-section>
           </q-card-section>
+          <q-separator />
+          <q-card-actions align="right" class="q-pa-md">
+            <q-btn label="Mark As Resolved " type="submit" color="primary" />
+            <q-btn label="Decline " type="submit" color="negative" />
+          </q-card-actions>
         </q-card>
       </q-item-section>
     </q-item>
