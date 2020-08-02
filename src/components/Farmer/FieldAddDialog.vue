@@ -29,6 +29,7 @@ export default {
       default: false
     }
   },
+
   data() {
     return {
       field: {
@@ -38,22 +39,11 @@ export default {
         region: null
       },
 
-      regionOptions: [
-        {
-          value: 0,
-          label: 'Nagpur'
-        },
-        {
-          value: 1,
-          label: 'Mumbai'
-        },
-        {
-          value: 2,
-          label: 'Pune'
-        }
-      ]
+      regions: [],
+      regionOptions: []
     }
   },
+
   computed: {
     show: {
       get() {
@@ -63,6 +53,10 @@ export default {
         this.$emit('change', opened)
       }
     }
+  },
+
+  mounted() {
+    this.fetchRegions()
   },
 
   methods: {
@@ -92,6 +86,21 @@ export default {
         })
         .finally(() => {
           this.$q.loading.hide()
+        })
+    },
+
+    fetchRegions() {
+      this.$axios
+        .get(process.env.API + '/regions')
+        .then(response => {
+          this.regions = response.data.data
+          this.regionOptions = this.regions.map(r => ({
+            value: r._id,
+            label: r.name
+          }))
+        })
+        .catch(err => {
+          console.error(err)
         })
     }
   }

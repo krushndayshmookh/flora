@@ -3,6 +3,7 @@
     q-img(:src="normalizedField.image" style="height: 150px;")
 
     q-card-section
+      .text-overline {{ normalizedField.area }} Acres
       .text-h6 {{ normalizedField.title }}
       .text-subtitle2 {{ normalizedField.crop.plant.name }}
 
@@ -31,6 +32,7 @@ export default {
         _id: 0,
         image: this.setImage(),
         title: '',
+        area: 0,
         crop: {
           plant: {
             name: 'Unoccupied'
