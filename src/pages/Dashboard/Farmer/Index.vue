@@ -3,7 +3,7 @@
 
     FieldList(:fields="fields" @add="toggleDialog(true)")
 
-    FieldAddDialog(v-model="fieldDialogOpen" @change="toggleDialog")
+    FieldAddDialog(v-model="fieldDialogOpen" @change="toggleDialog" @done="handleFieldAddDone")
 
     q-page-sticky.btn(position="bottom-right" :offset="[18, 18]")
       q-btn(fab icon="add" color="primary" @click="toggleDialog(true)")
@@ -19,50 +19,69 @@ import FieldAddDialog from 'components/Farmer/FieldAddDialog'
 
 export default {
   name: 'DashboardFarmer',
+
   components: {
     FieldList,
     FieldAddDialog
   },
+
   data() {
     return {
       fieldDialogOpen: false,
       fields: [
-        {
-          id: 0,
-          image: 'images/banner-1.jpg',
-          title: 'Wheat',
-          crop: 'Field 0'
-        },
-        {
-          id: 1,
-         image: 'images/baner-3.png',
-          title: 'Corn',
-          crop: 'Field 1'
-        },
-        {
-          id: 2,
-          image: 'images/banner-2.jpg',
-          title: 'Rice',
-          crop: 'Field 2'
-        },
-        {
-          id: 3,
-         image: 'images/baner-3.png',
-          title: 'Cotton',
-          crop: 'Field 3'
-        },
-        {
-          id: 4,
-          image: 'images/banner-2.jpg',
-          title: 'Dal',
-          crop: 'Field 4'
-        }
+        // {
+        //   id: 0,
+        //   image: 'images/banner-1.jpg',
+        //   title: 'Wheat',
+        //   crop: 'Field 0'
+        // },
+        // {
+        //   id: 1,
+        //   image: 'images/baner-3.png',
+        //   title: 'Corn',
+        //   crop: 'Field 1'
+        // },
+        // {
+        //   id: 2,
+        //   image: 'images/banner-2.jpg',
+        //   title: 'Rice',
+        //   crop: 'Field 2'
+        // },
+        // {
+        //   id: 3,
+        //   image: 'images/baner-3.png',
+        //   title: 'Cotton',
+        //   crop: 'Field 3'
+        // },
+        // {
+        //   id: 4,
+        //   image: 'images/banner-2.jpg',
+        //   title: 'Dal',
+        //   crop: 'Field 4'
+        // }
       ]
     }
   },
+
+  mounted() {
+    this.fetchFields()
+  },
+
   methods: {
     toggleDialog(val) {
       this.fieldDialogOpen = val
+    },
+
+    fetchFields() {
+      this.$axios
+        .get(process.env.API + '/fields?role=farmer')
+        .then(response => {
+          this.fields = response.data.data
+        })
+    },
+
+    handleFieldAddDone(){
+      this.fetchFields()
     },
 
     reportProductionFail() {}
