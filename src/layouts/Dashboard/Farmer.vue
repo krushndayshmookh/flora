@@ -23,11 +23,11 @@ export default {
           icon: 'spa',
           label: 'Farm'
         },
-        // {
-        //   link: '/product',
-        //   icon: 'shopping_cart',
-        //   label: 'Products'
-        // },
+        {
+          link: '/product',
+          icon: 'shopping_cart',
+          label: 'Products'
+        },
         {
           link: '/consumer',
           icon: 'shopping_cart',
