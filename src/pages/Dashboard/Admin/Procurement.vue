@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
     <div class="text-h6 q-my-md">Procurement</div>
-<div class="row q-col-gutter-md q-pa-md">
+    <div class="row q-col-gutter-md q-pa-md">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <q-card class="my-card" flat bordered>
           <q-card-section horizontal>
@@ -9,21 +9,17 @@
               <q-btn
                 class="fit q-pa-md"
                 color="primary"
-                
+                to="/admin/procurement/new/notice"
                 stack
                 icon="add"
                 size="lg"
-                to="/admin/procurement/new/plan"
               >
-              Issue Prodcurement Notice
+                Create Prodcurement Plan
               </q-btn>
             </q-card-section>
 
             <q-card-section class="col-6 flex flex-end ">
-              <q-img
-                class="rounded-borders"
-                src="images/incentive-2.jpg"
-              />
+              <q-img class="rounded-borders" src="images/incentive-2.jpg" />
             </q-card-section>
           </q-card-section>
         </q-card>
@@ -35,21 +31,17 @@
               <q-btn
                 class="fit q-pa-md"
                 color="secondary"
-                
                 stack
                 icon="notifications"
                 size="lg"
-                to="/admin/procurement/new/notice"
+                to="/admin/procurement/new/plan"
               >
-                 Create Prodcurement Plan
+                Issue Prodcurement Notice
               </q-btn>
             </q-card-section>
 
             <q-card-section class="col-6 flex flex-end ">
-              <q-img
-                class="rounded-borders"
-                src="images/incentive-2.jpg"
-              />
+              <q-img class="rounded-borders" src="images/incentive-2.jpg" />
             </q-card-section>
           </q-card-section>
         </q-card>
@@ -57,7 +49,6 @@
     </div>
   </q-page>
 </template>
-    
 
 <script>
 export default {
