@@ -34,7 +34,7 @@
                 </template>
               </q-select>
               <q-list>
-                <q-item tag="label" v-ripple>
+                <q-item v-ripple tag="label">
                   <q-item-section avatar>
                     <q-radio v-model="user.color" val="orange" color="orange" />
                   </q-item-section>
@@ -45,7 +45,7 @@
                       production.</q-item-label
                     >
                   </q-item-section> </q-item
-                ><q-item tag="label" v-ripple>
+                ><q-item v-ripple tag="label">
                   <q-item-section avatar top>
                     <q-radio v-model="user.color" val="cyan" color="cyan" />
                   </q-item-section>

@@ -40,7 +40,10 @@
             />
           </q-td>
           <q-td v-for="col in props.cols" :key="col.name" :props="props">
-            {{ col.value }}
+            <q-btn v-if="col.name == 'apply'" flat :href="col.value"
+              >Apply Here</q-btn
+            >
+            <div v-else>{{ col.value }}</div>
           </q-td>
         </q-tr>
         <q-tr v-show="props.expand" :props="props">
