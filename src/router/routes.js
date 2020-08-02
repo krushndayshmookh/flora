@@ -73,7 +73,27 @@ const routes = [{
                     {
                         path: 'statistics',
                         component: () =>
-                            import ('pages/Dashboard/Admin/Statistics.vue')
+                            import ('pages/Dashboard/Admin/Statistics/Index.vue')
+                    },
+                    {
+                        path: 'statistics/region-crops',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/Statistics/RegionCrops.vue')
+                    },
+                    {
+                        path: 'statistics/region-crops-details',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/Statistics/RegionCropsDetails.vue')
+                    },
+                    {
+                        path: 'statistics/region-centers',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/Statistics/RegionCenters.vue')
+                    },
+                    {
+                        path: 'statistics/region-centers-details',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/Statistics/RegionCentersDetails.vue')
                     },
                     {
                         path: 'reports',
