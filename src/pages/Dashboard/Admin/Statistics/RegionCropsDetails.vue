@@ -15,7 +15,7 @@
         <q-select
           v-model="selectedCrop"
           outlined
-          label="Region"
+          label="Crop"
           :options="cropOptions"
           map-options
         />
