@@ -10,7 +10,8 @@
     - [x] unresolved
     - [ ] details
     = [ ] resolve btn
- - [ ] Schemes and incentives
+ - [x] Schemes
+ - [ ] incentives
  - [x] DBT
  - [x] notifications
  - [ ] market pricing
@@ -26,7 +27,7 @@
     - [ ] selected region and govt. centre
     - [ ] list of collection centres in selected region
     - [ ] incoming reports
-    - [ ] scheme list and details
+    - [x] scheme list and details
     - [ ] incentive list
     - [ ] add new incentive
     - [ ] view all incentives
@@ -36,7 +37,7 @@
     - [x] DBT farming profile
     - [ ] ~farmer history page~ _**we'll think about this thoda aur if time permits**_
     - [x] Crop details (refer to farmer field details page)
-    - [ ] Create notif
+    - [x] Create notif
     - [ ] Market price monitor 
     - [ ] page where farmer can see orders and approve sale _this should be in farmer ka dahsboard na?_
     - [x] order creator for govt
