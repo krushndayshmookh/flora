@@ -54,6 +54,11 @@ export default {
           label: 'Market Pricing Monitor'
         },
         {
+          link: '/admin/plants',
+          icon: 'spa',
+          label: 'Crop Types'
+        },
+        {
           link: '/chatbox/contacts',
           icon: 'chat',
           label: 'Chat'
