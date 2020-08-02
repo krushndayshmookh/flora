@@ -14,6 +14,11 @@ export default {
     setLeftDrawerOptions() {
       let options = [
         {
+          link: '/admin/statistics',
+          icon: 'analytics',
+          label: 'Statistics'
+        },
+        {
           link: '/admin/reports',
           icon: 'report',
           label: 'Reports'
@@ -24,27 +29,38 @@ export default {
           label: 'Notifications'
         },
         {
-          link: '/admin/farmers',
-          icon: 'spa',
-          label: 'DBT'
+          link: '/admin/procurement',
+          icon: 'eco',
+          label: 'Procurement'
         },
         {
-          link:'/admin/procurement',
-          icon: 'eco',
-          label:' Procurement'
+          link: '/admin/farmers',
+          icon: 'account_balance_wallet',
+          label: 'DBT'
         },
         {
           link: '/admin/schemes',
           icon: 'book',
           label: 'Schemes'
-        },{
+        },
+        {
+          link: '/admin/incentives',
+          icon: 'redeem',
+          label: 'Incentives'
+        },
+        {
           link: '/admin/market',
           icon: 'money',
           label: 'Market Pricing Monitor'
         },
         {
-          link: '/admin/forum',
+          link: '/chatbox/contacts',
           icon: 'chat',
+          label: 'Chat'
+        },
+        {
+          link: '/advisory/forum',
+          icon: 'help',
           label: 'Forum'
         },
         {
