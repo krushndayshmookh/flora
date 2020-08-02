@@ -30,8 +30,40 @@
               :options="{ ...chartOptionsBase, ...chartDoughnutOptions }"
             />
           </q-card-section>
+        </q-card>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-8">
+        <q-card class="fit">
           <q-card-section>
             <div class="text-h6">{{ selectedCrop.label }}</div>
+          </q-card-section>
+          <q-card-section> </q-card-section>
+        </q-card>
+      </div>
+
+      <div class="col-12">
+        <q-card>
+          <q-card-section>
+            <div class="text-h6">Farmers</div>
+          </q-card-section>
+          <q-card-section class="q-pa-none">
+            <q-list padding>
+              <q-item
+                v-for="farmer in farmers"
+                :key="farmer._id"
+                v-ripple
+                clickable
+              >
+                <q-item-section>
+                  {{ farmer.name }}
+                </q-item-section>
+
+                <q-item-section side>
+                  {{ farmer.quantity }} Quintals
+                </q-item-section>
+              </q-item>
+            </q-list>
           </q-card-section>
         </q-card>
       </div>
@@ -100,7 +132,25 @@ export default {
 
       chartDoughnutOptions: {},
 
-      datacollection: {}
+      datacollection: {},
+
+      farmers: [
+        {
+          _id: 0,
+          name: 'Vithika Jha',
+          quantity: this.getRandomInt()
+        },
+        {
+          _id: 1,
+          name: 'Krushn Dayshmookh',
+          quantity: this.getRandomInt()
+        },
+        {
+          _id: 2,
+          name: 'Krishnandu Baidya',
+          quantity: this.getRandomInt()
+        }
+      ]
     }
   },
 
