@@ -106,7 +106,7 @@
             <q-card-section class="q-pt-xs">
               <div class="text-overline">Indian (Maharshtra Region)</div>
               <div class="text-h5 q-mt-sm q-pa-xs">
-                Ovierview
+                Overview
               </div>
               <div class="text-caption text-grey">
                 Farmer | 8 Year Exprience |
@@ -174,7 +174,7 @@ export default {
       user: {
         color: 'cyan',
 
-        crop: 'wheet',
+        crop: 'Wheat',
         farmer: '1',
         email: 'k******@****.com',
         phone: '76******52',
@@ -210,8 +210,8 @@ export default {
       ],
       ProcurementsSelectCrop: [
         {
-          value: 'wheet',
-          label: 'Wheet'
+          value: 'Wheat',
+          label: 'Wheat'
         },
         {
           value: 'corn',
