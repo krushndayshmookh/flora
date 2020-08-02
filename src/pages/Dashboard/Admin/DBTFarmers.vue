@@ -5,7 +5,7 @@
         v-for="farmer in farmers"
         :key="farmer._id"
         v-ripple
-        :to="'/admin/farmers/farmer/' + farmer._id"
+        :to="'/admin/farmers/' + farmer._id + '/profile'"
         clickable
       >
         <q-item-section avatar>
