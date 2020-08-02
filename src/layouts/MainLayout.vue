@@ -53,7 +53,29 @@ export default {
   computed: {
     notificationCount() {
       return this.$store.getters['general/notificationCount']
+    },
+
+    // title() {
+    //   return this.$store.getters['general/title']
+    // },
+
+    user() {
+      let user = this.$store.getters['auth/user']
+      return {
+        ...user,
+        token: this.$store.getters['auth/token']
+      }
     }
+  },
+
+  created() {
+    if (!this.$route.path.includes('/auth/login')) {
+      if (!this.user.username || !this.user.token) {
+        this.logout()
+      }
+    }
+    this.setHeaders()
+    // this.$q.dark.set(this.darkMode)
   },
 
   methods: {
@@ -68,6 +90,16 @@ export default {
     },
     toggleUserChooser() {
       this.showUserChooser = !this.showUserChooser
+    },
+
+    logout() {
+      this.$store.dispatch('auth/logout')
+      this.$router.replace('/auth/login')
+    },
+
+    setHeaders() {
+      this.$axios.defaults.headers.common['Authorization'] =
+        'Bearer ' + this.user.token
     }
   },
 
