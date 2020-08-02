@@ -62,6 +62,7 @@ export default {
             message: 'Created!'
           })
           this.show = false
+          this.$emit('done')
         })
         .catch(err => {
           console.error(err)
