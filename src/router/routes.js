@@ -81,6 +81,16 @@ const routes = [{
                             import ('pages/Dashboard/Admin/Procurement.vue')
                     },
                     {
+                        path: 'procurement/new/plan',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/ProcurementPlanForm.vue')
+                    },
+                    {
+                        path: 'procurement/new/notice',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/ProcurementNoticeForm.vue')
+                    },
+                    {
                         path: 'notifications',
                         component: () =>
                             import ('pages/Dashboard/Admin/Notifications.vue')
