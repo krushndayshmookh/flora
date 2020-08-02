@@ -6,9 +6,10 @@
   - [ ] by collection centre
  - [ ] ADMIN-farmer overview
  - [ ] ADMIN- reports
-    - [ ] resolved
-    - [ ] unresolved
+    - [x] resolved
+    - [x] unresolved
     - [ ] details
+    = [ ] resolve btn
  - [ ] Schemes and incentives
  - [x] DBT
  - [x] notifications
