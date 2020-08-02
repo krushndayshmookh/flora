@@ -29,6 +29,11 @@ export default {
           label: 'Farmers'
         },
         {
+          link:'/admin/procurement',
+          icon: 'eco',
+          label:' Procurement'
+        },
+        {
           link: '/admin/schemes',
           icon: 'book',
           label: 'Schemes'
