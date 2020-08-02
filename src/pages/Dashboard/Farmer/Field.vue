@@ -73,8 +73,13 @@
               q-item-section(side)
                 q-item-label(caption) Harvested Quantity
 
-        q-page-sticky.btn(position="bottom-right" :offset="[18, 18]")
-          q-btn(fab icon="edit" color="primary" @click="showEditDialog")
+        q-page-sticky(position="bottom-right" :offset="[18, 18]")
+          q-fab(v-model="fab1" external-label color="purple" icon="keyboard_arrow_up" direction="up")
+            q-fab-action(external-label label-position="left" color="blue" @click="editField" icon="edit" label="Edit Field Details")
+            q-fab-action(external-label label-position="left" color="secondary" @click="editCrop" icon="spa" label="Edit Crop Details")
+            q-fab-action(external-label label-position="left" color="secondary" @click="plantCrop" icon="spa" label="Plant a Crop")
+            q-fab-action(external-label label-position="left" color="orange" @click="harvestCrop" icon="agriculture" label="Harvest Crop")
+
 
         //- q-card-section.q-pt-none
           //- h5.text-weight-light.q-my-sm Crop: {{ ' ' }}
@@ -159,6 +164,8 @@ export default {
 
   data() {
     return {
+      fab1: false,
+
       editDialog: false,
 
       field: {
@@ -357,7 +364,7 @@ export default {
         .format('D MMM, YYYY')
 
       this.fieldInDB.expectedQuantity = 900
-      this.fieldInDB.harvestedQuantity = 900 + 5 
+      this.fieldInDB.harvestedQuantity = 900 + 5
 
       this.field = _.clone(this.fieldInDB, true)
     },
@@ -391,8 +398,18 @@ export default {
       // console.log('delayed filter aborted')
     },
 
-    showEditDialog() {
+    editField() {
       this.editDialog = true
+    },
+
+    editCrop() {
+      // this.editDialog = true
+    },
+    plantCrop() {
+      // this.editDialog = true
+    },
+    harvestCrop() {
+      // this.editDialog = true
     },
 
     hideEditDialog() {
