@@ -15,7 +15,7 @@
  - [ ] market pricing
  - [ ] forum
  - [ ] advisory
- - [ ] procurement
+ - [x] procurement
  - [ ] collection centres
  - [ ] plant add/delete
  
@@ -37,5 +37,6 @@
     - [x] Crop details (refer to farmer field details page)
     - [ ] Create notif
     - [ ] Market price monitor 
-    - [ ] page where farmer can see orders, order creator and approve sale
-    - [ ] Procurement plan creator
+    - [ ] page where farmer can see orders and approve sale _this should be in farmer ka dahsboard na?_
+    - [x] order creator for govt
+    - [x] Procurement plan creator
