@@ -7,9 +7,9 @@
           <q-card-section>
             <q-form class="q-gutter-md">
               <q-input
+                v-model="user.first_name"
                 color="blue"
                 filled
-                v-model="user.first_name"
                 label="First Name"
               >
                 <template v-slot:prepend>
@@ -18,9 +18,9 @@
               </q-input>
 
               <q-input
+                v-model="user.last_name"
                 color="blue"
                 filled
-                v-model="user.last_name"
                 label="Last Name"
               >
                 <template v-slot:prepend>
@@ -28,33 +28,33 @@
                 </template>
               </q-input>
 
-              <q-input color="blue" filled v-model="user.age" label="Age">
+              <q-input v-model="user.age" color="blue" filled label="Age">
                 <template v-slot:prepend>
                   <q-icon name="eco" />
                 </template>
               </q-input>
-              <q-input color="blue" filled v-model="user.email" label="Email">
+              <q-input v-model="user.email" color="blue" filled label="Email">
                 <template v-slot:prepend>
                   <q-icon name="email" />
                 </template>
               </q-input>
 
-              <q-input color="blue" filled v-model="user.phone" label="Phone">
+              <q-input v-model="user.phone" color="blue" filled label="Phone">
                 <template v-slot:prepend>
                   <q-icon name="call" />
                 </template>
               </q-input>
 
-              <q-input color="blue" filled v-model="user.aadhar" label="Aadhar">
+              <q-input v-model="user.aadhar" color="blue" filled label="Aadhar">
                 <template v-slot:prepend>
                   <q-icon name="payment" />
                 </template>
               </q-input>
 
               <q-input
+                v-model="user.exprience"
                 color="blue"
                 filled
-                v-model="user.exprience"
                 label="Farm Exprience"
               >
                 <template v-slot:prepend>
@@ -63,9 +63,9 @@
               </q-input>
 
               <q-input
+                v-model="user.address"
                 color="blue"
                 filled
-                v-model="user.address"
                 label="Address"
               >
                 <template v-slot:prepend>
@@ -115,9 +115,9 @@ export default {
       user: {
         first_name: 'Krish',
         last_name: 'Baidya',
-        age: 30,
-        email: 'm******@****.com',
-        phone: '98******23',
+        age: 24,
+        email: 'k******@****.com',
+        phone: '76******52',
         aadhar: '*********123',
         exprience: '6',
         address: 'Nagpur'
