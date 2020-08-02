@@ -83,6 +83,12 @@
               <q-icon name="warning" />
             </template>
           </q-select>
+
+          <q-input v-model="report.date" color="blue" filled label="Report Date">
+            <template v-slot:prepend>
+              <q-icon name="report" />
+            </template>
+          </q-input>
         </q-form>
       </q-card-section>
     </q-card>
@@ -111,7 +117,8 @@ export default {
         address: null,
         field: null,
         crop: null,
-        failure: null
+        failure: null,
+        date: null,
       },
       ReportSelectCrop: [
         {
@@ -141,19 +148,19 @@ export default {
       ],
       ReportSelectFailure: [
         {
-          value: '1',
+          value: 'rainfall',
           label: 'Rainfall'
         },
         {
-          value: '2',
+          value: 'natural_disaster',
           label: 'Natural Disaster'
         },
         {
-          value: '3',
+          value: 'wrong_fertilizer',
           label: 'Wrong Fertilizer'
         },
         {
-          value: '4',
+          value: 'others',
           label: 'Others'
         }
       ],

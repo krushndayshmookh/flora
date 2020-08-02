@@ -12,7 +12,7 @@
     q-tab-panels(v-model="tab" animated swipeable)
       q-tab-panel.q-pa-none(name="info")
         q-card-section
-          .text-h5 {{ field.title }}
+          .text-h5 {{ field.title }} 
 
         q-separator
         
@@ -380,7 +380,7 @@ export default {
   methods: {
     fetchField() {
       this.fieldInDB = {
-        title: 'title',
+        title: 'Wheat',
         area: 9,
         crop: 'wheat',
         plantedDate: new moment().format('D MMM, YYYY')
