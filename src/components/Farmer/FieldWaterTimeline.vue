@@ -6,7 +6,7 @@
       :side="idx % 2 ? 'left' : 'right'"
     >
       <template v-slot:title>
-        <div class="text-subtitle1">February 22, 1986</div>
+        <div class="text-subtitle1">February 22, 2020</div>
         <div class="text-caption">22:00</div>
       </template>
       <template v-slot:subtitle>
