@@ -76,6 +76,11 @@ const routes = [{
                             import ('pages/Dashboard/Admin/Reports.vue')
                     },
                     {
+                        path: 'incentive',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/Incentive.vue')
+                    },
+                    {
                         path: 'procurement',
                         component: () =>
                             import ('pages/Dashboard/Admin/Procurement.vue')

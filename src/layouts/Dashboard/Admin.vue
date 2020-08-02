@@ -29,6 +29,11 @@ export default {
           label: 'DBT'
         },
         {
+          link: '/admin/incentive',
+          icon: 'tag',
+          label: 'Incentive'
+        },
+        {
           link:'/admin/procurement',
           icon: 'eco',
           label:' Procurement'
