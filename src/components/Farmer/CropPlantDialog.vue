@@ -1,7 +1,7 @@
 <template>
   <q-card>
     <q-card-section>
-      <div class="text-h6">Field Details</div>
+      <div class="text-h6">Plant a Crop</div>
     </q-card-section>
 
     <q-card-section class="column q-col-gutter-md q-py-none">
@@ -42,17 +42,17 @@
     </q-card-section>
 
     <q-card-actions class="q-pa-md" align="right">
-      <q-btn color="primary" @click="saveField">Save</q-btn>
+      <q-btn color="primary" @click="saveCrop">Save</q-btn>
     </q-card-actions>
   </q-card>
 </template>
 
 <script>
 export default {
-  name: 'FieldEditDialog',
+  name: 'CropPlantDialog',
 
   props: {
-    field: {
+    crop: {
       type: Object,
       default: () => ({})
     }
@@ -91,15 +91,15 @@ export default {
   },
 
   mounted() {
-    this.normalizeField()
+    this.normalizeCrop()
   },
 
   methods: {
-    normalizeField() {
-      this.normalizedCrop = { ...this.normalizedCrop, ...this.field }
+    normalizeCrop() {
+      this.normalizedCrop = { ...this.normalizedCrop, ...this.crop}
     },
 
-    saveField() {
+    saveCrop() {
       this.$q.loading.show()
       this.$axios
         .put(process.env.API + '/fields', this.normalizedCrop)
