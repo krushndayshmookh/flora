@@ -1,13 +1,14 @@
 <template lang="pug">
   q-card
-    q-img(:src="field.image || setImage()" style="height: 150px;")
+    q-img(:src="normalizedField.image" style="height: 150px;")
 
     q-card-section
-      .text-h6 {{ field.title }}
-      .text-subtitle2(v-if="field.currentlyOccupied") {{ field.crop.plant.name || 'Unoccupied' }}
-      .text-subtitle2(v-else) Unoccupied
+      .text-h6 {{ normalizedField.title }}
+      .text-subtitle2 {{ normalizedField.crop.plant.name }}
+
+      .text-caption {{ normalizedField.region.name }}
     q-card-actions
-      q-btn.full-width(v-ripple outline  :to="'/farmer/field/' + field.id") View
+      q-btn.full-width(v-ripple outline  :to="'/farmer/field/' + field._id") View
 </template>
 
 <script>
@@ -16,12 +17,31 @@ export default {
   props: {
     field: {
       type: Object,
-      default: () => ({
-        id: 0,
-        image: '',
+      default: () => ({})
+    }
+  },
+
+  data() {
+    return {}
+  },
+
+  computed: {
+    normalizedField() {
+      const base = {
+        _id: 0,
+        image: this.setImage(),
         title: '',
-        crop: ''
-      })
+        crop: {
+          plant: {
+            name: 'Unoccupied'
+          }
+        },
+        currentlyOccupied: false,
+        region: {
+          name: 'unknown region'
+        }
+      }
+      return { ...base, ...this.field }
     }
   },
 
