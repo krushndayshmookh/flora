@@ -10,7 +10,7 @@
     - [ ] unresolved
     - [ ] details
  - [ ] Schemes and incentives
- - [ ] DBT
+ - [x] DBT
  - [ ] notifications
  - [ ] market pricing
  - [ ] forum
@@ -30,11 +30,11 @@
     - [ ] add new incentive
     - [ ] view all incentives
     - [ ] plant list, create plant, crop cycle input
-    - [ ] DBT Accounts 
-    - [ ] DBT acc details
-    - [ ] DBT farming profile
-    - [ ] farmer history page
-    - [ ] Crop details (refer to farmer field details page)
+    - [x] DBT Accounts 
+    - [x] DBT acc details
+    - [x] DBT farming profile
+    - [ ] ~farmer history page~ _**we'll think about this thoda aur if time permits**_
+    - [x] Crop details (refer to farmer field details page)
     - [ ] Create notif
     - [ ] Market price monitor 
     - [ ] page where farmer can see orders, order creator and approve sale
