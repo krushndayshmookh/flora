@@ -1,40 +1,91 @@
 <template>
   <q-page padding>
-    <q-input
-      v-model="report.title"
-      filled
-      placeholder="Title"
-      class="q-mb-md"
-      type="text"
-    >
-      <template v-slot:prepend>
-        <q-icon name="local_offer" />
-      </template>
-    </q-input>
+    <q-card>
+      <q-card-section>
+        <q-form class="q-gutter-md">
+          <q-input
+            v-model="report.first_name"
+            color="blue"
+            filled
+            label="First Name"
+          >
+            <template v-slot:prepend>
+              <q-icon name="person" />
+            </template>
+          </q-input>
 
-    <q-input
-      v-model="report.phone"
-      filled
-      placeholder="Phone"
-      class="q-mb-md"
-      type="text"
-    >
-      <template v-slot:prepend>
-        <q-icon name="phone" />
-      </template>
-    </q-input>
+          <q-input
+            v-model="report.last_name"
+            color="blue"
+            filled
+            label="Last Name"
+          >
+            <template v-slot:prepend>
+              <q-icon name="person" />
+            </template>
+          </q-input>
 
-    <q-input
-      v-model="report.description"
-      filled
-      placeholder="Descriiption"
-      class="q-mb-md"
-      type="textarea"
-    >
-      <template v-slot:prepend>
-        <q-icon name="info" />
-      </template>
-    </q-input>
+          <q-input v-model="report.phone" color="blue" filled label="Phone">
+            <template v-slot:prepend>
+              <q-icon name="call" />
+            </template>
+          </q-input>
+
+          <q-input v-model="report.aadhar" color="blue" filled label="Aadhar">
+            <template v-slot:prepend>
+              <q-icon name="payment" />
+            </template>
+          </q-input>
+
+          <q-input v-model="report.address" color="blue" filled label="Address">
+            <template v-slot:prepend>
+              <q-icon name="map" />
+            </template>
+          </q-input>
+
+          <q-select
+            v-model="report.field"
+            filled
+            label="Select Field"
+            map-options
+            emit-value
+            :options="ReportSelectField"
+            class="q-mb-md"
+          >
+            <template v-slot:prepend>
+              <q-icon name="eco" />
+            </template>
+          </q-select>
+          <q-select
+            v-model="report.crop"
+            filled
+            label="Select Crop"
+            map-options
+            emit-value
+            :options="ReportSelectCrop"
+            class="q-mb-md"
+          >
+            <template v-slot:prepend>
+              <q-icon name="eco" />
+            </template>
+          </q-select>
+
+          <q-select
+            v-model="report.failure"
+            filled
+            label="Reason For Failure"
+            map-options
+            emit-value
+            :options="ReportSelectFailure"
+            class="q-mb-md"
+          >
+            <template v-slot:prepend>
+              <q-icon name="warning" />
+            </template>
+          </q-select>
+        </q-form>
+      </q-card-section>
+    </q-card>
 
     <q-btn
       class="full-width fixed-bottom"
@@ -52,10 +103,74 @@ export default {
   data() {
     return {
       report: {
-        title: null,
+        first_name: null,
+        last_name: null,
+        phone: null,
+        aadhar: null,
         description: null,
-        phone: null
-      }
+        address: null,
+        field: null,
+        crop: null,
+        failure: null
+      },
+      ReportSelectCrop: [
+        {
+          value: 'Wheat',
+          label: 'Wheat'
+        },
+        {
+          value: 'corn',
+          label: 'Corn'
+        },
+        {
+          value: 'rice',
+          label: 'Rice'
+        },
+        {
+          value: 'dal',
+          label: 'Dal'
+        },
+        {
+          value: 'cotton',
+          label: 'Cotton'
+        },
+        {
+          value: 'onions',
+          label: 'Onions'
+        }
+      ],
+      ReportSelectFailure: [
+        {
+          value: '1',
+          label: 'Rainfall'
+        },
+        {
+          value: '2',
+          label: 'Natural Disaster'
+        },
+        {
+          value: '3',
+          label: 'Wrong Fertilizer'
+        },
+        {
+          value: '4',
+          label: 'Others'
+        }
+      ],
+      ReportSelectField: [
+        {
+          value: '1',
+          label: 'Field 1'
+        },
+        {
+          value: '2',
+          label: 'Field 2'
+        },
+        {
+          value: '3',
+          label: 'Field 3'
+        }
+      ]
     }
   },
 

@@ -3,7 +3,7 @@
     <div class="q-col-gutter-md">
       <div class="col">
         <q-card>
-          <q-img src="https://cdn.quasar.dev/img/parallax2.jpg" basic>
+          <q-img src="images/baner-3.png" basic>
             <div class="absolute-bottom text-h6 text-center">FORUM</div>
           </q-img>
 
