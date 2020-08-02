@@ -64,12 +64,17 @@ const routes = [{
                     import ('layouts/Dashboard/Admin.vue'),
                 children: [{
                         path: '',
-                        redirect: '/admin/reports'
+                        redirect: '/admin/statistics'
                     },
                     //   {
                     //     path: 'field/:id',
                     //     component: () => import('pages/Dashboard/Admin/Field.vue')
                     //   },
+                    {
+                        path: 'statistics',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/Statistics.vue')
+                    },
                     {
                         path: 'reports',
                         component: () =>
@@ -211,10 +216,8 @@ const routes = [{
                 component: () =>
                     import ('pages/Retina/TrainerAuto.vue')
             },
-
-            // { path: 'Advisory', component: () => import('pages/Advisory/Forum.vue') },
             {
-                path: 'Advisory',
+                path: 'advisory',
                 children: [{
                         path: 'forum',
                         component: () =>
