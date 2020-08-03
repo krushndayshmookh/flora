@@ -246,6 +246,18 @@ const routes = [{
             },
 
             {
+                path: 'expert',
+                component: () =>
+                    import ('layouts/Dashboard/Expert.vue'),
+                children: [{
+                        path: 'encyclopedia',
+                        component: () =>
+                            import ('pages/Encyclopedia/Index.vue')
+                    }
+                ]
+            },
+
+            {
                 path: 'market',
                 component: () =>
                     import ('layouts/Marketplace.vue'),

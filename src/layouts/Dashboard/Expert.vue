@@ -19,46 +19,10 @@ export default {
           label: 'Home'
         },
         {
-          link: '/farmer',
-          icon: 'spa',
-          label: 'Farm'
-        },
-        {
-          link: '/product',
-          icon: 'shopping_cart',
-          label: 'Market - Products'
-        },
-        {
-          link: '/consumer',
-          icon: 'shopping_cart',
-          label: 'Market - Services'
-        },
-        {
-          link: '/retina',
-          icon: 'visibility',
-          label: 'Disease Detection'
-        },
-        {
           link: '/encyclopedia',
           icon: 'book',
           label: 'Encyclopedia'
         },
-        {
-          link: '/fertilopedia',
-          icon: 'eco',
-          label: 'Crop Suggestion'
-        },
-        {
-          link: '/FertilizerCalci/Index',
-          icon: 'calculate',
-          label: 'Fertilizer Calculator'
-        },
-        {
-          link: '/schemes',
-          icon: 'announcement',
-          label: 'Schemes and Loans'
-        },
-
         {
           link: '/chatbox/contacts',
           icon: 'chat',

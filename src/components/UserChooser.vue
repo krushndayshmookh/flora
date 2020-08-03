@@ -67,7 +67,7 @@ export default {
         {
           _id: 'expert',
           label: 'Expert',
-          link: '/expert',
+          link: '/expert/encyclopedia',
           icon: 'school'
         },
         {
