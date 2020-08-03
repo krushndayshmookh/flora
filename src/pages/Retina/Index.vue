@@ -4,7 +4,17 @@
     .q-my-sm.text-center
       video(ref="webcam" autoplay playsinline muted width="400" height="400")
     .q-my-sm
-      p.text-center(v-for="(p,i) in prediction") {{ p }}    
+
+      q-card
+        q-card-section
+          .text-h6 Results
+        q-card-section.q-py-none
+          .text-body1 {{ result.label }}
+          .text-caption Confidence: {{ result.confidence*100 }} %
+        q-card-section
+          q-btn(color="primary" label="More info" icon="info")
+
+      //- p.text-center(v-for="(p,i) in prediction") {{ p }}    
 </template>
 
 <script>
@@ -28,7 +38,12 @@ export default {
         'A chrysanthemum showing necrotic tissue',
         'Shot-hole fungus on Prunus sp',
         'Scorched dogwood (Cornus sp.) leaves'
-      ]
+      ],
+
+      result: {
+        label: '',
+        confidence: 0
+      }
     }
   },
 
@@ -75,8 +90,13 @@ export default {
           // Get the most likely class and confidence from the classifier module.
           const result = await this.classifier.predictClass(activation)
 
-          console.log(activation)
-          console.log(result)
+          // console.log(activation)
+          // console.log(result)
+
+          this.result = {
+            label: this.labels[result.label],
+            confidence: result.confidences[result.label]
+          }
 
           this.prediction = []
           Object.keys(result.confidences).forEach(k => {
