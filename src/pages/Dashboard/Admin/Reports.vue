@@ -6,7 +6,7 @@
     </q-tabs>
 
     <q-tab-panels v-model="tab" animated>
-      <q-tab-panel name="unresolved" class="q-pa-none">
+      <q-tab-panel name="unresolved" class="q-pa-none" @done="fetchReports">
         <ReportList :reports="reports.unresolved" />
       </q-tab-panel>
 

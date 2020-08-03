@@ -5,7 +5,7 @@
       :key="report._id"
       v-ripple
       clickable
-      :to="'/reports/' + report._id"
+      
     >
       <q-item-section avatar>
         <q-avatar>
@@ -34,8 +34,13 @@
             </q-card-section>
           </q-card-section>
           <q-separator />
-          <q-card-actions align="right" class="q-pa-md">
-            <q-btn label="Mark As Resolved " type="submit" color="primary" />
+          <q-card-actions v-if="!report.resolved" align="right" class="q-pa-md">
+            <q-btn
+              label="Mark As Resolved "
+              type="submit"
+              color="primary"
+              @click="resolveReport(report._id)"
+            />
             <q-btn label="Decline " type="submit" color="negative" />
           </q-card-actions>
         </q-card>
@@ -52,6 +57,21 @@ export default {
     reports: {
       type: Array,
       default: () => []
+    }
+  },
+
+  methods: {
+    resolveReport(reportId) {
+      this.$q.loading.show()
+      this.$axios
+        .post(process.env.API + '/reports/' + reportId + '/resolve')
+        .then(() => {
+          this.$emit('done')
+        })
+        .catch(e => console.error(e))
+        .finally(() => {
+          this.$q.loading.hide()
+        })
     }
   }
 }
