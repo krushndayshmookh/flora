@@ -1,11 +1,11 @@
 <template>
-  <q-page >
+  <q-page>
     <q-list bordered padding class="q-pa-sm">
       <q-item
-        clickable
-        v-ripple
         v-for="article in articles"
         :key="article.id"
+        v-ripple
+        clickable
         :to="'/encyclopedia/article/' + article._id"
       >
         <q-item-section>
@@ -25,7 +25,7 @@
         </q-item-section>
       </q-item>
     </q-list>
-    <q-separator/>
+    <q-separator />
   </q-page>
 </template>
 

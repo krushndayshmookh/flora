@@ -278,10 +278,6 @@ const routes = [{
                     import ('layouts/Dashboard/Procurement.vue'),
                 children: [
                     {
-                        path: '',
-                        redirect: '/procurement/orders'
-                    },
-                    {
                         path: 'orders',
                         component: () =>
                             import ('pages/Procurement/Orders.vue')
@@ -290,7 +286,11 @@ const routes = [{
                         path: 'inventory',
                         component: () =>
                             import ('pages/Procurement/Inventory.vue')
-                    }
+                    },
+                    {
+                        path: '',
+                        redirect: '/procurement/orders'
+                    },
                 ]
             },
 
