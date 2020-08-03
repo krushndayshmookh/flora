@@ -19,7 +19,7 @@ export default {
           label: 'Home'
         },
         {
-          link: '/farmer',
+          link: '/farmer/fields',
           icon: 'spa',
           label: 'Farm'
         },

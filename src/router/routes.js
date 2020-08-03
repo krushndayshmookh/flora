@@ -40,10 +40,15 @@ const routes = [{
                 path: 'farmer',
                 component: () =>
                     import ('layouts/Dashboard/Farmer.vue'),
-                children: [{
+                children: [
+                    {
                         path: '',
+                        redirect: '/home'
+                    },
+                    {
+                        path: 'fields',
                         component: () =>
-                            import ('pages/Dashboard/Farmer/Index.vue')
+                            import ('pages/Dashboard/Farmer/Fields.vue')
                     },
                     {
                         path: 'field/:id',
@@ -54,6 +59,32 @@ const routes = [{
                         path: 'report',
                         component: () =>
                             import ('pages/Dashboard/Farmer/Report.vue')
+                    }
+                ]
+            },
+
+            {
+                path: 'trader',
+                component: () =>
+                    import ('layouts/Dashboard/Trader.vue'),
+                children: [{
+                        path: '',
+                        redirect: '/home'
+                    },
+                    {
+                        path: 'orders',
+                        component: () =>
+                            import ('pages/Dashboard/Trader/Orders.vue')
+                    },
+                    {
+                        path: 'products',
+                        component: () =>
+                            import ('pages/Dashboard/Trader/Products.vue')
+                    },
+                    {
+                        path: 'services',
+                        component: () =>
+                            import ('pages/Dashboard/Trader/Services.vue')
                     }
                 ]
             },

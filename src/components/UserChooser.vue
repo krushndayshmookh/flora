@@ -31,13 +31,13 @@ export default {
         {
           _id: 'farmer',
           label: 'Farmer',
-          link: '/farmer',
+          link: '/farmer/fields',
           icon: 'agriculture'
         },
         {
           _id: 'trader',
           label: 'Trader',
-          link: '/trader',
+          link: '/trader/orders',
           icon: 'local_shipping'
         },
         {
