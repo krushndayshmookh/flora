@@ -47,7 +47,7 @@ export default {
           icon: 'local_hospital'
         },
         {
-          _id: 'incestor',
+          _id: 'investor',
           label: 'Investor',
           link: '/investor',
           icon: 'monetization_on'

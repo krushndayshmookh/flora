@@ -34,7 +34,7 @@ const routes = [{
                     }
                 ],
                 component: () =>
-                    import ('layouts/Dashboard/Encyclopedia.vue')
+                    import ('layouts/Encyclopedia.vue')
             },
             {
                 path: 'farmer',
@@ -66,10 +66,6 @@ const routes = [{
                         path: '',
                         redirect: '/admin/statistics'
                     },
-                    //   {
-                    //     path: 'field/:id',
-                    //     component: () => import('pages/Dashboard/Admin/Field.vue')
-                    //   },
                     {
                         path: 'statistics',
                         component: () =>
@@ -197,7 +193,7 @@ const routes = [{
             {
                 path: 'product',
                 component: () =>
-                    import ('layouts/Dashboard/Product.vue'),
+                    import ('layouts/Marketplace.vue'),
                 children: [{
                         path: '',
                         component: () =>
@@ -213,7 +209,7 @@ const routes = [{
             {
                 path: 'schemes',
                 component: () =>
-                    import ('layouts/Dashboard/Scheme.vue'),
+                    import ('layouts/Scheme.vue'),
                 children: [{
                     path: '',
                     component: () =>
@@ -251,19 +247,13 @@ const routes = [{
                 component: () =>
                     import ('pages/Retina/TrainerAuto.vue')
             },
-
-            // { path: 'Advisory', component: () => import('pages/Advisory/Forum.vue') },
             {
-                path: 'Advisory',
+                path: 'advisory',
                 children: [{
                         path: 'forum',
                         component: () =>
                             import ('pages/Advisory/Forum.vue')
                     }
-                    // {
-                    //   path: 'contacts',
-                    //   component: () => import('pages/ChatBox/contacts.vue')
-                    // }
                 ],
                 component: () =>
                     import ('layouts/Advisory.vue')
@@ -278,7 +268,6 @@ const routes = [{
                 component: () =>
                     import ('layouts/FertilizerCalci.vue')
             },
-
             {
                 path: 'fertilopedia',
                 component: () =>
@@ -299,8 +288,6 @@ const routes = [{
                 component: () =>
                     import ('pages/About.vue')
             },
-            // { path: 'chatbox', component: () => import('pages/ChatBox/chat.vue') },
-            // { path: 'contacts', component: () => import('pages/ChatBox/contacts.vue') }
             {
                 path: 'uploaddocument',
                 component: () =>
