@@ -14,51 +14,15 @@ export default {
     setLeftDrawerOptions() {
       let options = [
         {
-          link: '/home',
-          icon: 'dashboard',
-          label: 'Home'
+          link: '/procurement/orders',
+          icon: 'widgets',
+          label: 'Orders'
         },
         {
-          link: '/farmer',
-          icon: 'spa',
-          label: 'Farm'
+          link: '/procurement/inventory',
+          icon: 'archive',
+          label: 'Inventory'
         },
-        {
-          link: '/product',
-          icon: 'shopping_cart',
-          label: 'Market - Products'
-        },
-        {
-          link: '/consumer',
-          icon: 'shopping_cart',
-          label: 'Market - Services'
-        },
-        {
-          link: '/retina',
-          icon: 'visibility',
-          label: 'Disease Detection'
-        },
-        {
-          link: '/encyclopedia',
-          icon: 'book',
-          label: 'Encyclopedia'
-        },
-        {
-          link: '/fertilopedia',
-          icon: 'eco',
-          label: 'Crop Suggestion'
-        },
-        {
-          link: '/FertilizerCalci/Index',
-          icon: 'calculate',
-          label: 'Fertilizer Calculator'
-        },
-        {
-          link: '/schemes',
-          icon: 'announcement',
-          label: 'Schemes and Loans'
-        },
-
         {
           link: '/chatbox/contacts',
           icon: 'chat',

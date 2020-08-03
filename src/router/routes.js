@@ -258,6 +258,28 @@ const routes = [{
             },
 
             {
+                path: 'procurement',
+                component: () =>
+                    import ('layouts/Dashboard/Procurement.vue'),
+                children: [
+                    {
+                        path: '',
+                        redirect: '/procurement/orders'
+                    },
+                    {
+                        path: 'orders',
+                        component: () =>
+                            import ('pages/Procurement/Orders.vue')
+                    },
+                    {
+                        path: 'inventory',
+                        component: () =>
+                            import ('pages/Procurement/Inventory.vue')
+                    }
+                ]
+            },
+
+            {
                 path: 'market',
                 component: () =>
                     import ('layouts/Marketplace.vue'),
