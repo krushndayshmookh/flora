@@ -4,11 +4,13 @@ const routes = [{
             import ('layouts/MainLayout.vue'),
         children: [
             { path: '', redirect: '/home' },
+
             {
                 path: 'home',
                 component: () =>
                     import ('pages/Index.vue')
             },
+
             {
                 path: 'encyclopedia',
                 children: [{
@@ -36,6 +38,7 @@ const routes = [{
                 component: () =>
                     import ('layouts/Encyclopedia.vue')
             },
+
             {
                 path: 'farmer',
                 component: () =>
@@ -196,6 +199,22 @@ const routes = [{
             },
 
             {
+                path: 'doctor',
+                component: () =>
+                    import ('layouts/Dashboard/Doctor.vue'),
+                children: [{
+                        path: '',
+                        redirect: '/home'
+                    },
+                    {
+                        path: 'appointments',
+                        component: () =>
+                            import ('pages/Dashboard/Doctor/Appointments.vue')
+                    }
+                ]
+            },
+
+            {
                 path: 'investor',
                 component: () =>
                     import ('layouts/Dashboard/Investor.vue'),
@@ -205,6 +224,7 @@ const routes = [{
                         import ('pages/Dashboard/Investor/Index.vue')
                 }]
             },
+
             {
                 path: 'consumer',
                 component: () =>
@@ -221,6 +241,7 @@ const routes = [{
                     }
                 ]
             },
+
             {
                 path: 'product',
                 component: () =>
@@ -237,6 +258,7 @@ const routes = [{
                     }
                 ]
             },
+
             {
                 path: 'schemes',
                 component: () =>
@@ -247,6 +269,7 @@ const routes = [{
                         import ('pages/Schemes/Index.vue')
                 }]
             },
+
             {
                 path: 'chatbox',
                 children: [{
@@ -263,6 +286,7 @@ const routes = [{
                 component: () =>
                     import ('layouts/Chatbox.vue')
             },
+            
             {
                 path: 'retina',
                 component: () =>
@@ -278,6 +302,7 @@ const routes = [{
                 component: () =>
                     import ('pages/Retina/TrainerAuto.vue')
             },
+
             {
                 path: 'advisory',
                 children: [{
@@ -289,6 +314,7 @@ const routes = [{
                 component: () =>
                     import ('layouts/Advisory.vue')
             },
+
             {
                 path: 'FertilizerCalci',
                 children: [{
@@ -299,11 +325,13 @@ const routes = [{
                 component: () =>
                     import ('layouts/FertilizerCalci.vue')
             },
+
             {
                 path: 'fertilopedia',
                 component: () =>
                     import ('pages/Fertilopedia/Index.vue')
             },
+
             {
                 path: 'profile',
                 component: () =>
@@ -319,6 +347,7 @@ const routes = [{
                 component: () =>
                     import ('pages/About.vue')
             },
+
             {
                 path: 'uploaddocument',
                 component: () =>

@@ -49,7 +49,7 @@ export default {
         {
           _id: 'doctor',
           label: 'Doctor',
-          link: '/doctor',
+          link: '/doctor/appointments',
           icon: 'local_hospital'
         },
         {
