@@ -21,7 +21,7 @@
             q-step(:name="-1" title="Plant a crop" icon="settings" :done="cultivationStep > -1")
               | Choose a crop from most profitable crops in your area or cultivate an incentivized crop.
               q-stepper-navigation
-                q-btn(@click="cropStage = 'planted'" color="primary" label="Plant")
+                q-btn(@click="()=>{ editCropPlant(); cropStage = 'planted'}" color="primary" label="Plant")
             q-step(:name="0" title="Harvest Field" icon="settings" :done="cultivationStep > 0")
               q-stepper-navigation
                 q-btn(@click="cropStage = 'harvested'" color="primary" label="Harvest")
@@ -178,7 +178,6 @@ import FieldWaterTimeline from 'components/Farmer/FieldWaterTimeline'
 import FieldFertilizerTimeline from 'components/Farmer/FieldFertilizerTimeline'
 import FieldEditDialog from 'components/Farmer/FieldEditDialog.vue'
 import CropPlantDialog from 'components/Farmer/CropPlantDialog.vue'
-
 
 export default {
   name: 'DashboardFarmerField',
@@ -386,7 +385,7 @@ export default {
   methods: {
     fetchField() {
       this.fieldInDB = {
-        title: 'Wheat',
+        title: 'Field 1',
         area: 9,
         crop: 'wheat',
         plantedDate: new moment().format('D MMM, YYYY')
@@ -440,7 +439,7 @@ export default {
     },
 
     editCropPlant() {
-       this.editCrop = true
+      this.editCrop = true
     },
     plantCrop() {
       // this.editDialog = true
