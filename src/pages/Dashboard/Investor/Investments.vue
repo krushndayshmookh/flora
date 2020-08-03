@@ -11,7 +11,14 @@
             <q-card-section>
               <div class="text-h6">Name: Vithika Jha</div>
               <p>Crop: Wheat <br />Amount invested: Rs.400</p>
-              <q-btn align="right" type="b" flat color="black" icon="info"  label="Details" />
+              <q-btn
+                align="right"
+                type="b"
+                flat
+                color="primary"
+                icon="info"
+                label="Details"
+              />
             </q-card-section>
           </q-card-section>
         </q-card>
@@ -27,7 +34,14 @@
             <q-card-section>
               <div class="text-h6">Name: Krushn Dayshmookh</div>
               <p>Crop: Rice <br />Amount invested: Rs.356</p>
-              <q-btn align="right" type="b" flat color="black" icon="info"  label="Details" />
+              <q-btn
+                align="right"
+                type="b"
+                flat
+                color="primary"
+                icon="info"
+                label="Details"
+              />
             </q-card-section>
           </q-card-section>
         </q-card>
@@ -43,7 +57,14 @@
             <q-card-section>
               <div class="text-h6">Name: Kishor Baidya</div>
               <p>Crop: Jute <br />Amount Invested: Rs.486</p>
-              <q-btn align="right" type="b" flat color="black" icon="info"  label="Details" />
+              <q-btn
+                align="right"
+                type="b"
+                flat
+                color="primary"
+                icon="info"
+                label="Details"
+              />
             </q-card-section>
           </q-card-section>
         </q-card>
@@ -59,7 +80,14 @@
             <q-card-section>
               <div class="text-h6">Name: Anuprita Dhoble</div>
               <p>Crop: Dal <br />Amount Invested: Rs.435</p>
-              <q-btn align="right" type="b" flat color="black" icon="info"  label="Details" />
+              <q-btn
+                align="right"
+                type="b"
+                flat
+                color="primary"
+                icon="info"
+                label="Details"
+              />
             </q-card-section>
           </q-card-section>
         </q-card>
@@ -75,7 +103,14 @@
             <q-card-section>
               <div class="text-h6">Name: Kirti Togarwar</div>
               <p>Crop: Toor <br />Amount Invested: Rs.675</p>
-              <q-btn align="right" type="b" flat color="black" icon="info"  label="Details" />
+              <q-btn
+                align="right"
+                type="b"
+                flat
+                color="primary"
+                icon="info"
+                label="Details"
+              />
             </q-card-section>
           </q-card-section>
         </q-card>
@@ -97,8 +132,7 @@
       </div> -->
     </div>
     <q-page-sticky position="bottom-right" :offset="[18, 18]">
-        <q-btn fab icon="add" color="primary" />
+      <q-btn fab icon="add" color="primary" />
     </q-page-sticky>
   </q-page>
 </template>
-
