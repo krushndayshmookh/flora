@@ -1,20 +1,45 @@
 <template lang="pug">
-  q-page(padding)
-    .column.q-col-gutter-md
-      .col(v-for="feed in feeds" :key="feed._id")
-        q-card(flat bordered)
-          q-img.rounded-borders(:src="feed.image")
+q-page(padding)
+  .column.q-col-gutter-md
+    .col
+      q-card
+        q-card-section
+          .text-h6 Share something...
+        q-card-section.q-py-none
+          .column.q-col-gutter-md
+            q-input.col(outlined, type='text', placeholder='Title')
+              template(v-slot:prepend)
+                q-icon(name='title')
+            q-input.col(
+              outlined,
+              type='textarea',
+              placeholder='Enter something...'
+            )
+              template(v-slot:prepend)
+                q-icon(name='title')
+        q-card-actions.q-pa-md.justify-between
+          q-btn(outline label='Select Photo', icon='image', color='primary')
+          q-btn(label='Post', icon-right='send', color='primary')
 
-          q-card-section(horizontal)
-            q-card-section.q-pt-xs
-              .text-h5.q-mt-sm.q-mb-xs {{ feed.title }}
-              .text-overline {{ feed.overline }}
-              .text-caption.text-grey {{ feed.caption }}
+    .col(v-for='feed in feeds', :key='feed._id')
+      q-card(flat, bordered)
+        q-img.rounded-borders(:src='feed.image')
 
-          q-separator
-          q-card-actions(align="right")
-            q-btn(type="a" flat icon="info" :href="feed.link" label="Details")
-            
+        q-card-section(horizontal)
+          q-card-section.q-pt-xs
+            .text-h5.q-mt-sm.q-mb-xs {{ feed.title }}
+            .text-overline {{ feed.overline }}
+            .text-caption.text-grey {{ feed.caption }}
+
+        q-separator
+        q-card-actions(align='right')
+          q-btn(
+            type='a',
+            flat,
+            icon='info',
+            :href='feed.link',
+            label='Details'
+          )
 </template>
 
 <script>
