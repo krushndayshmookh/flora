@@ -194,6 +194,11 @@ const routes = [{
                         path: 'schemes/:id',
                         component: () =>
                             import ('pages/Dashboard/Admin/SchemeDetails.vue')
+                    },
+                    {
+                        path: 'plants',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/Plants.vue')
                     }
                 ]
             },
