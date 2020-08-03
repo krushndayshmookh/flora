@@ -1,36 +1,36 @@
 # To Do
 
-- [ ] ADMIN -stats
-  - [ ] by crop 
-  - [ ] by area
-  - [ ] by collection centre
- - [ ] ADMIN-farmer overview
- - [ ] ADMIN- reports
+- [x] ADMIN -stats
+  - [x] by crop 
+  - [x] by area
+  - [x] by collection centre
+ - [x] ADMIN-farmer overview
+ - [x] ADMIN- reports
     - [x] resolved
     - [x] unresolved
-    - [ ] details
-    = [ ] resolve btn
+    - [x] details
+    = [x] resolve btn
  - [x] Schemes
- - [ ] incentives
+ - [x] incentives
  - [x] DBT
  - [x] notifications
  - [ ] market pricing
- - [ ] forum
- - [ ] advisory
+ - [x] forum
+ - [x] chat
  - [x] procurement
  - [ ] collection centres
  - [ ] plant add/delete
  
  - [ ] PAGES
-    - [ ] crop overview 
-    - [ ] selected region and crop
-    - [ ] selected region and govt. centre
-    - [ ] list of collection centres in selected region
-    - [ ] incoming reports
+    - [x] crop overview 
+    - [x] selected region and crop
+    - [x] selected region and govt. centre
+    - [x] list of collection centres in selected region
+    - [x] incoming reports
     - [x] scheme list and details
-    - [ ] incentive list
-    - [ ] add new incentive
-    - [ ] view all incentives
+    - [x] incentive list
+    - [x] add new incentive
+    - [x] view all incentives
     - [ ] plant list, create plant, crop cycle input
     - [x] DBT Accounts 
     - [x] DBT acc details
