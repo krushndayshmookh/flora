@@ -24,12 +24,12 @@ export default {
           label: 'Farm'
         },
         {
-          link: '/product',
+          link: '/market/products',
           icon: 'shopping_cart',
           label: 'Market - Products'
         },
         {
-          link: '/consumer',
+          link: '/market/services',
           icon: 'shopping_cart',
           label: 'Market - Services'
         },

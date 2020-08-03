@@ -14,17 +14,17 @@ export default {
     setLeftDrawerOptions() {
       let options = [
         {
-          link: '/investor/home',
+          link: '/home',
           icon: 'dashboard',
           label: 'Home'
         },
         {
-          link: '/investor/consumer',
-          icon: 'shopping_cart',
-          label: 'Services'
+          link: '/investor/investments',
+          icon: 'monetization_on',
+          label: 'Investments'
         },
         {
-          link: '/investor/schemes',
+          link: '/schemes',
           icon: 'book',
           label: 'Schemes'
         },

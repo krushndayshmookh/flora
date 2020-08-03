@@ -220,8 +220,11 @@ const routes = [{
                     import ('layouts/Dashboard/Investor.vue'),
                 children: [{
                     path: '',
+                    redirect: '/home'
+                },{
+                    path: 'investments',
                     component: () =>
-                        import ('pages/Dashboard/Investor/Index.vue')
+                        import ('pages/Dashboard/Investor/Investments.vue')
                 }]
             },
 
@@ -230,14 +233,31 @@ const routes = [{
                 component: () =>
                     import ('layouts/Dashboard/Consumer.vue'),
                 children: [{
-                        path: 'chemical/:id',
+                        path: 'products',
                         component: () =>
                             import ('pages/Dashboard/Consumer/ServicesDescription.vue')
                     },
                     {
-                        path: '',
+                        path: 'services',
                         component: () =>
-                            import ('pages/Dashboard/Consumer/Index.vue')
+                            import ('pages/Dashboard/Consumer/Products.vue')
+                    }
+                ]
+            },
+
+            {
+                path: 'market',
+                component: () =>
+                    import ('layouts/Marketplace.vue'),
+                children: [{
+                        path: 'products',
+                        component: () =>
+                            import ('pages/Dashboard/Consumer/ServicesDescription.vue')
+                    },
+                    {
+                        path: 'services',
+                        component: () =>
+                            import ('pages/Dashboard/Consumer/Products.vue')
                     }
                 ]
             },

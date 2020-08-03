@@ -55,20 +55,20 @@ export default {
         {
           _id: 'investor',
           label: 'Investor',
-          link: '/investor',
+          link: '/investor/investments',
           icon: 'monetization_on'
+        },
+        {
+          _id: 'consumer',
+          label: 'Consumer',
+          link: '/consumer/products',
+          icon: 'face'
         },
         {
           _id: 'expert',
           label: 'Expert',
           link: '/expert',
           icon: 'school'
-        },
-        {
-          _id: 'consumer',
-          label: 'Consumer',
-          link: '/consumer',
-          icon: 'face'
         },
         {
           _id: 'procurement',
