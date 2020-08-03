@@ -215,6 +215,11 @@ const routes = [{
                         path: 'appointments',
                         component: () =>
                             import ('pages/Dashboard/Doctor/Appointments.vue')
+                    },
+                    {
+                        path: 'counselling',
+                        component: () =>
+                            import ('pages/Dashboard/Doctor/Counselling.vue')
                     }
                 ]
             },

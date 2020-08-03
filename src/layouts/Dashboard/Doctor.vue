@@ -24,6 +24,11 @@ export default {
           label: 'Appointments'
         },
         {
+          link: '/doctor/counselling',
+          icon: 'psychology',
+          label: 'Counselling'
+        },
+        {
           link: '/encyclopedia',
           icon: 'book',
           label: 'Encyclopedia'
