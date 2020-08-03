@@ -407,6 +407,11 @@ const routes = [{
                     import ('pages/Profile/Setup.vue')
             },
             {
+                path: 'profile/psychometric',
+                component: () =>
+                    import ('pages/Profile/Psychometric.vue')
+            },
+            {
                 path: 'about',
                 component: () =>
                     import ('pages/About.vue')
