@@ -1,12 +1,25 @@
-<template lang="pug">
-  q-card
-    //- q-img(:src="encyclopedia.image" style="height: 150px;")
-    q-card-section(horizontal)
-      q-card-section
-        .text-h6 {{ article.title }}
-        .text-subtitle2 {{ article.description }}
-      q-card-section.absolute-right
-        //- q-btn(v-ripple outline  :to="'/encyclopedia/article/' + encyclopedia.id") View
+<template>
+  <q-page padding>
+    <div class="column q-col-gutter-md">
+      <q-card class="my-card">
+        <q-img src="images/index-2.jpg" basic>
+          <div class="absolute-bottom text-h6">
+            {{ article.title }}
+          </div>
+        </q-img>
+
+        <q-card-section>
+          <div class="text-subtitle1 text-justify q-pa-lg">
+            {{ article.description }}
+          </div>
+
+          <div class="text-subtitle1 text-justify q-pa-lg">
+            {{ article.description }}
+          </div>
+        </q-card-section>
+      </q-card>
+    </div>
+  </q-page>
 </template>
 
 <script>

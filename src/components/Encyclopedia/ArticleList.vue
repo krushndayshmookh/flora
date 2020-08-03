@@ -1,13 +1,32 @@
-<template lang="pug">
-  q-list
-    q-item.q-pa-md(clickable v-ripple v-for="article in articles" :key="article.id" :to="'/encyclopedia/article/'+article._id")
-      q-item-section
-        q-item-label {{ article.title }}
-        q-item-label(caption lines="1") {{ article.description }}
-      q-item-section(side top)
-        q-item-label(caption) {{ article.lastEdited }}
-        .text-orange
-          q-icon(name="star" color="yellow" v-for="(ratestar, idx) in article.rating" :key="idx")
+<template>
+  <q-page >
+    <q-list bordered padding class="q-pa-sm">
+      <q-item
+        clickable
+        v-ripple
+        v-for="article in articles"
+        :key="article.id"
+        :to="'/encyclopedia/article/' + article._id"
+      >
+        <q-item-section>
+          <div class="text-subtitle text-bold">
+            {{ article.title }}
+          </div>
+        </q-item-section>
+        <q-item-section>
+          <q-item-label caption lines="2">
+            {{ article.description }}</q-item-label
+          >
+        </q-item-section>
+        <q-item-section side>
+          <q-avatar size="64px">
+            <q-img class="rounded-borders" src="images/article-1.png" />
+          </q-avatar>
+        </q-item-section>
+      </q-item>
+    </q-list>
+    <q-separator/>
+  </q-page>
 </template>
 
 <script>
@@ -18,6 +37,6 @@ export default {
       type: Array,
       default: () => []
     }
-  } 
+  }
 }
 </script>
