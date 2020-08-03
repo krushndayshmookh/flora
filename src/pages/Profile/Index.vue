@@ -100,9 +100,26 @@
               />
             </q-card-section>
           </q-card-section>
-
-          <q-card-section> </q-card-section>
         </q-card>
+
+        <div class="q-pt-mb">
+          <q-card class="my-card" flat bordered>
+            <q-card-section>
+              <div class="text-h5">How are you feeling today?</div>
+              <div class="text-body1">
+                We recommend checking out our psycometric evaluator.
+              </div>
+            </q-card-section>
+            <q-card-section>
+              <q-btn
+                label="Take Psycometric Test"
+                icon="psychology"
+                to="/profile/psychometric"
+                color="primary"
+              ></q-btn>
+            </q-card-section>
+          </q-card>
+        </div>
       </div>
     </div>
   </q-page>
