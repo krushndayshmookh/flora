@@ -35,6 +35,12 @@ export default {
           icon: 'agriculture'
         },
         {
+          _id: 'admin',
+          label: 'Government',
+          link: '/admin',
+          icon: 'settings'
+        },
+        {
           _id: 'trader',
           label: 'Trader',
           link: '/trader/orders',
@@ -65,17 +71,11 @@ export default {
           icon: 'face'
         },
         {
-          _id: 'admin',
-          label: 'Government',
-          link: '/admin',
-          icon: 'settings'
-        },
-        {
           _id: 'procurement',
           label: 'Procurement Center',
           link: '/procurement',
           icon: 'archive'
-        },
+        }
         // {
         //   _id: 'login',
         //   label: 'Login',
