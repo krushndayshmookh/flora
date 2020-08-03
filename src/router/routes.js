@@ -199,6 +199,11 @@ const routes = [{
                         path: 'plants',
                         component: () =>
                             import ('pages/Dashboard/Admin/Plants.vue')
+                    },
+                    {
+                        path: 'pricing',
+                        component: () =>
+                            import ('pages/Dashboard/Admin/Pricing.vue')
                     }
                 ]
             },

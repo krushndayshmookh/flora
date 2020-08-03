@@ -50,7 +50,7 @@ export default {
           label: 'Incentives'
         },
         {
-          link: '/admin/market',
+          link: '/admin/pricing',
           icon: 'money',
           label: 'Market Pricing Monitor'
         },
