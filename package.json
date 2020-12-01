@@ -11,7 +11,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ./",
     "test": "echo \"No test specified\" && exit 0",
     "build": "quasar build",
-    "deploy": "cd dist/spa && now --prod && cd ..",
+    "deploy": "cd dist/spa && vercel --prod && cd ..",
     "dev": "quasar dev"
   },
   "dependencies": {
