@@ -76,7 +76,7 @@
         </q-card>
       </div>
 
-      <!-- <div class="col-12 col-sm-6 col-md-4">
+      <div class="col-12 col-sm-6 col-md-4">
         <q-card bordered>
           <q-card-section style="text-align:center">
             <img
@@ -89,7 +89,7 @@
             </q-card-section>
           </q-card-section>
         </q-card>
-      </div> -->
+      </div>
     </div>
   </q-page>
 </template>
